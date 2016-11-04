@@ -1,1 +1,1 @@
-#ibtv-zh
+#ibtv-sc
