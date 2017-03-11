@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="baidu-site-verification" content="gyPd7hTE0o" />
+	<title>会员消息－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/favicon.ico" type="image/ico">
+
+<link href="__TMPL__Public/css/xiaoxi.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+
+<!--header logoer start-->
+
+<div id="searchbg">
+
+    <div class="logobg"><a href="{$site_host}"><img src="__TMPL__Public/images/logo.jpg" width="230" height="90" /></a></div>
+
+<div class="centerbg">
+
+        <dl class="searchboxbg">
+
+        <div class="selectbg">
+
+            <form action='/index.php/member/memberprod/search' method='post'>
+
+            <select name='type' style="width:85px; height:38px;border:#207ddb 1px solid; ">
+
+                <option value='0'>搜索产品</option>
+
+                <option value='1'>搜索会员</option>
+
+            </select>
+
+        </div>
+
+        <dt><input name="sear" type="text" placeholder="招商投资" maxlength=16  required style="width:550px; height:35px; border:#207ddb 1px solid; margin:0px;"/></dt>
+
+        <dd><input type="submit" value="" style="width:94px; height:39px; background:url(__TMPL__Public/images/1.png); border:0px;" /></dd>
+
+        </dl>
+
+        </form>
+
+        <div class="jsgunbg">
+
+            <div style="width:770px;height:50px; line-height:60px; font-size:20px;overflow:hidden;" onMouseOver="stop()" onMouseOut="start()">
+
+            <table width="700" border="0" cellspacing="0" cellpadding="0" id="scrollimg" height="21">
+
+            <tr>
+
+            <td id="simg">
+
+            <TABLE width="960" border="0" cellspacing="0" cellpadding="0" height="21">
+
+            <tr>
+
+                <foreach name='tuimessage' item='vo'>
+
+            <td class="zi"><a href="/index.php/member/memberprod/showmsg/id/{$vo.id}" target='_blank'>{$vo.comm}</a></td>
+
+                </foreach>
+
+            </tr>
+
+            </TABLE>
+
+            </td>
+
+            <td id="simg1"></td>
+
+            </tr>
+
+            </table>
+
+            </div>
+
+            <script LANGUAGE="Javascript">
+
+            var tm=null
+
+            function newsScroll() {
+
+            if(scrollimg.parentNode.scrollLeft!=(scrollimg.clientWidth/2))
+
+            scrollimg.parentNode.scrollLeft++;
+
+            else
+
+            scrollimg.parentNode.scrollLeft=0
+
+            }
+
+            window.onload=function() {
+
+            simg1.innerHTML=simg.innerHTML
+
+            tm=setInterval('newsScroll()',20)
+
+            }
+
+            function stop()
+
+            {
+
+            clearInterval(tm)
+
+            }
+
+            function start()
+
+            {
+
+            tm=setInterval('newsScroll()',20)
+
+            }
+
+            </script> 
+
+        </div>
+
+    </div>
+
+    <div class="rightmabg">
+
+        <div class="addressbg">
+
+            <li style="font-size:16px;font-weight:bold;">加入我们</li>
+
+            <li><a href="/index.php?m=list&a=index&id=142">查看联系方式</a></li>
+
+        </div>
+
+        <span ><img src="__TMPL__Public/images/ma.jpg" width="90" height="90" /></span>
+
+    </div>
+
+</div>
+
+<!--header logoer end-->
+
+<!--header  start-->
+
+<div id="headerbg">
+
+        <h1 style='float:left;padding-top:5px'><a href="/index.php/member/memberprod/more">首页</a></h1>
+
+        <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/all">全部行业</a></h1>
+
+        <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/all">所有会员</a></h1>
+
+        <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allprod">所有产品</a></h1>
+
+        <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allhd">所有活动</a></h1>
+
+        <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allmsg">所有资讯</a></h1>
+
+</div>
+
+<!--header tradesort end-->
+
+<!--main list start-->
+
+<div id="mainlistbg">  
+
+    <div class="leftnewsbg">
+
+    <div class="subnavbg"><h1>最新消息</h1></div>
+
+    	<ul>
+
+            <foreach name="mls" item="vo">
+
+    		<li><a href="/index.php/member/memberprod/showmsg/id/{$vo.id}" target="_blank"><h1>{$vo.comm}</h1></a></li>
+
+            </foreach>
+
+    	</ul>
+
+    	<div class="centerimgbg"><img src="__TMPL__Public/images/logos.jpg" width="330" height="200" /></div>
+
+    </div>
+
+    <div class="rightnewsbg">
+
+    	<div class="tuinavbg"><h1>推荐会员</h1></div>
+
+    	<ul class="listnewbg">
+
+            <foreach name="tuimember" item="vo" >
+
+    		<li><a href="/index.php/member/memberprod/showmb/id/{$vo.id}" target="_blank">{$vo.mname}</a></li>
+
+            </foreach>
+
+    	</ul>
+
+    	<div class="tuinavbg"><h1>推荐产品</h1></div>
+
+    	<ul class="listnewbg">
+
+            <foreach name="tuiprod" item="vo" >
+
+    		<li><a href="/index.php/member/memberprod/showprod/id/{$vo.id}" target="_blank">{$vo.pname}</a></li>
+
+            </foreach>
+
+    	</ul>
+
+    	<div class="tuinavbg"><h1>推荐消息</h1></div>
+
+    	<ul class="listnewbg">
+
+            <foreach name="tuimessage" item="vo" >
+
+    		<li><a href="/index.php/member/memberprod/showmsg/id/{$vo.id}" target="_blank">{$vo.comm}</a></li>
+
+            </foreach>
+
+    	</ul>
+
+    </div>
+
+</div>
+
+<!--main list end-->
+
+<include file="Public:memberfooter" />
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/appear.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/swfobject_source.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js"></script>
+
+<script type="text/javascript" src="__TMPL__Public/ind/js/gun.js"></script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+<script language=Javascript> 
+  function time(){
+    //获得显示时间的div
+    t_div = document.getElementById('showtime');
+   var now=new Date()
+    //替换div内容 
+   t_div.innerHTML = now.getFullYear()
+    +"年"+(now.getMonth()+1)+"月"+now.getDate()
+    +"日"+now.getHours()+"时"+now.getMinutes()
+    +"分";
+    //等待一秒钟后调用time方法，由于settimeout在time方法内，所以可以无限调用
+   setTimeout(time,1000);
+  }
+</script>
+
+</head>
+
+<body onload="time()">
+
+<div class=" wrapper logo"><a href="{$site_host}"><img src="__TMPL__Public/ind/appear/logo.jpg" alt="logo" /></a></div>
+<div class=" wrapper top2">
+	<div class="shijian" id="showtime"></div>
+    <img class="pic" src="__TMPL__Public/ind/appear/top2.jpg" alt="nono" />
+    <ul class="nav">
+	<li>
+	<li><a href="{:u('list/index',array('id'=>33))}">资讯</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>34))}">融资</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>35))}">美国上市</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>36))}">英国上市</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>37))}">香港上市</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>38))}">新加坡上市</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>39))}">澳大利亚上市</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>40))}">加拿大上市</a></li>
+    </ul>
+</div>
+<div class="wrapper m1">
+
+        <php>
+            $appear_lt=sp_getslide('appear_lt');
+        </php>
+        <foreach name="appear_lt" item="lt"><php>break;</php></foreach>
+        <div class="m1left"><img  onerror="nofind();" src="/data/upload/{$lt.slide_pic}" alt="{$lt.slide_name}" width"755px" height"92px"/></div>
+        
+        <php>
+            $appear_rt=sp_getslide('appear_rt');
+        </php>
+        <foreach name="appear_rt" item="rt"><php>break;</php></foreach>
+        <div class="m1right"><img  onerror="nofind();" src="/data/upload/{$rt.slide_pic}" alt="{$rt.slide_name}"width"204px" height"92px"/></div>
+</div>
+<div class="wrapper top3">
+	<div class="banner">
+       
+        <div style="width:453px;margin:0px auto;">
+            <div class="box-keleyi-com" id="slider-keleyi-com">
+              <ul>
+                          <php>
+            $science_scnq=sp_sql_posts('cid:35,36,37,38,39,40;field:tid,post_title,smeta;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="science_scnq" item="scnq">
+                <php>
+                $smeta=json_decode($scnq['smeta'],true);
+                </php>
+                
+                            <li>
+                                    <a href="{:U('article/index',array('id'=>$scnq['tid']))}">
+                                    <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="453" height="403"/>
+                                    </a>
+                                    <p>{$scnq.post_title}</p>
+                            </li>
+            </foreach>
+             </ul>
+          </div>
+        </div>
+    </div>
+    <div class="banner1">
+    	<div class="banner11">
+    		<div class="banner11tit">资讯</div>
+            <ul>
+             			<php>
+                        $appear_zx=sp_sql_posts('cid:33;field:tid,post_title;limit:5;order:post_date desc');
+                        </php>
+                        <foreach name="appear_zx" item="zx">
+                        <li><a href="{:U('article/index',array('id'=>$zx['tid']))}" >{$zx.post_title}</a></li>
+                        </foreach>
+            </ul>
+            <div class="more"><a href="{:u('list/index',array('id'=>33))}">更多热点资讯>></a></div>
+        </div>
+    	<div class="banner11 banner12">
+    		<div class="banner11tit banner12tit">融资</div>
+            <ul>
+             			<php>
+                        $appear_rz=sp_sql_posts('cid:34;field:tid,post_title;limit:5;order:post_date desc');
+                        </php>
+                        <foreach name="appear_rz" item="rz">
+                        <li><a href="{:U('article/index',array('id'=>$rz['tid']))}" >{$rz.post_title}</a></li>
+                        </foreach>
+            </ul>
+            <div class="more"><a href="{:u('list/index',array('id'=>34))}">更多热点融资>></a></div>
+        </div>
+    </div>
+    <div class="banner2">
+    
+            <php>
+            $appear_ssall=sp_sql_posts('cid:35,36,37,38,39,40;field:tid,post_title,smeta;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_ssall" item="ssall">
+                <php>
+                $smeta=json_decode($ssall['smeta'],true);
+                </php>
+                <dl>
+                	
+                	<dt><a href="{:U('article/index',array('id'=>$ssall['tid']))}">
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="72" height="60"/></a></dt>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$ssall['tid']))}">{$ssall.post_title}</a></dd>
+                </dl>
+            </foreach>
+                
+    </div>
+</div>
+<div class="wrapper flash">
+<php>
+$appear_c=sp_getslide('appear_c');
+</php>
+<foreach name="appear_c" item="c"><php>break;</php></foreach>
+<img  onerror="nofind();" src="/data/upload/{$c.slide_pic}" alt="{$c.slide_name}" width="960" height="109"/>
+</div>
+<div class="wrapper m1">
+	<div class="m1main">
+            <php>
+            $appear_mgss=sp_sql_posts('cid:35;field:tid,post_title,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_mgss" item="mgss">
+                <php>
+                $smeta=json_decode($mgss['smeta'],true);
+                </php>
+                <dl>
+                	
+                	<dt><a href="{:U('article/index',array('id'=>$mgss['tid']))}">
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$mgss['tid']))}">{$mgss.post_title}</a></dd>
+                </dl>
+            </foreach>
+            <php>
+            $appear_ygss=sp_sql_posts('cid:36;field:tid,post_title,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_ygss" item="ygss">
+                <php>
+                $smeta=json_decode($ygss['smeta'],true);
+                </php>
+                <dl>
+                	
+                	<dt><a href="{:U('article/index',array('id'=>$ygss['tid']))}">
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$ygss['tid']))}">{$ygss.post_title}</a></dd>
+                </dl>
+            </foreach>
+    </div>
+
+</div>
+<div class="wrapper m2">
+	<div class="m2left">
+  		<div class="m2left1">
+        
+            <php>
+            $appear_xxss=sp_sql_posts('cid:37,38;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_xxss" item="xxss">
+                <php>
+                $smeta=json_decode($xxss['smeta'],true);
+                </php>
+        	<dL>
+            	<dt><a href="{:U('article/index',array('id'=>$xxss['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd class="dd1"><a href="{:U('article/index',array('id'=>$xxss['tid']))}">{$xxss.post_title}</a></dd>
+                <dd class="dd2"><a href="{:U('article/index',array('id'=>$xxss['tid']))}">{$xxss.post_excerpt}</a></dd>
+            </dL>
+            </foreach>
+        </div>  
+    </div>
+	<div class="m2right">
+		<div class="m2right1">
+            <php>
+            $appear_ajss=sp_sql_posts('cid:39,40;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_ajss" item="ajss">
+                <php>
+                $smeta=json_decode($ajss['smeta'],true);
+                </php>
+        	<dL>
+            	<dt><a href="{:U('article/index',array('id'=>$ajss['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd class="dd1"><a href="{:U('article/index',array('id'=>$ajss['tid']))}">{$ajss.post_title}</a></dd>
+                <dd class="dd2"><a href="{:U('article/index',array('id'=>$ajss['tid']))}">{$ajss.post_excerpt}</a></dd>
+            </dL>
+            </foreach>
+        </div>
+        <div class="zhishu">
+        <div class="m2right2">
+        	<a href="#2"><img src="__TMPL__Public/ind/appear/CPI-PPI.jpg" width="375" height="292"/></a>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper flash">
+<php>
+$appear_d=sp_getslide('appear_d');
+</php>
+<foreach name="appear_d" item="d"><php>break;</php></foreach>
+<img  onerror="nofind();" src="/data/upload/{$d.slide_pic}" alt="{$d.slide_name}"  width="960" height="109"/></div>
+<div class="wrapper m3">
+	<div id=demo style="OVERFLOW: hidden; WIDTH: 960px; align: center">
+  <table cellspacing="0" cellpadding="0" align="center" border="0">
+    <tbody>
+      <tr>
+        <td id="marquePic1" valign="top">
+		
+<table width="958" height="130" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+  
+            <php>
+            $appear_all=sp_sql_posts('cid:35,36,37,38,39,40;field:tid,smeta;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <td width="95" align="center"><a href="{:U('article/index',array('id'=>$all['tid']))}" style="margin:0 10px;">
+                <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="160" height="185"/></a></td>
+            </foreach>
+
+  </tr>
+  <tr>
+            <php>
+            $appear_all=sp_sql_posts('cid:35,36,37,38,39,40;field:post_title;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_all" item="all">
+			<td height="20"align="center"><div class="ai">{$all.post_title}</div></td>
+            </foreach>
+  </tr>
+</table>		
+		
+		</td>
+        <td id="marquePic2" valign="top"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class="wrapper m4">
+	<ul>
+            <php>
+            $appear_zr=sp_sql_posts('cid:33,34;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_zr" item="zr">
+        	<li><a href="{:U('article/index',array('id'=>$zr['tid']))}">{$zr.post_title}</a></li>
+            </foreach>
+    </ul>
+	<ul>
+            <php>
+            $appear_my=sp_sql_posts('cid:35,36;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_my" item="my">
+        	<li><a href="{:U('article/index',array('id'=>$my['tid']))}">{$my.post_title}</a></li>
+            </foreach>
+    </ul>
+	<ul>
+            <php>
+            $appear_xx=sp_sql_posts('cid:37,38;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_xx" item="xx">
+        	<li><a href="{:U('article/index',array('id'=>$xx['tid']))}">{$xx.post_title}</a></li>
+            </foreach>
+    </ul>
+	<ul>
+            <php>
+            $appear_aj=sp_sql_posts('cid:39,40;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_aj" item="aj">
+        	<li><a href="{:U('article/index',array('id'=>$aj['tid']))}">{$aj.post_title}</a></li>
+            </foreach>
+    </ul>
+</div>
+
+<div class="wrapper m5"></div>
+
+  <include file="Public:footer" />
+<script src="http://keleyi.com/keleyi/phtml/image/15/keleyieffect.js"></script>
+<script type="text/javascript">
+Effect.slider({
+'targetElement': 'slider-ke'+'leyi-com',
+'showMarkers': true,
+'showControls': true
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* CSS Document */
+
+.m1{ overflow:hidden; height:462px; background:#f4f4f4; padding-top:9px;}
+
+.m1left{ float:left; overflow:hidden; /*margin-left:14px;*/ display:inline;}
+.m1left img{ width:615px; height:445px; display:block;}
+
+.m1right{ float:left; overflow:hidden;display:inline; padding:0 30px; width:270px;}
+.m1righttit{ height:40px; line-height:40px; font-size:16px; font-weight:bold; background:url(../interview/m1righttitbg.jpg) no-repeat 0 34px;}
+.m1right ul{ margin-top:1px; overflow:hidden;}
+.m1right ul li{ height:40px; line-height:40px; border-bottom:1px dashed #a0a19a; color:#4c4945; overflow:hidden;}
+.m1right ul li a{ color:#637e14;}
+.m1right ul li.more{ float:right; border:none; font-weight:bold; height:35px; line-height:35px;}
+
+.m2{ background:#f4f4f4; margin-top:10px; padding-bottom:10px;}
+.ai{ width:160px; height:24px;line-height:24px; overflow:hidden;}
+
+
+
+.m3{ overflow:hidden; margin-top:10px;}
+.m3left{ float:left;}
+
+.titzi{ height:36px; line-height:36px; font-size:16px; font-weight:bold; text-indent:6px;}
+
+.m3one{ width:622px; height:339px; background:#f4f4f4; border-top:3px solid #636363;}
+.m3onemain{ overflow:hidden; padding-left:10px; width:290px; float:left;}
+.m3onemaintit{ height:30px; line-height:30px; color:#2a4e80; font-weight:bold; font-size:14px; overflow:hidden;}
+.m3onemaintit a{ color:#637e14;}
+.m3onemain dl{ overflow:hidden;}
+.m3onemain dl dt a img{ width:292px; height:195px;}
+.m3onemain dl dd{ height:50px; line-height:25px; overflow:hidden; padding:0 10px; margin-top:8px;}
+.m3onemain1{ margin-left:6px;}
+.m3onemain dl dd a{ color:#637e14;}
+
+.m3two{ margin-top:10px; overflow:hidden; width:622px; border-top:3px solid #636363;}
+.m3two dl{ width:176px; overflow:hidden; padding-left:10px; float:left; margin-right:20px; display:inline;}
+.m3two dl dt a img{ width:176px; height:114px;}
+.m3two dl dd{ height:50px; line-height:25px; overflow:hidden;}
+.m3two dl dd a{ color:#000;}
+
+.m3three{ width:622px; overflow:hidden; background:#f4f4f4; margin-top:10px; border-top:3px solid #636363;}
+.m3threemain{ overflow:hidden;}
+.m3threemainl{ width:390px; padding-left:6px; float:left;}
+.m3threemainl dl{ overflow:hidden;}
+.m3threemainl dl dt{ float:left;}
+.m3threemainl dl dt a img{ width:243px; height:160px;}
+.m3threemainl dl dd.dd1{ float:left; margin-left:12px;width:130px; line-height:25px; height:150px; overflow:hidden;}
+.m3threemainl dl dd a{ color:#000;}
+.m3threemainl dl dd.dd2{ float:right; padding-right:10px;}
+
+.m3threemainr{ float:left; overflow:hidden; padding-left:16px; margin-top:5px;}
+.m3threemainr dl{ width:210px; height:60px; overflow:hidden;}
+.m3threemainr dl dt{ float:left;}
+.m3threemainr dl dt a img{ width:98px; height:64px;}
+.m3threemainr dl dd{ float:left; height:60px; line-height:20px; width:88px; overflow:hidden; margin-left:15px; display:inline;}
+.m3threemainr dl dd a{ color:#000;}
+.m3threemainr dl.dl1{ margin-top:7px;}
+
+.border{border-top:2px solid #636363; padding-top:10px;}
+
+.m3four{ overflow:hidden; padding-top:10px; border-top:3px solid #636363; margin-top:10px;width:622px;}
+
+.m3five{ width:622px; overflow:hidden; border-top:3px solid #636363; margin-top:10px; padding-top:10px;}
+
+.m3fiveall{ width:296px; overflow:hidden; border:2px solid #e4e4e4; padding:4px 4px; float:left; margin-right:2px; margin-top:2px;}
+.m3fivealltit{ height:30px; line-height:30px; border-bottom:1px dashed #e4e4e4;}
+.m3fiveall ul{ margin-top:1px; overflow:hidden; padding:0 4px;}
+.m3fiveall ul li{ height:30px; line-height:30px; border-bottom:1px dashed #a0a19a; color:#4c4945; overflow:hidden;}
+.m3fiveall ul li a{ color:#637e14;}
+.m3fiveall ul li.more{ float:right; border:none; font-weight:bold; height:35px; line-height:35px;}
+
+
+.m3right{ float:left; width:320px; overflow:hidden; padding-left:18px;}
+.m3right1{ overflow:hidden; border-top:3px solid #636363;}
+.m3rightpic1 a img{ width:320px; height:260px;}
+.m3rightpic1 a{ display:block;}
+.m3rightmain{ width:318px; overflow:hidden; margin-top:7px; border:1px solid #e4e4e4;}
+.m3rightmaintop{ height:32px; line-height:32px; background:url(../interview/m3rightbg.jpg) repeat-x; color:#FFF; text-indent:14px; position:relative;}
+.ding{ position:absolute; right:10px; top:5px;}
+
+.m3rightmain ul{ margin-top:1px; overflow:hidden; padding-left:10px;}
+.m3rightmain ul li{ height:40px; line-height:40px; border-bottom:1px dashed #a0a19a; color:#4c4945; overflow:hidden;}
+.m3rightmain ul li a{ color:#637e14;}
+.m3rightmain ul li.more{border:none; font-weight:bold; height:35px; line-height:35px;}
+
+.bian{ margin-top:20px; overflow:hidden;}
+.m5{ height:2px; background:#000; margin-top:20px;}
+
+
+
+.input_bg{ overflow:hidden; margin-top:30px;}
+.input_bg input{ width:282px; height:30px; background:url(../img/input_bg.jpg) no-repeat;}
+.input_bg span{ height:30px; line-height:30px; text-align:center; background: url(../img/bg_1.jpg) repeat-x; width:60px; display:inline-block;} 
+.input_bg span a{ color:#fff; font-size:14px; font-weight:bold;}
+.more_nav { overflow:hidden; float:right;}
+.more_nav li{ float:left; height:30px; line-height:30px; text-align:center; background:#ECECEB; padding:0 15px; margin-left:3px;border-radius: 5px 6px 0px 0px;}
+.more_nav li a{ color:#000; font-weight:bold;}
+.more_right{ width:100%; overflow:hidden; margin-top:20px; float:right}
+
+.assg{ overflow:hidden; background:url(../img/nav_bg.jpg) repeat-x;}
+.wras{overflow:hidden; height:47px; line-height:47px; background:url(../img/nav_bg.jpg) repeat-x;}
+.wras li{ float:left; background:url(../img/line_bg.jpg) no-repeat left top; padding:0 20px;}
+.wras li a{ color:#fff;}
+.touying{ overflow:hidden; background:url(../img/touying.jpg) repeat-x bottom; height:54px; margin-bottom:10px;}
+
+
+
+
+#YSel{width:620px;height:445px;overflow:hidden;border:1px solid #DEDEDE;background-color:#333333;}
+#YSel dl{position:relative;z-index:10;float:left;margin:4px;display:inline;width:615px;height:445px;overflow:hidden;}
+#YSel dt{position:absolute;z-index:13;right:0;width:128px;height:94px;overflow:hidden;}
+#YSel dt img{float:left;width:116px;height:86px;margin:4px 4px 4px 8px;display:inline;}
+
+#YSel dt#YSTab1{top:90px;}
+#YSel dt#YSTab2{top:180px;}
+#YSel dt#YSTab3{top:270px;}
+#YSel dd{position:absolute;z-index:12;top:0;left:0;width:615px;height:445px;overflow:hidden;}
+#YSel dd img{float:left;width:474px;height:360px;}
+#YSel h3{ text-align:left;width:600px;height:24px;font-size:12px;line-height:24px;overflow:hidden;clear:both; color:#639035;}
+#YSel p{float:left;clear:both;width:600px;height:48px;overflow:hidden;line-height:16px;font-size:12px; color:#FFF;}
+#YSel p a{ color:#639035;}
+.even{background-color:#F8F8F8;}
+.odd{background-color:#EAEFF5;}
+.hover{background-color:#B0BEC7;color:#FFF;cursor:pointer;}
+.hidden{display:none;clear:both;}
+
+
+
+
+
+
+.foucebox{height:430px;margin:10px auto;background:#333333;position:relative;}
+.f_s_box{width:474px;height:360px;overflow:hidden; margin-left:6px; margin-top:4px; margin-right:10px;}
+.f_s_bg{ width:100%;height:50px;position:absolute;left:0;bottom:0px;
+filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#99000000', endColorstr='#99000000');}
+.f_s_txt{height:50px;font-size:12px;color:#CCC;position:absolute;left:0;bottom:0;padding: 0 10px; line-height:25px; overflow:hidden;}
+.f_s_txt a{color:#CCCCCC;}
+.f_s_bigimg img{width:474px;height:360px;}
+/* scrollimg_tigger */
+.scrollimg_tigger_hover,.scrollimg_tigger_img li{background:url(../images/index_sp.png) no-repeat;}
+.scrollimg_tigger{position:relative;}
+.scrollimg_tigger_hover{width:116px;height:85px;position:absolute;left:12px;top:4px;background-position:0 0px;z-index:5;}
+.scrollimg_tigger_img{padding:5px 11px;}
+.scrollimg_tigger_img li{width:120px;height:85px;float:left;background-position:-60px 0px;margin:3px 1px 1px 2px;display:inline;}
+.scrollimg_tigger_img img{width:120px;height:85px;margin:1px;display:block;}
+.scrollimg_tigger_link{position:absolute;left:11px;top:5px;z-index:10;}
+.scrollimg_tigger_link li{width:120px;height:85px;float:left;display:inline;margin:3px 1px 1px 2px;cursor:pointer;}
+.scrollimg_tigger_link a{display:block;height:85px;}
+.scrollimg_tigger_hover a{border:2px #FFCC00 solid;}
+.scrollimg_tigger{ width:120px; overflow:hidden}
+.scrollimg_tigger{ float:left;}
+#SwitchBigPic{ float:left}

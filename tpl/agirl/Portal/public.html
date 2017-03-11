@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/keep.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/AutoChangePhoto.js"></script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+</head>
+
+<body>
+
+<div class=" wrapper top2">
+	<a class="logo" href="{$site_host}"><img onerror="nofind();" src="__TMPL__Public/images/logo.png" height="110" /></a>
+    <a class="logoyou">
+    
+        <php>
+            $keep_t=sp_getslide('public_t');
+        </php>
+        <foreach name="keep_t" item="t"><php>break;</php></foreach>
+    <img onerror="nofind();" src="/data/upload/{$t.slide_pic}" alt="{$t.slide_name}" width="722"  height="110"/></a>
+</div>
+<div class="wrapper nav">
+	<ul>
+    	<li><a href="{:u('list/index',array('id'=>129))}">新闻</a></li><li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>130))}">活动</a></li><li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>131))}">报名及筹款</a></li><li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>132))}">赞助</a></li><li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>133))}">注意事项</a></li>
+    </ul>
+            <ul style="float:right"> 
+                <li><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+                <li>|</li>
+                <li><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+            </ul>
+</div>
+<div class="wrapper main">
+	<div class="mainleft">
+    	<div class="banner">
+<TABLE id=pictable style="DISPLAY: none">
+  <TBODY>
+          <php>
+        $trade_all=sp_sql_posts('cid:129,130,131,132,133;field:tid,post_title,smeta;limit:7;order:post_date desc');
+        </php>
+        <foreach name="trade_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+  <TR>
+    <TD><IMG onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="403" height="265"></TD>
+    <TD><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_title}</a></TD>
+    <TD></TD>
+  </TR>
+        </foreach>
+
+</TBODY></TABLE>
+
+<DIV class=div_xixi>
+<SCRIPT language=javascript type=text/javascript>
+<!--
+                var picarry = {};
+                var lnkarry = {};
+                var ttlarry = {};
+                  function FixCode(str){
+                    return str.replace("'","=");
+                  }
+                  var t=document.getElementById("pictable");
+                  var rl=t.rows.length;
+                  var baseu=  document.URL.replace(/(http.*\/)(.*)/, "$1"); 
+                  if(baseu.indexOf("/servlet/")>=0)
+                  baseu = baseu.replace("/servlet/","/");
+
+                  var txt="";
+                  for(var i=0;i<rl;i++){
+                    try{
+                        picarry[i]=t.rows[i].cells[0].childNodes[0].src;
+                        lnkarry[i]=t.rows[i].cells[2].innerHTML;
+                        ttlarry[i]=FixCode(t.rows[i].cells[1].innerHTML);
+                        document.getElementById("li_jimg"+i).innerHTML = '<img onerror="nofind();" src="'+picarry[id]+'">';
+                        alert(picarry[i]);
+                    }catch(e){
+        
+                    }
+                }             
+                    document.write("<div class='div_jimg\'><a  id='a_jimg'><img id='bigimg' style='filter:RevealTrans (duration='1',transition='23'); visibility:visible;' alt='' src='"+picarry[0]+"'><\/a><ul class='ul_jimg'><li class='li_jimg on' id='li_jimg0' onmouseover='setfoc(0)' onmouseout='playit()'><a  href='"+lnkarry[0]+"' class='img'>"+ttlarry[0]+"<\/a><\/li><li class='li_jimg' id='li_jimg1' onmouseover='setfoc(1)' onmouseout='playit()'><a  href='"+lnkarry[1]+"' class='img'>"+ttlarry[1]+"<\/a><\/li><li class='li_jimg' id='li_jimg2' onmouseover='setfoc(2)' onmouseout='playit()'><a  href='"+lnkarry[2]+"' class='img'>"+ttlarry[2]+"<\/a><\/li><li class='li_jimg' id='li_jimg3' onmouseover='setfoc(3)' onmouseout='playit()'><a  href='"+lnkarry[3]+"' class='img'>"+ttlarry[3]+"<\/a><\/li><li class='li_jimg' id='li_jimg4' onmouseover='setfoc(4)' onmouseout='playit()'><a  href='"+lnkarry[4]+"' class='img'>"+ttlarry[4]+"<\/a><\/li><li class='li_jimg' id='li_jimg5' onmouseover='setfoc(5)' onmouseout='playit()'><a  href='"+lnkarry[5]+"' class='img'>"+ttlarry[5]+"<\/a><\/li><li class='li_jimg' id='li_jimg6' onmouseover='setfoc(6)' onmouseout='playit()'><a  href='"+lnkarry[6]+"' class='img'>"+ttlarry[6]+"<\/a><\/li><\/ul><\/div>");
+</SCRIPT>
+</DIV>
+        </div>
+        <div class="ml1">
+        	<div class="ml1left">
+            	<div class="ml1left1">
+                	<div class="ml1left1tit">新闻</div>
+                    <ul>
+                     <php>
+        $trade_zhyy=sp_sql_posts('cid:129;field:tid,post_title;limit:20;order:post_date desc');
+        </php>
+        <foreach name="trade_zhyy" item="zhyy">
+
+                    	<li><a href="{:U('article/index',array('id'=>$zhyy['tid']))}">{$zhyy.post_title}</a></li>
+        </foreach>
+                    </ul>
+                </div>
+                
+                <div class="ml1left3">
+                 <php>
+        $trade_yy=sp_sql_posts('cid:130;field:tid,post_title,smeta;limit:8;order:post_date desc');
+        </php>
+        <foreach name="trade_yy" item="yy">
+        <php>
+        $smeta=json_decode($yy['smeta'],true);
+        </php>
+        	<dl>
+            	<dt><a href="{:U('article/index',array('id'=>$yy['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$yy['tid']))}">{$yy.post_title}</a></dd>
+            </dl>
+        </foreach>
+                </div>
+            </div>
+            <div class="ml1right">
+            	<div class="ml1right1">
+                    <div class="ml1right1tit"><span class="span1">赞助</span></div>
+		<php>
+        $trade_cy=sp_sql_posts('cid:132;field:tid,post_title,post_excerpt,smeta;limit:3;order:post_date desc');
+        </php>
+        <foreach name="trade_cy" item="cy">
+        <php>
+        $smeta=json_decode($cy['smeta'],true);
+        </php>
+        	<dl>
+            	<dt><a href="{:U('article/index',array('id'=>$cy['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="137" height="89" /></a></dt>
+                <dd class="dd1"><a href="{:U('article/index',array('id'=>$cy['tid']))}">{$cy.post_title}</a></dd>
+                <dd class="dd2"><a href="{:U('article/index',array('id'=>$cy['tid']))}">{$cy.post_excerpt}</a></dd>
+            </dl>
+        </foreach>
+                </div>
+                <div class="ml1right2">
+                    <div class="ml1right1tit"><span class="span1">报名及筹款</span></div>
+                    <ul>
+                    		<php>
+        $trade_jk=sp_sql_posts('cid:131;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="trade_jk" item="jk">
+                    <li><a href="{:U('article/index',array('id'=>$jk['tid']))}">{$jk.post_title}</a></li>
+                    <li class="special">{$jk.post_excerpt}</li>
+        </foreach>
+                    
+                    </ul>
+                </div>
+                <div class="ml1right3">
+                <php>
+        $interview_by=sp_sql_posts('cid:130;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        $a = 0;
+        </php>
+                	<div class="ml1right3tit">活动</div>
+        <foreach name="interview_by" item="by">
+        <php>
+        $a++;
+        $smeta=json_decode($by['smeta'],true);
+        if($a == 1)
+        {
+        </php>
+        	
+                    <div class="pic"><a href="{:U('article/index',array('id'=>$by['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></div>
+        <php>
+        }
+        if($a > 1){
+        </php>
+
+                    <ul>
+                    	<li class="special"><a href="{:U('article/index',array('id'=>$by['tid']))}">{$by.post_title}</a></li>
+                        <li class="ai">{$by.post_excerpt}</li>
+                    </ul>
+        <php>
+        }
+        </php>
+        </foreach>
+                    
+                    
+                    
+                    <div class="guang">
+        <php>
+            $keep_c=sp_getslide('public_c');
+        </php>
+        <foreach name="keep_c" item="c"><php>break;</php></foreach>
+    <img onerror="nofind();" src="/data/upload/{$c.slide_pic}" alt="{$c.slide_name}" width="486" height="86"/>
+    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m2">
+        <php>
+        $trade_ss=sp_sql_posts('cid:133;field:tid,post_title,post_excerpt,smeta;limit:2;order:post_date desc');
+        </php>
+        <foreach name="trade_ss" item="ss">
+        <php>
+        $smeta=json_decode($ss['smeta'],true);
+        </php>
+
+        	<dl>
+            	<dt><a href="{:U('article/index',array('id'=>$ss['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="247" height="150"/></a></dt>
+                <dd class="dd1"><a href="{:U('article/index',array('id'=>$ss['tid']))}">{$ss.post_title}</a></dd>
+                <dd class="dd2">{$ss.post_excerpt}</dd>
+                
+            </dl>
+        </foreach>
+        </div>
+        <div class="m3">
+            <div class="m3main">
+            <php>
+        $trade_bcz=sp_sql_posts('cid:130,132;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="trade_bcz" item="bcz">
+        <php>
+        $smeta=json_decode($bcz['smeta'],true);
+        </php>
+
+                <dl>
+                    <dt><a href="{:U('article/index',array('id'=>$bcz['tid']))}">
+                    <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="131" height="125"/></a></dt>
+                	<dd class="dd1"><a href="{:U('article/index',array('id'=>$bcz['tid']))}">{$bcz.post_title}</a></dd>
+                    <dd class="dd2">{$bcz.post_excerpt}</dd>
+                </dl>
+        </foreach>
+                
+            </div>
+        </div>
+    </div>
+	<div class="mainright">
+    	<div  class="x_ys_pa">
+            <div class="yincang">
+             <php>
+        $trade_sjy=sp_sql_posts('cid:133,131,129;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="trade_sjy" item="sjy">
+        <php>
+        $smeta=json_decode($sjy['smeta'],true);
+        </php>
+                <dl class="x_ys_cdl">
+                    <dt class="x_ys_dt"><a href="{:U('article/index',array('id'=>$sjy['tid']))}">
+                    <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="131" height="102"/></a></dt>
+                    <dd class="x_ys_dd"><a href="{:U('article/index',array('id'=>$sjy['tid']))}">{$sjy.post_title}</a></dd>
+                    <dd class="x_ys_dde"><a href="{:U('article/index',array('id'=>$sjy['tid']))}">{$sjy.post_excerpt}</a></dd>
+                </dl>
+        </foreach>
+               </div>
+               
+               <php>
+        $trade_sjy=sp_sql_posts('cid:132,131field:tid,post_title,post_excerpt,smeta;limit:3;order:post_date desc');
+        </php>
+        <foreach name="trade_sjy" item="sjy">
+        <php>
+        $smeta=json_decode($sjy['smeta'],true);
+        </php>
+            <div class="x_ys_pic">
+            	<p class="biaoti">{$sjy.post_title}</p>
+            	<p><a href=""><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="269" height="158" /></a></p>
+                <p class="x_ys_big"><a href="{:U('article/index',array('id'=>$sjy['tid']))}">{$sjy.post_excerpt}</a></p>
+            </div>
+        </foreach>
+            
+        <php>
+        $trade_sjy=sp_sql_posts('cid:130,133;field:tid,post_title,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="trade_sjy" item="sjy">
+        <php>
+        $smeta=json_decode($sjy['smeta'],true);
+        </php>
+        <p class="x_ys_px">
+            	<a class="neirong" href="{:U('article/index',array('id'=>$sjy['tid']))}">{$sjy.post_title}</a>
+            	<a class="tupian" href="{:U('article/index',array('id'=>$sjy['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="48" height="50" /></a>
+            </p>
+        </foreach>
+            
+            
+            <div class="x_ys_box">
+            <php>
+        $trade_cs=sp_sql_posts('cid:130,129;field:tid,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="trade_cs" item="cs">
+        <php>
+        $smeta=json_decode($cs['smeta'],true);
+        </php>
+
+            	<div class="x_ys_bx left"><a href="{:U('article/index',array('id'=>$cs['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="113" height="141" /></a></div>
+        </foreach>
+                <div style="clear:both;"></div>
+            </div>
+    </div>
+</div>
+</div>
+<div class=" wrapper main2">
+            <php>
+        $trade_bcz=sp_sql_posts('cid:130,131,132,133;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="trade_bcz" item="bcz">
+        <php>
+        $smeta=json_decode($bcz['smeta'],true);
+        </php>
+	<div class="main2one">
+    <dl>
+        	<dt><a href="{:U('article/index',array('id'=>$bcz['tid']))}">
+            <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="213" height="209" /></a></dt>
+            <dd><a href="{:U('article/index',array('id'=>$bcz['tid']))}">{$bcz.post_title}</a></dd>
+        </dl>
+        <ul>
+        	<li><a href="{:U('article/index',array('id'=>$bcz['tid']))}">{$bcz.post_excerpt}</a></li>
+        </ul>
+    </div>
+        </foreach>
+	
+	
+</div>
+    <div class=" wrapper main3">
+    
+        <php>
+            $keep_d=sp_getslide('public_d');
+        </php>
+        <foreach name="keep_d" item="d"><php>break;</php></foreach>
+    <img onerror="nofind();" src="/data/upload/{$d.slide_pic}" alt="{$d.slide_name}" width="960" height="119" />
+    </div>
+
+
+  <include file="Public:footer" />
+</body>
+</html>

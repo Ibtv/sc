@@ -1,0 +1,74 @@
+@charset "utf-8";
+/**document css**/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0; color:#666;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:14px;vertical-align:middle;}
+body{font-size:14px;font-family:Arial, Helvetica, sans-serif;margin:0 auto; font-family:"Arial";}
+table{border-collapse:collapse;border-spacing:0;}
+b,em,i{ font-style:normal; font-weight:normal;}
+h1,h2,h3{ font-size:20px;}
+h4{font-weight:normal; font-size:14px; color:#666;}
+h5{ font-size:14px;}
+h6{ font-size:14px;font-weight:normal;}
+a:link{ color:#000; text-decoration:none;}
+a:visited{ color:#000; text-decoration:none;}
+a:hover{ color:#ff0000;  text-decoration:none;}
+.warpper{width:1200px;margin:0 auto; overflow:hidden;}
+/* header logoer start */
+#headlogobg{background:#e73b63;width:1200px; height:90px; margin:0 auto; overflow:hidden;}
+ul.loginbar{width:400px; height:31px; overflow:hidden;}
+ul.loginbar div{width:150px; height:31px; text-align:center;line-height:25px; float:left;}
+ul.loginbar li{width:60px; height:31px; float:left; text-align:center; line-height:25px;}
+#loginbarbg li a:link{color:#000; text-decoration:none;}
+#loginbarbg li a:hover{ color:#ff6e00;  text-decoration:none;}
+#searchbg{width:1200px; height:90px; margin:5px auto; overflow:hidden;}
+.logobg{width:230px; height:90px; float:left;}
+.centerbg{ width:770px; height:90px;float:left; overflow:hidden;}
+.selectbg{width:85px;height:38px; margin:10px 0px 0px 10px; float:left;}
+dl.searchboxbg{width:770px; height:40px;float:left;}
+dl.searchboxbg dt{width:550px; height:30px; margin:10px 0px 0px 5px;float:left;}
+dl.searchboxbg dd{width:94px; height:38px; margin:10px 0px 0px 4px; float:left;}
+.jsgunbg{width:770px; height:50px; line-height:50px;float:left;  overflow:hidden;}
+.rightmabg{width:190px; height:90px; float:left; overflow:hidden; margin-left:10px;}
+.addressbg{width:100px; height:90px; text-align:center; line-height:40px; float:left;}
+/* header  start */
+#headerbg{border-top:#d3d0d0 1px solid; border-bottom:#d3d0d0 1px solid; width:1200px; height:30px;
+          margin:5px auto; overflow:hidden;}
+.homebg{width:50px; line-height:30px;text-align:center;}
+/* header tradesort start */
+#tradesortbg{border:#d3d0d0 1px solid;width:1200px; height:30px; margin:5px auto;}
+#tradesortbg ul{width:1200px; height:30px;}
+#tradesortbg ul li{width:95px; height:30px;float:left; text-align:center; line-height:30px;}
+ul li.industry{border-right:#d3d0d0 1px solid;width:95px; height:30px;}
+/**activities start**/
+#content{width:1200px;margin:0 auto;height:720px;}
+#activities{width:850px; margin:0 auto;float:left; }
+#activities.name{height:20px; width:850px;margin:0 auto; float:left; }
+.min{width:850px;float:left; padding-bottom:20px;}
+#activities dl{ width:840px; padding:10px 5px; border-top:2px #000 solid;}
+.pic{height:180px; width:540px; overflow:hidden; float:left; padding:0px;}
+.text{height:190px; width:285px; overflow:hidden;color:#666; padding-left:5px; float:left;}
+.title{ font-size:20px; color:#036;overflow:hidden; height:80px; width:285px; font-weight:bold; color:#333;}
+.title a:link{ color:#060;text-decoration:none;}
+.title a:visited{ color:#060; text-decoration:none;} 
+.title a:hover{ color:#F00; text-decoration:none;} 
+
+.address{height:30px; width:300px; overflow:hidden;}
+.time{height:30px; width:300px; overflow:hidden;}
+.organizers{height:20px; width:300px; overflow:hidden;}
+.xiangqing{height:35px; width:840px; line-height:24px; padding-left:5px; overflow:hidden; font-weight:bold; color:#060;}
+.details{width:838px; line-height:24px; padding-left:5px; overflow:hidden;  border:#036 1px dashed; font-size:18px;}
+/**activities end**/
+
+/*ad start*/
+/*various start*/
+#various{ height:600px; width:330px; float:left; padding:0px 10px 10px 10px;}
+.guanggao{ height:330px; width:330px;overflow:hidden; margin-top:25px;}
+/*various end*/
+/*here start*/
+.here{ width:330px; height:360px; margin-top:15px;}
+.til{height:20px; width:330px;}
+
+/*here end*/
+
+/*ad end*/

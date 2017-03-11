@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/interview.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/gun.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/yao.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/pic.js"></script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+</head>
+
+
+<body>
+<div class="wrapper">
+	<div class="input_bg right">
+        <input type="text" />
+        <span><a href="#2"> 搜 索</a></span>
+    </div><br />
+    <div class="more_right"><ul class="more_nav">
+    </ul></div>
+    
+</div>
+<div class="touying">
+  <div class="assg">
+  <ul class="wras wrapper">
+	<li><a href="{:u('list/index',array('id'=>89))}"> 语录</a></li>
+	<li><a href="{:u('list/index',array('id'=>90))}"> 科学家</a></li>
+	<li><a href="{:u('list/index',array('id'=>91))}"> 艺术名家</a></li>
+	<li><a href="{:u('list/index',array('id'=>92))}"> 企业家</a></li>
+	<li><a href="{:u('list/index',array('id'=>93))}"> 经济学家</a></li>
+	<li><a href="{:u('list/index',array('id'=>94))}"> 政界精英</a></li>
+    <li style=" float:right"><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+                <li style=" float:right"><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+  </ul>
+</div>
+</div>
+ <div class="wrapper m1">
+             
+	<div class="m1left">
+<div id="YSel">
+     <dl>
+      <php>
+        $interview_kyqjz=sp_sql_posts('cid:90,91,92,93,94;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        $s = 0;
+        </php>
+        <foreach name="interview_kyqjz" item="kyqjz">
+        <php>
+        $s++;
+        $smeta=json_decode($kyqjz['smeta'],true);
+        </php>
+     	 <dt id="YSTab<php>echo $s;</php>"><a href="{:U('article/index',array('id'=>$kyqjz['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+     	 <dd>
+     	    <a href="{:U('article/index',array('id'=>$kyqjz['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a>
+     	    <h3>{$kyqjz.post_title}</h3>
+     	   	<p>{$kyqjz.post_excerpt}</p>
+     	 </dd>
+        </foreach>
+     
+
+
+     </dl>
+</div>
+<script language="javascript" type="text/javascript" src="js/yao.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+YAO.YTabs({
+		tabRoot: 'YSel',
+		tabs: 'dt',
+		contents: 'dd',
+		auto: true,
+		fadeUp: true
+	});
+//-->
+</script>    
+    </div>
+    <div class="m1right">
+    	<div class="m1righttit">语录</div>
+        <ul>
+         <php>
+        $interview_yl=sp_sql_posts('cid:89;field:tid,post_title;limit:10;order:post_date desc');
+        </php>
+        <foreach name="interview_yl" item="yl">
+        	<li><a href="{:U('article/index',array('id'=>$yl['tid']))}">{$yl.post_title}</a></li>
+        </foreach>
+        </ul>
+    </div>
+</div>
+
+<div class=" wrapper m2">
+	<div id=demo style="OVERFLOW: hidden; WIDTH: 960px; align: center" class="zuopin">
+  <table cellspacing="0" cellpadding="0" align="center" border="0">
+    <tbody>
+      <tr>
+        <td id="marquePic1" valign="top">
+		
+<table width="958" height="130" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+            <php>
+            $interview_yq=sp_sql_posts('cid:91,92;field:tid,smeta;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="interview_yq" item="yq">
+                <php>
+                $smeta=json_decode($yq['smeta'],true);
+                </php>
+                <td align="center"><a href="{:U('article/index',array('id'=>$yq['tid']))}" style="margin:0 10px;">
+                <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="160" height="185"/></a></td>
+            </foreach>
+
+  </tr>
+  <tr>
+            <php>
+            $interview_yq=sp_sql_posts('cid:91,92;field:post_title;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="interview_yq" item="yq">
+			<td align="center"><div class="ai">{$yq.post_title}</div></td>
+            </foreach>
+  </tr>
+</table>		
+		
+		</td>
+        <td id="marquePic2" valign="top"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class=" wrapper m3">
+	<div class="m3left">
+    	<div class="m3one">
+            <div class="titzi">艺术家</div>
+
+                        <php>
+        $interview_ysmj=sp_sql_posts('cid:91;field:tid,post_title,post_excerpt,smeta;limit:2;order:post_date desc');
+        </php>
+        <foreach name="interview_ysmj" item="ysmj">
+        <php>
+        $smeta=json_decode($ysmj['smeta'],true);
+        </php>
+            <div class="m3onemain">
+            	<div class="m3onemaintit"><a href="{:U('article/index',array('id'=>$ysmj['tid']))}">{$ysmj.post_title}</a></div>
+                <dl>
+                	<dt><a href="{:U('article/index',array('id'=>$ysmj['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd><a href="{:U('article/index',array('id'=>$ysmj['tid']))}">{$ysmj.post_excerpt}</a></dd>
+                </dl>
+            </div>
+        </foreach>
+        </div>
+        <div class="m3two">
+            <div class="titzi">经济学家</div>
+        <php>
+        $interview_jjxj=sp_sql_posts('cid:93;field:tid,post_title,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_jjxj" item="jjxj">
+        <php>
+        $smeta=json_decode($jjxj['smeta'],true);
+        </php>
+            <dl>
+            	<dt><a href="{:U('article/index',array('id'=>$jjxj['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$jjxj['tid']))}">{$jjxj.post_title}</a></dd>
+            </dl>
+        </foreach>
+        </div>
+        <div class="m3three">
+            <div class="titzi">企业家</div>
+            <div class="m3threemain">
+                  <php>
+        $interview_qyj=sp_sql_posts('cid:92;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        $s = 0;
+        </php>
+        <foreach name="interview_qyj" item="qyj">
+        <php>
+        $s++;
+        $smeta=json_decode($qyj['smeta'],true);
+		if($s == 1)
+        {
+        </php>
+        <div class="m3threemainl">
+            		<div class="m3onemaintit">{$qyj.post_title}</div>
+                    <dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$qyj['tid']))}">
+                        <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="243" height="160" /></a></dt>              
+                        <dd class="dd1"><a href="{:U('article/index',array('id'=>$qyj['tid']))}">{$qyj.post_excerpt}</a></dd>		
+                    </dl>
+                </div>
+        <php>
+        }
+        </php>
+        
+		<div class="m3threemainr">
+        <php>
+        if($s > 1){
+        </php>
+                	<dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$qyj['tid']))}">
+                        <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="95" height="65" /></a></dt>
+                        <dd><a href="{:U('article/index',array('id'=>$qyj['tid']))}">{$qyj.post_title}</a></dd>
+                    </dl>
+        <php>
+        }
+        </php>
+                </div>
+        </foreach>
+            	
+                
+            </div>
+        </div>
+        <div class="m3two gao6">
+            <div class="titzi">政界精英</div>
+                    <php>
+        $interview_zjjy=sp_sql_posts('cid:94;field:tid,post_title,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_zjjy" item="zjjy">
+        <php>
+        $smeta=json_decode($zjjy['smeta'],true);
+        </php>
+            <dl>
+            	<dt><a href="{:U('article/index',array('id'=>$zjjy['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$zjjy['tid']))}">{$zjjy.post_title}</a></dd>
+            </dl>
+        </foreach>
+        </div>
+        
+        <div class="m3two gao6">
+            <div class="titzi">科学家</div>
+        <php>
+        $interview_kxj=sp_sql_posts('cid:90;field:tid,post_title,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_kxj" item="kxj">
+        <php>
+        $smeta=json_decode($kxj['smeta'],true);
+        </php>
+            <dl>
+            	<dt><a href="{:U('article/index',array('id'=>$kxj['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$kxj['tid']))}">{$kxj.post_title}</a></dd>
+            </dl>
+        </foreach>
+        </div>
+        <div class="m3five">
+            <div class="m3fiveall">
+            <div class="m3fivealltit">政界精英</div>
+            <ul>
+        <php>
+        $interview_zjjy=sp_sql_posts('cid:94;field:tid,post_title;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_zjjy" item="zjjy">
+        	<li><a href="{:U('article/index',array('id'=>$zjjy['tid']))}">{$zjjy.post_title}</a></li>
+        </foreach>   
+            </ul> 
+            </div>
+            <div class="m3fiveall">
+            <div class="m3fivealltit">经济学家</div>
+            <ul>
+        <php>
+        $interview_jjxj=sp_sql_posts('cid:93;field:tid,post_title;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_jjxj" item="jjxj">
+        	<li><a href="{:U('article/index',array('id'=>$jjxj['tid']))}">{$jjxj.post_title}</a></li>
+        </foreach>      
+            </ul> 
+            </div>
+            <div class="m3fiveall">
+            <div class="m3fivealltit">企业家</div>
+            <ul>
+        <php>
+        $interview_qyj=sp_sql_posts('cid:92;field:tid,post_title;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_qyj" item="qyj">
+        	<li><a href="{:U('article/index',array('id'=>$qyj['tid']))}">{$qyj.post_title}</a></li>
+        </foreach>     
+            </ul> 
+            </div>
+            <div class="m3fiveall">
+            <div class="m3fivealltit">艺术名家</div>
+            <ul>
+        <php>
+        $interview_ysmj=sp_sql_posts('cid:91;field:tid,post_title;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_ysmj" item="ysmj">
+        	<li><a href="{:U('article/index',array('id'=>$ysmj['tid']))}">{$ysmj.post_title}</a></li>
+        </foreach>      
+            </ul> 
+            </div>
+            <div class="m3fiveall">
+            <div class="m3fivealltit">科学家</div>
+            <ul>
+        <php>
+        $interview_kxj=sp_sql_posts('cid:90;field:tid,post_title;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_kxj" item="kxj">
+        	<li><a href="{:U('article/index',array('id'=>$kxj['tid']))}">{$kxj.post_title}</a></li>
+        </foreach>    
+            </ul> 
+            </div>
+            <div class="m3fiveall">
+            <div class="m3fivealltit">语录</div>
+            <ul>
+        <php>
+        $interview_yl=sp_sql_posts('cid:89;field:tid,post_title;limit:6;order:post_date desc');
+        </php>
+        <foreach name="interview_yl" item="yl">
+        	<li><a href="{:U('article/index',array('id'=>$yl['tid']))}">{$yl.post_title}</a></li>
+        </foreach>      
+            </ul> 
+            </div>
+       </div>
+    </div>
+    <div class="m3right">
+    	<div class="m3right1">
+            <div class="titzi">专题访谈</div>
+        </div>
+        <div class="m3rightpic1">
+        <php>
+        $interview_rt=sp_getslide('interview_rt');
+        </php>
+        <foreach name="interview_rt" item="rt"><php>break;</php></foreach>
+            <a href="{$rt.slide_url}"  title="{$rt.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$rt.slide_pic}" alt="{$rt.slide_name}" width="320" height="252"/>
+            </a>
+        </div>
+        <div class="m3rightmain">
+            <ul>
+        <php>
+        $interview_yk=sp_sql_posts('cid:89,90;field:tid,post_title;limit:11;order:post_date desc');
+        </php>
+        <foreach name="interview_yk" item="yk">
+        	<li><a href="{:U('article/index',array('id'=>$yk['tid']))}">{$yk.post_title}</a></li>
+        </foreach>
+            </ul>   
+        </div>
+        <div class="m3rightmain">
+            <ul>
+        <php>
+        $interview_yq=sp_sql_posts('cid:91,92;field:tid,post_title;limit:10;order:post_date desc');
+        </php>
+        <foreach name="interview_yq" item="yq">
+        	<li><a href="{:U('article/index',array('id'=>$yq['tid']))}">{$yq.post_title}</a></li>
+        </foreach>   
+            </ul>              
+        </div>
+        <div class="m3rightpic1 bian">
+        <php>
+        $interview_rct=sp_getslide('interview_rct');
+        </php>
+        <foreach name="interview_rct" item="rct"><php>break;</php></foreach>
+            <a href="{$rct.slide_url}"  title="{$rct.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$rct.slide_pic}" alt="{$rct.slide_name}"width="320" height="252"/>
+            </a>
+        </div>
+        <div class="m3rightpic1 bian">
+        <php>
+        $interview_rcd=sp_getslide('interview_rcd');
+        </php>
+        <foreach name="interview_rcd" item="rcd"><php>break;</php></foreach>
+            <a href="{$rcd.slide_url}"  title="{$rcd.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$rcd.slide_pic}" alt="{$rcd.slide_name}"width="320" height="252"/>
+            </a>
+        </div>
+        <div class="m3rightmain">
+            <ul>
+        <php>
+        $interview_jz=sp_sql_posts('cid:93,94;field:tid,post_title;limit:10;order:post_date desc');
+        </php>
+        <foreach name="interview_jz" item="jz">
+        	<li><a href="{:U('article/index',array('id'=>$jz['tid']))}">{$jz.post_title}</a></li>
+        </foreach>     
+            </ul>               
+        </div>
+        <div class="m3rightpic1 bian">
+        
+        <php>
+        $interview_rd=sp_getslide('interview_rd');
+        </php>
+        <foreach name="interview_rd" item="rd"><php>break;</php></foreach>
+            <a href="{$rd.slide_url}"  title="{$rd.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$rd.slide_pic}" alt="{$rd.slide_name}"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <include file="Public:footer" />
+
+<script type="text/javascript"> 
+var MovieRecom={	
+	step:55,
+	hover:"bigHover",
+	bigpic:"SwitchBigPic",
+	smallpic:"big_pic_nav",
+	selectstyle:"currA",
+	pictxt:"",
+	totalcount:4,
+	autotimeintval:2000,
+	objname:"MovieRecom",
+	css:"display:none;left:0;top:0;overflow:hidden;"
+};
+BigNews.init(MovieRecom);
+</script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/trade.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/g.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/slider.js"></script>
+</head>
+<script type="text/javascript">
+$(function(){
+//start
+$(".shga span").hover(function(){
+	$(this).siblings(".color").show();
+},function(){
+	$(this).siblings(".color").hide();
+	})	
+//end
+})
+</script>
+
+<body>
+<div class="wrapper nav">
+	<ul>
+	<li><a href="{:u('list/index',array('id'=>41))}">进口资讯</a></li>
+	<li><a href="{:u('list/index',array('id'=>42))}">出口资讯</a></li>
+	<li><a href="{:u('list/index',array('id'=>43))}">进口政策</a></li>
+	<li><a href="{:u('list/index',array('id'=>44))}">出口政策</a></li>
+	<li><a href="{:u('list/index',array('id'=>45))}">进口贸易</a></li>
+	<li><a href="{:u('list/index',array('id'=>46))}">出口贸易</a></li>
+    </ul>
+                <ul style="float:right">
+                <li><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+                <li>|</li>
+                <li><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+            </ul>
+</div>
+
+<div class=" wrapper m3">
+        <php>
+            $trade_t=sp_getslide('trade_t');
+        </php>
+        <foreach name="trade_t" item="t"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$t.slide_pic}" alt="{$t.slide_name}"/>
+</div>
+<div class=" wrapper m4">
+	<div class="m4left">
+        <div class="m4lefttit"><div class="zi">资讯</div></div>
+        <php>
+        $trade_zx=sp_sql_posts('cid:41,42;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="trade_zx" item="zx">
+        <php>
+        $smeta=json_decode($zx['smeta'],true);
+        </php>
+        <div class="m4leftone"><a href="{:U('article/index',array('id'=>$zx['tid']))}">{$zx.post_title}</a></div>
+        <div class="m4lefttwo">{$zx.post_excerpt}</div>
+        <div class="shipin"><a href="{:U('article/index',array('id'=>$zx['tid']))}">
+        <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></div>
+        </foreach>
+        <ul class="ul1">
+        <php>
+        $trade_zx=sp_sql_posts('cid:41,42;field:tid,post_title,post_excerpt;limit:8;order:post_date desc');
+        $a=0;
+        </php>
+        <foreach name="trade_zx" item="zx">
+        <php>
+        $a++;
+        	if($a>1){
+        </php>
+        <li class="biao"><a href="{:U('article/index',array('id'=>$zx['tid']))}" >{$zx.post_title}</a></li>
+        <li class="nei"><a href="{:U('article/index',array('id'=>$zx['tid']))}" >{$zx.post_excerpt}</a></li>
+        
+        <php>
+        }
+        </php>
+        </foreach>
+        </ul>
+        <div class="jiange">
+        <php>
+            $trade_c=sp_getslide('trade_c');
+        </php>
+        <foreach name="trade_c" item="c"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$c.slide_pic}" alt="{$c.slide_name}"/></div>
+        <ul class="ul1">
+        <php>
+        $trade_zc=sp_sql_posts('cid:43,44;field:tid,post_title,post_excerpt;limit:3;order:post_date desc');
+        </php>
+        <foreach name="trade_zc" item="zc">
+        <li class="biao"><a href="{:U('article/index',array('id'=>$zc['tid']))}" >{$zc.post_title}</a></li>
+        <li class="nei"><a href="{:U('article/index',array('id'=>$zc['tid']))}" >{$zx.post_excerpt}</a></li>
+        </foreach>
+        </ul>
+    </div>
+	<div class="m4right">
+    	<div class="m4lefttit"><div class="zi">贸易</div></div>
+        <div class="m4rightone">
+        	<div class="m4rightonel">
+            	<ul>
+                
+        <php>
+        $trade_jkmy=sp_sql_posts('cid:45;field:tid,post_title,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="trade_jkmy" item="jkmy">
+        <php>
+        $smeta=json_decode($jkmy['smeta'],true);
+        </php>
+            <li class="li">
+                <dl>
+                    <dt><a href="{:U('article/index',array('id'=>$jkmy['tid']))}" >
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="146" height="60"/></a></dt>
+                    <dd><a href="{:U('article/index',array('id'=>$jkmy['tid']))}" >{$jkmy.post_title}</a></dd>
+                </dl>
+            </li>
+        </foreach>
+                </ul>
+            </div>
+        	<div class="m4rightoner">
+                    <php>
+        $trade_ckmy=sp_sql_posts('cid:46;field:tid,post_title,smeta;limit:3;order:post_date desc');
+        </php>
+        <foreach name="trade_ckmy" item="ckmy">
+        <php>
+        $smeta=json_decode($ckmy['smeta'],true);
+        </php>
+                <dl>
+                    <dt><a href="{:U('article/index',array('id'=>$ckmy['tid']))}" >
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd><a href="{:U('article/index',array('id'=>$ckmy['tid']))}" >{$ckmy.post_title}</a></dd>
+                </dl>
+        </foreach>
+            </div>
+        </div>
+        <div class="m4righttwo">
+        <!--<img src="__TMPL__Public/ind/trade/youbanner.jpg" alt="banner" />-->
+        
+        	<div class="jdt">                              
+                      <a side id="" class="left-menu w730 r">	  <!-- 		首页图片幻灯片1000 x 404  开始-->
+                         <div id="banner">
+                           <div id="Div1" class="flash-wrap">
+                           <div id="slide">
+                         </div>
+                           <span id="lblCommend22">
+                             <script type="text/javascript">
+                              $("#slide").jdSlide({ width: 466, height: 339, pics: [ 
+
+                        <php>
+                            $s=sp_getslide('trade_s');
+                        </php>
+                        <for start="0" end="5" name="i" >
+                              { src: "/data/upload/{$s[$i]['slide_pic']}", href: "{$s[$i]['slide_url']}", alt: "{$s[$i]['slide_name']}", breviary: "#", type: "img" } ,
+                        </for>
+							  ] })
+                           </script>
+                          </span>  
+                        </div>
+                    </div>
+                          <!-- 		首页图片幻灯片1000 x 404  结束-->	  
+                      </aside>                            
+                   </div>
+        
+        </div>
+        <div class="m4rightthree">
+            <ul>
+        <php>
+        $trade_jkzx=sp_sql_posts('cid:41;field:tid,smeta;limit:3;order:post_date desc');
+        </php>
+        <foreach name="trade_jkzx" item="jkzx">
+        <php>
+        $smeta=json_decode($jkzx['smeta'],true);
+        </php>
+                <li><a href="{:U('article/index',array('id'=>$jkzx['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></li>
+        </foreach>
+            </ul>
+        </div>
+        <div class="m4rightfour">
+        
+        <php>
+        $trade_jkzc=sp_sql_posts('cid:44;field:tid,post_title,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="trade_jkzc" item="jkzc">
+        <php>
+        $smeta=json_decode($jkzc['smeta'],true);
+        </php>
+        	<dl>
+            	<dt><a href="{:U('article/index',array('id'=>$jkzc['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$jkzc['tid']))}">{$jkzc.post_title}</a></dd>
+            </dl>
+        </foreach>
+        </div>
+    </div>
+</div>
+<div class="wrapper m5">
+    <div class="m5tit"><div class="zi">政策</div></div>
+    <div class="m5main">
+    	<div class="m5mainl">
+        	<div class="m5mainl1">
+            	<ul class="m5mainl1zuo">
+        <php>
+        $trade_jkzc=sp_sql_posts('cid:43;field:tid,post_title,smeta;limit:2;order:post_date desc');
+        </php>
+        <foreach name="trade_jkzc" item="jkzc">
+        <php>
+        $smeta=json_decode($jkzc['smeta'],true);
+        </php>
+                	<li class="shga">
+                        <span><a href="{:U('article/index',array('id'=>$jkzc['tid']))}">
+                        <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></span>
+                        <div class="color">
+                        	<a href="{:U('article/index',array('id'=>$jkzc['tid']))}">{$jkzc.post_title}</a>
+                        </div>
+                    </li>
+        </foreach>
+                </ul>
+                <div class="m5mainl1you">
+                
+                        <php>
+        $trade_ckzc=sp_sql_posts('cid:44;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="trade_ckzc" item="ckzc">
+        <php>
+        $smeta=json_decode($ckzc['smeta'],true);
+        </php>
+                	<div class="m5mainl1you1"><a href="{:U('article/index',array('id'=>$ckzc['tid']))}">
+                    <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></div>
+                    <ul class="m5mainl1you2">
+                    	<li><a href="{:U('article/index',array('id'=>$ckzc['tid']))}">{$ckzc.post_title}</a></li>
+                    	<li><a href="{:U('article/index',array('id'=>$ckzc['tid']))}">{$ckzc.post_excerpt}</a></li>
+                    </ul>
+        </foreach>
+                </div>
+            </div>
+            <div class="m5main2">
+                <ul class="ul1">
+        <php>
+        $trade_all=sp_sql_posts('cid:41,42,43,44,45,46;field:tid,post_title,post_excerpt;limit:4;order:post_date desc');
+        </php>
+        <foreach name="trade_all" item="all">
+        <li class="biao"><a href="{:U('article/index',array('id'=>$all['tid']))}" >{$all.post_title}</a></li>
+        <li class="nei"><a href="{:U('article/index',array('id'=>$all['tid']))}" >{$all.post_excerpt}</a></li>
+        </foreach>
+                </ul>           
+        </div>
+        </div>
+    	<div class="m5mainr">
+        	<div class="m5mainl1">
+                <div class="m5mainl1you">
+                
+                        <php>
+        $trade_jkmy=sp_sql_posts('cid:45;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="trade_jkmy" item="jkmy">
+        <php>
+        $smeta=json_decode($jkmy['smeta'],true);
+        </php>
+                    <ul class="m5mainl1you2">
+                    	<li><a href="{:U('article/index',array('id'=>$jkmy['tid']))}">{$jkmy.post_title}</a></li>
+                    	<li><a href="{:U('article/index',array('id'=>$jkmy['tid']))}">{$jkmy.post_excerpt}</a></li>
+                    </ul>
+                	<div class="m5mainl1you1"><a href="{:U('article/index',array('id'=>$jkmy['tid']))}">
+                    <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></div>
+        </foreach>
+                </div>
+                         	
+                <ul class="m5mainl1zuo">
+                        <php>
+        $trade_ckmy=sp_sql_posts('cid:46;field:tid,post_title,smeta;limit:2;order:post_date desc');
+        </php>
+        <foreach name="trade_ckmy" item="ckmy">
+        <php>
+        $smeta=json_decode($ckmy['smeta'],true);
+        </php>
+                	<li class="shga">
+                        <span><a href="{:U('article/index',array('id'=>$ckmy['tid']))}">
+                        <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></span>
+                        <div class="color">
+                        	<a href="{:U('article/index',array('id'=>$ckmy['tid']))}">{$ckmy.post_title}</a>
+                        </div>
+                    </li>
+        </foreach>
+                </ul>
+            </div>
+                <div class="m4rightthree">
+            <ul>
+        <php>
+        $trade_ckzx=sp_sql_posts('cid:42;field:tid,smeta;limit:3;order:post_date desc');
+        </php>
+        <foreach name="trade_ckzx" item="ckzx">
+        <php>
+        $smeta=json_decode($ckzx['smeta'],true);
+        </php>
+                <li><a href="{:U('article/index',array('id'=>$ckzx['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></li>
+        </foreach>
+            </ul>
+        </div>
+                <div class="m4rightfour">
+        
+        <php>
+        $trade_ckzc=sp_sql_posts('cid:44;field:tid,post_title,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="trade_ckzc" item="ckzc">
+        <php>
+        $smeta=json_decode($ckzc['smeta'],true);
+        </php>
+        	<dl>
+            	<dt><a href="{:U('article/index',array('id'=>$ckzc['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$ckzc['tid']))}">{$ckzc.post_title}</a></dd>
+            </dl>
+        </foreach>
+        </div>
+           </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper m6"></div>
+
+
+    <include file="Public:footer" />
+<script type="text/javascript">
+$(function(){
+
+	$('#demo01').flexslider({
+		animation: "slide",
+		direction:"horizontal",
+		easing:"swing"
+	});
+	
+	$('#demo02').flexslider({
+		animation: "slide",
+		direction:"vertical",
+		easing:"swing"
+	});
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/invest.css"/>
+</script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	
+	</script>
+</head>
+
+<body>
+<div class="bg">
+	<div class=" wrapper nav">
+    	<ul>
+    <li><a href="{:u('list/index',array('id'=>65))}">动态</a></li><li class="spe">|</li>
+	<li><a href="{:u('list/index',array('id'=>66))}">中国地产</a></li><li class="spe">|</li>
+	<li><a href="{:u('list/index',array('id'=>67))}">美国地产</a></li><li class="spe">|</li>
+	<li><a href="{:u('list/index',array('id'=>68))}">欧洲地产</a></li><li class="spe">|</li>
+	<li><a href="{:u('list/index',array('id'=>69))}">其它地产</a></li><li class="spe">|</li>
+	<li><a href="{:u('list/index',array('id'=>70))}">政策</a></li><li class="spe">|</li>
+	<li><a href="{:u('list/index',array('id'=>71))}">地产金融</a></li><li class="spe">|</li>
+	<li><a href="{:u('list/index',array('id'=>72))}">家居</a></li>
+        </ul>
+                    <ul class="ul2">
+                <li><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+                <li>|</li>
+                <li><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+            </ul>
+    </div>
+</div>
+<div class="gg wrapper">
+        <php>
+            $invest_t=sp_getslide('estate_t');
+        </php>
+        <foreach name="invest_t" item="t"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$t.slide_pic}" alt="{$t.slide_name}" width="787px" height="72px"/>
+        </div>
+<div class="nr clearfix wrapper">
+	<div class="left L">
+		<div class="L1">
+            <php>
+            $invest_zx=sp_sql_posts('cid:65;field:tid,post_title,post_excerpt;limit:1;order:post_date desc');
+            </php>
+            <foreach name="invest_zx" item="zx"></foreach>
+        	<h1><a href="{:U('article/index',array('id'=>$zx['tid']))}">{$zx.post_title}</a></h1>
+            <p>{$zx.post_excerpt}</p>
+            <div class="L11">
+                <div class="L11pic">
+                
+       <php>
+            $invest_zx=sp_sql_posts('cid:65;field:tid,smeta;limit:1;order:post_date desc');
+            </php>
+            <foreach name="invest_zx" item="zx"></foreach>
+                <php>
+                $smeta=json_decode($zx['smeta'],true);
+                </php>
+                
+        <a href="{:U('article/index',array('id'=>$zx['tid']))}">
+        <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"width="455px" height="350px"/>
+        </a>
+                </div>
+                <ul>
+                <php>
+                $invest_gjtz=sp_sql_posts('cid:66;field:tid,post_title;limit:5;order:post_date desc');
+                </php>
+                <foreach name="invest_gjtz" item="gjtz">
+                    <li><a href="{:U('article/index',array('id'=>$gjtz['tid']))}">{$gjtz.post_title}</a></li>
+                </foreach>
+                </ul>
+            </div>
+        </div>
+        <div class="L2">
+        	<php>
+            $invest_bg=sp_sql_posts('cid:67;field:tid,post_title,smeta;limit:3;order:post_date desc');
+            </php>
+            <foreach name="invest_bg" item="bg">
+                <php>
+                $smeta=json_decode($bg['smeta'],true);
+                </php>
+                
+        	<dl>
+                
+                <dt><a href="{:U('article/index',array('id'=>$bg['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="235px" height="158px"></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$bg['tid']))}">{$bg.post_title}</a></dd>
+                
+            </dl>
+            </foreach>
+        
+            
+        </div>
+        <div class="L3 ">
+        	<div class="L3tit">各国地产</div>
+            <div class="L31">
+            	<ul>
+                <php>
+                $invest_fxtz=sp_sql_posts('cid:66,67,68,69;field:tid,post_title;limit:6;order:post_date desc');
+                </php>
+                <foreach name="invest_fxtz" item="fxtz">
+                    
+                	<li class="biao"><a href="{:U('article/index',array('id'=>$fxtz['tid']))}">{$fxtz.post_title}</a></li>
+                    <li class="more"><a href="{:U('article/index',array('id'=>$fxtz['tid']))}">更多>>>></a></li>
+                    
+                </foreach>
+                </ul>
+                <dl>
+                
+        	<php>
+            $invest_fxtz=sp_sql_posts('cid:70;field:tid,post_excerpt,smeta;limit:1;order:post_date desc');
+            </php>
+            <foreach name="invest_fxtz" item="fxtz">
+                <php>
+                $smeta=json_decode($fxtz['smeta'],true);
+                </php>
+                
+        	<dl>
+               
+                <dt><a href="{:U('article/index',array('id'=>$fxtz['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="170" height="246"></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$fxtz['tid']))}">{$fxtz.post_excerpt}</a></dd>
+                
+            </dl>
+            </foreach>                 
+                    
+                    
+                </dl>
+            </div>
+            <div class="L32">
+            <php>
+            $invest_sj=sp_sql_posts('cid:71;field:tid,smeta;limit:1;order:post_date desc');
+            </php>
+            <foreach name="invest_sj" item="sj">
+                <php>
+                $smeta=json_decode($sj['smeta'],true);
+                </php>
+                <dl>
+                <div class="div1">
+                <a href="{:U('article/index',array('id'=>$sj['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"></a>
+                </div>
+                
+            </dl>
+            </foreach>
+                <ul>
+                <php>
+                $invest_sj=sp_sql_posts('cid:71;field:tid,post_title;limit:9;order:post_date desc');
+                </php>
+                <foreach name="invest_sj" item="sj">
+                	<li class="biao"><a href="{:U('article/index',array('id'=>$sj['tid']))}">{$sj.post_title}</a></li>
+                </foreach>
+                 </ul>
+           </div>
+        </div>
+        
+        <div style=" height:632px;">
+        <php>
+            $invest_qth=sp_sql_posts('cid:72;field:tid,post_title,post_excerpt,smeta;limit:2;order:post_date desc');
+            </php>
+            <foreach name="invest_qth" item="qth">
+                <php>
+                $smeta=json_decode($qth['smeta'],true);
+                </php>
+                <div class="L4">
+                <div class="m4lefttit"><div class="zi">{$qth.post_title}</div></div>
+            <div class="L4mian">
+            	<div class="L4mianl">
+                	<dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$qth['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+
+                    </dl>
+                </div>
+                <div class="L4mianr">
+                    <ul>
+                        <li><a href="{:U('article/index',array('id'=>$qth['tid']))}">{$qth.post_excerpt}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                
+            </foreach>
+            </div>
+    </div>
+    <div class="right R">
+    	<div class="R1">
+            <ul>
+             <php>
+            $invest_zg=sp_sql_posts('cid:65,66;field:tid,post_title,post_date,smeta;limit:6;order:post_date desc');
+            </php>
+            <foreach name="invest_zg" item="zg">
+                <php>
+                $smeta=json_decode($zg['smeta'],true);
+                </php>
+                <li><a href="{:U('article/index',array('id'=>$zg['tid']))}"><span>{:date("m-d",strtotime($zg['post_date']))}</span>{$zg.post_title}</a></li>
+            </foreach>
+            </ul>
+        </div>
+        <div class="R2">
+        <php>
+            $invest_rt=sp_getslide('estate_rt');
+        </php>
+        <foreach name="invest_rt" item="rt"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$rt.slide_pic}" alt="{$rt.slide_name}" height="217" width="237"/>
+        </div>
+    	<div class="R3">
+                        <ul>
+                 <php>
+            $invest_bf=sp_sql_posts('cid:67,68;field:tid,post_title,post_date,smeta;limit:6;order:post_date desc');
+            </php>
+            <foreach name="invest_bf" item="bf">
+                <php>
+                $smeta=json_decode($bf['smeta'],true);
+                </php>
+                <li><a href="{:U('article/index',array('id'=>$bf['tid']))}"><span>{:date("m-d",strtotime($bf['post_date']))}</span>{$bf.post_title}</a></li>
+            </foreach>
+            </ul>
+        </div>
+    	<div class="R3">
+            <ul>
+            
+            <php>
+            $invest_sq=sp_sql_posts('cid:69,70;field:tid,post_title,post_date,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="invest_sq" item="sq">
+                <php>
+                $smeta=json_decode($sq['smeta'],true);
+                </php>
+                <li><a href="{:U('article/index',array('id'=>$sq['tid']))}"><span>{:date("m-d",strtotime($sq['post_date']))}</span>{$sq.post_title}</a></li>
+            </foreach>
+            </ul>
+       </div>
+       		<div>
+            <php>
+            $invest_zx=sp_sql_posts('cid:71;field:tid,post_title,post_excerpt,post_date,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="invest_zx" item="zx">
+                <php>
+                $smeta=json_decode($zx['smeta'],true);
+                </php>
+                
+       <div class="R4">
+       		<DIV class=" R1tit R1tit2" style=" margin-top:20px">{$zx.post_title}</DIV>
+            <div class="zhu">
+            	<dl>
+                	<dt><a href="{:U('article/index',array('id'=>$zx['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="236px" height="140px"/></a></dt>
+                    <dd class="dd1"><a href="{:U('article/index',array('id'=>$zx['tid']))}">{:date("m-d",strtotime($zx['post_date']))}</a></dd>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$zx['tid']))}">{$zx.post_excerpt}</a></dd>
+                </dl>
+                <div class="anniu"><a href="{:U('article/index',array('id'=>$zx['tid']))}"><img src="__TMPL__Public/ind/invest/anniu.jpg"/></a></div>
+            </div>
+       </div>
+            </foreach>
+            </div>
+       
+       
+    </div>
+</div>
+<div class="wrapper m2">
+        <php>
+            $invest_c=sp_getslide('estate_c');
+        </php>
+        <foreach name="invest_c" item="c"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$c.slide_pic}" alt="{$c.slide_name}" width="960px" height="142px"/>
+</div>
+<div class="wrapper m3">
+	<div class="m3l">
+    
+        <div style=" height:632px;">
+            <php>
+            $invest_all=sp_sql_posts('cid:65,66,67,68,69,70,71,72;field:tid,post_title,post_excerpt,smeta;limit:2;order:post_date desc');
+            </php>
+            <foreach name="invest_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                
+                <div class="L4">
+                <div class="m4lefttit"><div class="zi">{$all.post_title}</div></div>
+            <div class="L4mian">
+            	<div class="L4mianl">
+                	<dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$all['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+
+                    </dl>
+                </div>
+                <div class="L4mianr">
+                    <ul>
+                        <li><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_excerpt}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            </foreach>
+            </div>
+        <div class="guang">
+        
+        <php>
+            $invest_d=sp_getslide('estate_d');
+        </php>
+        <foreach name="invest_d" item="d"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$d.slide_pic}" alt="{$d.slide_name}" width="710px" height="186px"/>
+        </div>
+        <div class="datu">
+            <div class="datunei">
+            	<dl class="dl1">
+                <php>
+                $invest_bg=sp_sql_posts('cid:67;field:tid,post_title,smeta;limit:1;order:post_date desc');
+                </php>
+                <foreach name="invest_bg" item="bg">
+                    <php>
+                    $smeta=json_decode($bg['smeta'],true);
+                    </php>
+                        <dt><a href="{:U('article/index',array('id'=>$bg['tid']))}"><img src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                        <dd>{$bg.post_title}</dd>
+                </foreach>
+                </dl>
+                <div class="xia">
+            <php>
+            $invest_sj=sp_sql_posts('cid:69;field:tid,post_title,smeta;limit:2;order:post_date desc');
+            </php>
+            <foreach name="invest_sj" item="sj">
+                <php>
+                $smeta=json_decode($sj['smeta'],true);
+                </php>
+                	<dl>
+                   	<dt><a href="{:U('article/index',array('id'=>$sj['tid']))}"><img src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd>{$sj.post_title}</dd>
+                    </dl>
+            </foreach>
+                </div>
+            </div>
+        </div>
+        <div class="datuzi">
+            <div class="datuzimain">
+            <php>
+            $invest_sj=sp_sql_posts('cid:65;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="invest_sj" item="sj">
+                <php>
+                $smeta=json_decode($sj['smeta'],true);
+                </php>
+                	<dl>
+                   	<dt><a href="{:U('article/index',array('id'=>$sj['tid']))}"><img src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd><a href="{:U('article/index',array('id'=>$sj['tid']))}">{$sj.post_title}</a></dd>
+                    <dd style="height:120px;"><a href="{:U('article/index',array('id'=>$sj['tid']))}">{$sj.post_excerpt}</a></dd>
+                    </dl>
+            </foreach>
+            </div>
+    	</div>
+    </div>
+	<div class="m3r">
+    	<div class="m3r1">
+        
+        <php>
+            $invest_rc=sp_getslide('estate_rc');
+        </php>
+        <foreach name="invest_rc" item="rc"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$rc.slide_pic}" alt="{$rc.slide_name}" width="240px" height="175px"/>
+        </div>
+        <div  style="height:295px">
+               <php>
+            $invest_gjtz=sp_sql_posts('cid:66;field:tid,post_title,post_excerpt,post_date,smeta;limit:1;order:post_date desc');
+            </php>
+            <foreach name="invest_gjtz" item="gjtz">
+                <php>
+                $smeta=json_decode($gjtz['smeta'],true);
+                </php>
+                
+       <div class="R4">
+       		<DIV class=" R1tit R1tit2" style=" margin-top:20px">{$gjtz.post_title}</DIV>
+            <div class="zhu">
+            	<dl>
+                	<dt><a href="{:U('article/index',array('id'=>$gjtz['tid']))}"><img src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd class="dd1"><a href="{:U('article/index',array('id'=>$gjtz['tid']))}">{:date("m-d",strtotime($gjtz['post_date']))}</a></dd>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$gjtz['tid']))}">{$gjtz.post_excerpt}</a></dd>
+                </dl>
+                <div class="anniu"><a href="{:U('article/index',array('id'=>$gjtz['tid']))}"><img src="__TMPL__Public/ind/invest/anniu.jpg"/></a></div>
+            </div>
+       </div>
+            </foreach>
+            </div>
+       <div class="m3r2">
+       		<DIV class=" R1tit R1tit2" style=" margin-top:20px">政策</DIV>
+                    <php>
+            $invest_bg=sp_sql_posts('cid:70;field:tid,post_title,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="invest_bg" item="bg">
+                <php>
+                $smeta=json_decode($bg['smeta'],true);
+                </php>
+                
+			<dl>
+            	<dt><a href="{:U('article/index',array('id'=>$bg['tid']))}"><img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd><a href="{:U('article/index',array('id'=>$bg['tid']))}">{$bg.post_title}</a></dd>
+            </dl>
+                
+            </foreach>
+            
+            
+       </div>
+       <div style="height:940px">
+            <php>
+            $invest_fsq=sp_sql_posts('cid:70,71,72;field:tid,post_title,post_excerpt,post_date,smeta;limit:3;order:post_date desc');
+            </php>
+            <foreach name="invest_fsq" item="fsq">
+                <php>
+                $smeta=json_decode($fsq['smeta'],true);
+                </php>
+                
+       <div class="R4">
+       		<DIV class=" R1tit R1tit2" style=" margin-top:20px">{$fsq.post_title}</DIV>
+            <div class="zhu">
+            	<dl>
+                	<dt><a href="{:U('article/index',array('id'=>$fsq['tid']))}"><img src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd class="dd1"><a href="{:U('article/index',array('id'=>$fsq['tid']))}">{:date("m-d",strtotime($fsq['post_date']))}</a></dd>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$fsq['tid']))}">{$fsq.post_excerpt}</a></dd>
+                </dl>
+                <div class="anniu"><a href="{:U('article/index',array('id'=>$fsq['tid']))}"><img src="__TMPL__Public/ind/invest/anniu.jpg"/></a></div>
+            </div>
+       </div>
+            </foreach>
+            </div>
+    	<div class="m3r1">
+        
+        <php>
+            $invest_rd=sp_getslide('estate_rd');
+        </php>
+        <foreach name="invest_rd" item="rd"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$rd.slide_pic}" alt="{$rd.slide_name}" width="240px" height="175px"/>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper m5"></div>
+
+    <include file="Public:footer" />
+</body>
+</html>

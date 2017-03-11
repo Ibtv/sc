@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/news.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js" ></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.caroufredsel-6.0.4-packed.js" ></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/focus.js" ></script>
+<script language=Javascript> 
+  function time(){
+    //获得显示时间的div
+    t_div = document.getElementById('showtime');
+   var now=new Date()
+    //替换div内容 
+   t_div.innerHTML = "现在是"+now.getFullYear()
+    +"年"+(now.getMonth()+1)+"月"+now.getDate()
+    +"日"+now.getHours()+"时"+now.getMinutes()
+    +"分"+now.getSeconds()+"秒";
+    //等待一秒钟后调用time方法，由于settimeout在time方法内，所以可以无限调用
+   setTimeout(time,1000);
+  }
+</script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	
+	</script>
+</head>
+
+<body onload="time()">
+<div class=" wrapper top1">
+		<div class="shijian" id="showtime"></div>
+    	<div class="top1">
+
+            <ul class="ul2">
+                <li><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+                <li>|</li>
+                <li><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+            </ul>
+                    </div>
+    </div>
+
+<div class="wrapper top2">
+	<a class="logo" href="{$site_host}"><img onerror="nofind();" src="__TMPL__Public/images/logo.png" height="110" /></a>
+        <php>
+            $news_t=sp_getslide('news_t');
+        </php>
+        <foreach name="news_t" item="t"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$t.slide_pic}" alt="{$t.slide_name}" width="722"  height="110"/>
+</div>
+<div class="wrapper nav">
+	<ul>
+	<li><a href="{:u('list/index',array('id'=>17))}">中国</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>18))}">美国</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>19))}">欧洲</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>20))}">亚太</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>21))}">拉美</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>22))}">非洲</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>23))}">中东</a></li>    <li class="fen">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>24))}">港澳台</a></li>    <li class="fen">&nbsp;</li>
+    </ul>
+</div>
+<div class=" wrapper main">
+	<div class="mainleft">
+  <div class="banner">
+    <div class="banner_show" id="banner_show">
+    
+                        <php>
+                        $news_zm=sp_sql_posts('cid:17,18;field:tid,smeta;limit:1;order:post_date desc');
+                        </php>
+                        <foreach name="news_zm" item="zm"></foreach>
+                        <php>
+                        $smeta=json_decode($zm['smeta'],true);
+                        </php>
+                        <a href="{:U('article/index',array('id'=>$zm['tid']))}"  class="bannger_inbox">
+                        <img src="{$site_host}data/upload/{$smeta.thumb}" width="664" height="321">
+                        </a>
+                        
+                        <php>
+                        $news_oyl=sp_sql_posts('cid:19,20,21;field:tid,smeta;limit:1;order:post_date desc');
+                        </php>
+                        <foreach name="news_oyl" item="oyl"></foreach>
+                        <php>
+                        $smeta=json_decode($oyl['smeta'],true);
+                        </php>
+                        <a href="{:U('article/index',array('id'=>$oyl['tid']))}"  class="bannger_inbox">
+                        <img src="{$site_host}data/upload/{$smeta.thumb}" width="664" height="321">
+                        </a>
+                        
+                        <php>
+                        $news_fzg=sp_sql_posts('cid:22,23,24;field:tid,smeta;limit:1;order:post_date desc');
+                        </php>
+                        
+                        <foreach name="news_fzg" item="fzg"></foreach>
+                        <php>
+                        $smeta=json_decode($fzg['smeta'],true);
+                        </php>
+                        <a href="{:U('article/index',array('id'=>$fzg['tid']))}"  class="bannger_inbox">
+                        <img src="{$site_host}data/upload/{$smeta.thumb}" width="664" height="321">
+                        </a>
+      <div class="banner_mag">
+                   <div class="banner_magbox">
+                        <php>
+                        $news_zm=sp_sql_posts('cid:17,18;field:tid,post_title,post_excerpt;limit:1;order:post_date desc');
+                        </php>
+                        
+                        <foreach name="news_zm" item="zm"></foreach>
+                        <php>
+                        $smeta=json_decode($zm['smeta'],true);
+                        </php>
+                            <div id="banner_magbox0">
+                              <a href="{:U('article/index',array('id'=>$zm['tid']))}"><h1>{$zm.post_title}</h1></a>
+                              <p>{$zm.post_excerpt}</p>
+                            </div>
+                            
+                        <php>
+                        $news_oyl=sp_sql_posts('cid:19,20,21;field:tid,post_title,post_excerpt;limit:1;order:post_date desc');
+                        </php>
+                        
+                        <foreach name="news_oyl" item="oyl"></foreach>
+                        <php>
+                        $smeta=json_decode($oyl['smeta'],true);
+                        </php>
+                             <div id="banner_magbox1" class="none">
+                              <a href="{:U('article/index',array('id'=>$oyl['tid']))}"><h1>{$oyl.post_title}</h1></a>
+                              <p>{$oyl.post_excerpt}</p>
+                            </div>
+                            
+                        <php>
+                        $news_fzg=sp_sql_posts('cid:22,23,24;field:tid,post_title,post_excerpt;limit:1;order:post_date desc');
+                        </php>
+                        
+                        <foreach name="news_fzg" item="fzg"></foreach>
+                        <php>
+                        $smeta=json_decode($fzg['smeta'],true);
+                        </php>
+                             <div id="banner_magbox2" class="none">
+                              <a href="{:U('article/index',array('id'=>$oyl['tid']))}"><h1>{$fzg.post_title}</h1></a>
+                              <p>{$fzg.post_excerpt}</p>
+                            </div>
+                  </div>
+                  <div class="yq_banner_list" id="yq_banner_list">
+                  <a href="javascript:;" rel="0" class="hover">&nbsp;</a>
+                  <a href="javascript:;" rel="1">&nbsp;</a>
+                  <a href="javascript:;" rel="2">&nbsp;</a>
+                  </div>
+      </div>
+         <div class="banner_pre_next">
+        	<a href="javascript:;" class="banner_btn_left">上一个</a>
+            <a href="javascript:;" class="banner_btn_right">下一个</a>
+        </div>
+    </div>
+  </div>
+        <div class="m1">
+        	<div class="m1tit">环球动态</div>
+            <div class="m1main">
+            		<php>
+                    $news_oz=sp_sql_posts('cid:19;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+                    </php>
+                    
+                    <foreach name="news_oz" item="oz"></foreach>
+                    <php>
+                    $smeta=json_decode($oz['smeta'],true);
+                    </php>
+                    
+            	<dl class="m1main1">
+                	<dt><a href="{:U('article/index',array('id'=>$oz['tid']))}">
+                    <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"  width="324" height="183"/></a></dt>
+                    <dd class="dd1"><a href="{:U('article/index',array('id'=>$oz['tid']))}">{$oz.post_title}</a></dd>
+                    <dd class="dd2">{$oz.post_excerpt}</dd>
+                </dl>
+
+
+            		<php>
+                    $news_lm=sp_sql_posts('cid:21;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+                    </php>
+                    
+                    <foreach name="news_lm" item="lm"></foreach>
+                    <php>
+                    $smeta=json_decode($lm['smeta'],true);
+                    </php>
+                    
+            	<dl class="m1main2">
+                	<dt><a href="{:U('article/index',array('id'=>$lm['tid']))}">
+                    <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"  width="153" height="90"/></a></dt>
+                    <dd class="dd1"><a href="{:U('article/index',array('id'=>$lm['tid']))}">{$lm.post_title}</a></dd>
+                    <dd class="dd2">{$lm.post_excerpt}</dd>
+                </dl>
+                
+       	<php>
+        $news_fz=sp_sql_posts('cid:22,field:tid,post_title,post_excerpt;limit:7;order:post_date desc'); 
+        </php>
+        <foreach name="news_fz" item="fz">
+                <ul class="m1main3">
+                	<li><a href="{:U('article/index',array('id'=>$fz['tid']))}">{$fz.post_title}</a></li>
+                </ul>
+        </foreach>
+            </div>
+        </div>
+        
+        <div class="m2">
+        	<div class="m1tit">亚洲时讯</div>
+            <div class="m2main">
+            	<div class="m2main1">          
+                    <php>
+                    $news_gat=sp_sql_posts('cid:24;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+                    </php>
+                    
+                    <foreach name="news_gat" item="gat"></foreach>
+                    <php>
+                    $smeta=json_decode($gat['smeta'],true);
+                    </php>
+                    <div class="m2main1tit">{$gat.post_title}</div>
+                   <dl>
+                        <dt><a href="{:U('article/index',array('id'=>$gat['tid']))}">
+                        <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="150"  height="76"/>
+                        </a></dt>
+                        <dd>{$gat.post_excerpt}</dd>
+                	</dl>
+                </div>
+                
+                <ul class="m2main2">
+                
+       	<php>
+        $news_zd=sp_sql_posts('cid:23,field:tid,post_title,post_excerpt;limit:5;order:post_date desc'); 
+        </php>
+        <foreach name="news_zd" item="zd">
+                	<li><a href="{:U('article/index',array('id'=>$zd['tid']))}">{$zd.post_title}</a></li>
+        </foreach>
+        
+                
+            </div>
+            <div class="m2mainfu">
+            <php>
+            $news_zh=sp_sql_posts('cid:17;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+            </php>
+            
+            <foreach name="news_zh" item="zh">
+                <php>
+                $smeta=json_decode($zh['smeta'],true);
+                </php>
+                <div class="m2mainfu1">
+                    <div class="m2mainfutit">{$zh.post_title}</div>
+                    <a class="m2mainfutu" href="{:U('article/index',array('id'=>$zh['tid']))}">
+                    <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="151" height="61"/></a>
+                    <ul>
+                        <li><a href="{:U('article/index',array('id'=>$zh['tid']))}">{$zh.post_excerpt}</a></li>
+                    </ul>
+                </div> 
+            </foreach>
+            </div>              
+                                
+                                
+        </div>
+        <div class="m3">
+        <php>
+            $news_lc=sp_getslide('news_lc');
+        </php>
+        <foreach name="news_lc" item="lc"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$lc.slide_pic}" alt="{$lc.slide_name}" width="675" height="95" />
+        
+        </div>
+        <div class="m4">
+            <php>
+            $news_all=sp_sql_posts('cid:17,18,19,20,21,22,23,24;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+            </php>
+            <foreach name="news_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+            <div class="m4main1">
+                <div class="zuojia">{$all.post_title}</div>
+                <dl>
+                	<dt><a class="m2mainfutu" href="{:U('article/index',array('id'=>$all['tid']))}">
+                    <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="151" height="84"/></a></dt>
+                    <dd><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_excerpt}</a></dd>
+                </dl> 
+            </div>
+            </foreach>
+        </div>
+    </div>
+    <div class="mainright">
+    	<div class="y1">
+        	<div class="yitit">最新信息</div>
+            <ul>
+                   <php>
+        $news_new=sp_sql_posts('cid:17,18,19,20,21,22,23,24;field:tid,post_title,post_excerpt;limit:5;order:post_date desc'); 
+        </php>
+        <foreach name="news_new" item="new">
+            <li class="li2"><a class="zi" href="{:U('article/index',array('id'=>$new['tid']))}">{$new.post_title}</a><br />
+            <p style="color:#666">{$new.post_excerpt}</p></li>
+        </foreach>
+            </ul>
+        </div>
+        <div class="y2">
+        	
+            <div class="y2main">
+            <a >&nbsp;</a>
+            <php>
+            $news_mg=sp_sql_posts('cid:18;field:tid,post_title,post_excerpt,smeta;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="news_mg" item="mg">
+                <php>
+                $smeta=json_decode($mg['smeta'],true);
+                </php>
+                <dl>
+                	<a href="{:U('article/index',array('id'=>$mg['tid']))}">
+                	<dt><img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="72" height="114"/></dt>
+                    <dd class="dd1">{$mg.post_title}</dd>
+                    <dd class="dd2">{$mg.post_excerpt}</dd></a>
+                </dl>
+                
+            </foreach>
+            
+            </div>
+        </div>
+        <div class="y3">
+        <php>
+            $news_rt=sp_getslide('news_rt');
+        </php>
+        <foreach name="news_rt" item="rt"><php>break;</php></foreach>
+        	<a class="y31" href="{$rt.slide_url}"><Img onerror="nofind();"  width="280" height="124" src="/data/upload/{$rt.slide_pic}" alt="{$rt.slide_name}" /></a>
+        <php>
+            $news_rd=sp_getslide('news_rd');
+        </php>
+        <foreach name="news_rd" item="rd"><php>break;</php></foreach>
+        	<a class="y32" href="{$rd.slide_url}"><Img onerror="nofind();"  width="280" height="171" src="/data/upload/{$rd.slide_pic}" alt="{$rd.slide_name}"/></a>
+        </div>
+        
+    </div>
+</div>
+<ul class=" wrapper xia">
+
+            <php>
+            $news_zh=sp_sql_posts('cid:17;field:tid,post_title,post_excerpt,smeta;limit:10;order:post_date desc');
+            </php>
+            <foreach name="news_zh" item="zh">
+                <php>
+                $smeta=json_decode($zh['smeta'],true);
+                </php>
+                <li>
+                <div class="pic"><a href="{:U('article/index',array('id'=>$zh['tid']))}">
+                <img onerror="nofind();"  width="184" height="110" src="{$site_host}data/upload/{$smeta.thumb}" /></a></div>
+                <div class="wenzi">{$zh.post_title}</div>
+    			</li>
+            </foreach>
+            
+
+    
+</ul>
+<div class="wrapper di">
+
+        <php>
+            $news_d=sp_getslide('news_d');
+        </php>
+        <foreach name="news_d" item="d"><php>break;</php></foreach>
+        <img  onerror="nofind();" src="/data/upload/{$d.slide_pic}" alt="{$d.slide_name}" width="960" height="85"/>
+        </div>
+
+  <include file="Public:footer" />
+
+</body>
+</html>

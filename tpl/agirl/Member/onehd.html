@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员活动</title>
+<link href="__TMPL__Public/css/huiyuanstyle.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body>
+<!--header logoer start-->
+<div id="searchbg">
+	<div class="logobg"><a href="{$site_host}"><img src="__TMPL__Public/images/logo.jpg" width="230" height="90" /></a></div>
+<div class="centerbg">
+        <dl class="searchboxbg">
+        <div class="selectbg">
+            <form action='/index.php/member/memberprod/search' method='post'>
+            <select name='type' style="width:85px; height:38px;border:#207ddb 1px solid; ">
+                <option value='0'>搜索产品</option>
+                <option value='1'>搜索会员</option>
+            </select>
+        </div>
+        <dt><input name="sear" type="text" placeholder="招商投资" maxlength=16  required style="width:550px; height:35px; border:#207ddb 1px solid; margin:0px;"/></dt>
+        <dd><input type="submit" value="" style="width:94px; height:39px; background:url(__TMPL__Public/images/1.png); border:0px;" /></dd>
+        </dl>
+        </form>
+        <div class="jsgunbg">
+            <div style="width:770px;height:50px; line-height:60px; font-size:20px;overflow:hidden;" onMouseOver="stop()" onMouseOut="start()">
+            <table width="700" border="0" cellspacing="0" cellpadding="0" id="scrollimg" height="21">
+            <tr>
+            <td id="simg">
+            <TABLE width="960" border="0" cellspacing="0" cellpadding="0" height="21">
+            <tr>
+                <foreach name='tuimessage' item='vo'>
+            <td class="zi"><a href="/index.php/member/memberprod/showmsg/id/{$vo.id}" target='_blank'>{$vo.comm}</a></td>
+                </foreach>
+            </tr>
+            </TABLE>
+            </td>
+            <td id="simg1"></td>
+            </tr>
+            </table>
+            </div>
+            <script LANGUAGE="Javascript">
+            var tm=null
+            function newsScroll() {
+            if(scrollimg.parentNode.scrollLeft!=(scrollimg.clientWidth/2))
+            scrollimg.parentNode.scrollLeft++;
+            else
+            scrollimg.parentNode.scrollLeft=0
+            }
+            window.onload=function() {
+            simg1.innerHTML=simg.innerHTML
+            tm=setInterval('newsScroll()',20)
+            }
+            function stop()
+            {
+            clearInterval(tm)
+            }
+            function start()
+            {
+            tm=setInterval('newsScroll()',20)
+            }
+            </script> 
+        </div>
+    </div>
+    <div class="rightmabg">
+        <div class="addressbg">
+            <li style="font-size:16px;font-weight:bold;">加入我们</li>
+            <li><a href="/index.php?m=list&a=index&id=142">查看联系方式</a></li>
+        </div>
+        <span ><img src="__TMPL__Public/images/ma.jpg" width="90" height="90" /></span>
+    </div>
+</div>
+<!--header logoer end-->
+<!--header tradesort start-->
+<div id="headerbg">
+	 	<h1 style='float:left;padding-top:5px'><a href="/index.php/member/memberprod/more">首页</a></h1>
+		<h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/all">全部行业</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/all">所有会员</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allprod">所有产品</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allhd">所有活动</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allmsg">所有消息</a></h1>
+</div>
+<!--header tradesort end-->
+<!--Content start-->
+<div id="content">
+    <!--activities start-->
+    <div id="activities">
+        <div class="min">
+             <dl>
+                <dd class="pic"><img src="{$hd.simg}" width="540" height="180" /></dd>
+                <dt class="text">
+                    <P class="title"><a href="#">活动名称:{$hd.sname}</a></P>
+                    <p class="address ">活动地点:{$hd.addr}</p>
+                    <p class="time">活动时间:{$hd.hdtime}</p>
+                    <p class="organizers">主办单位:<a href="/index.php/member/memberprod/showmb/mn/{$hd.zbdwei}" target="_blank">{$hd.zbdwei}</a></p>
+                </dt>
+             </dl>
+             <div class="xiangqing">活动详情</div>
+             <div class="details">
+             	{$hd.comm}
+            </div>
+    </div>
+    <!--min end-->
+    </div>
+    <!--activities end-->
+    <!--ad start-->
+    <div id="various">
+    	<div class="guanggao"><img src="__TMPL__Public/images/logos.jpg" width="330" height="330" />
+        </div>
+        <div class="here">
+        	<div class="til"> 活动地址</div>
+            <div class="map">
+			  <!--百度地图容器-->
+				  <div style="width:328px;height:328px;border:#ccc solid 1px;" id="dituContent"></div>
+				</body>
+				<script type="text/javascript">
+					//创建和初始化地图函数：
+					function initMap(){
+						createMap();//创建地图
+						setMapEvent();//设置地图事件
+						addMapControl();//向地图添加控件
+						addMarker();//向地图中添加marker
+					}
+					
+					//创建地图函数：
+					function createMap(){
+						var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+						var point = new BMap.Point(116.466149,39.873532);//定义一个中心点坐标
+						map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+						window.map = map;//将map变量存储在全局
+					}
+					
+					//地图事件设置函数：
+					function setMapEvent(){
+						map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+						map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+						map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+						map.enableKeyboard();//启用键盘上下左右键移动地图
+					}
+					
+					//地图控件添加函数：
+					function addMapControl(){
+						//向地图中添加缩放控件
+					var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_SMALL});
+					map.addControl(ctrl_nav);
+						//向地图中添加缩略图控件
+					var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+					map.addControl(ctrl_ove);
+						//向地图中添加比例尺控件
+					var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+					map.addControl(ctrl_sca);
+					ctrl_sca.setUnit(BMAP_UNIT_IMPERIAL)
+				}
+					
+					//标注点数组
+					var markerArr = [{title:"国际商务电视台",content:"朝阳区东三环南路19号联合国际大厦甲段606",point:"116.466306|39.873581",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+						 ];
+					//创建marker
+					function addMarker(){
+						for(var i=0;i<markerArr.length;i++){
+							var json = markerArr[i];
+							var p0 = json.point.split("|")[0];
+							var p1 = json.point.split("|")[1];
+							var point = new BMap.Point(p0,p1);
+							var iconImg = createIcon(json.icon);
+							var marker = new BMap.Marker(point,{icon:iconImg});
+							var iw = createInfoWindow(i);
+							var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+							marker.setLabel(label);
+							map.addOverlay(marker);
+							label.setStyle({
+										borderColor:"#808080",
+										color:"#333",
+										cursor:"pointer"
+							});
+							
+							(function(){
+								var index = i;
+								var _iw = createInfoWindow(i);
+								var _marker = marker;
+								_marker.addEventListener("click",function(){
+									this.openInfoWindow(_iw);
+								});
+								_iw.addEventListener("open",function(){
+									_marker.getLabel().hide();
+								})
+								_iw.addEventListener("close",function(){
+									_marker.getLabel().show();
+								})
+								label.addEventListener("click",function(){
+									_marker.openInfoWindow(_iw);
+								})
+								if(!!json.isOpen){
+									label.hide();
+									_marker.openInfoWindow(_iw);
+								}
+							})()
+						}
+					}
+					//创建InfoWindow
+					function createInfoWindow(i){
+						var json = markerArr[i];
+						var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+						return iw;
+					}
+					//创建一个Icon
+					function createIcon(json){
+						var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+						return icon;
+					}
+					
+					initMap();//创建和初始化地图
+				</script>
+			</div>
+        </div>
+    </div>
+    <!--ad end-->
+    
+</div>
+<!--Content end-->
+<include file="Public:memberfooter"/>

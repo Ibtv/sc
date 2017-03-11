@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="baidu-site-verification" content="gyPd7hTE0o" />
+	<title>{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/index.css"/>
+    <link href="__TMPL__Public/video-js/video-js.css" rel="stylesheet" type="text/css">
+	<script src="__TMPL__Public/video-js/video.js"></script>
+	<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/ind/js/js.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/ind/js/jquery.marquee.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/ind/js/jquery.cxscroll.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/ind/js/webwidget_slideshow_common.js"></script>
+
+  <script>
+    videojs.options.flash.swf = "__TMPL__Public/video-js/video-js.swf";
+  </script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+
+</head>
+
+<body>
+<div class="body_bg">
+    <div class="wrapper">
+    	<div class="top2">s
+            <ul class="ul1">
+            	<li><a href="http://sc.ibtv.cc">中文</a></li>
+        		<li><a href="http://tc.ibtv.cc">中文(繁)</li>
+                <li><a href="http://en.ibtv.cc">English</a></li>
+                <li><a href="http://ar.ibtv.cc">العربية</a></li>
+                <li><a href="http://fr.ibtv.cc">français</a></li>
+                <li><a href="http://es.ibtv.cc">español</a></li>
+                <li><a href="http://ru.ibtv.cc">русский</a></li>
+                <li><a href="http://pt.ibtv.cc">português</a></li>
+                <li><a href="http://de.ibtv.cc">Deutsch</a></li>
+            	<li><a href="http://kr.ibtv.cc">한국어</a></li> 
+                <li><a href="http://ja.ibtv.cc">日本</a></li> 
+            </ul>
+            <ul class="ul2"> 
+                <li><a href="{:u('list/index',array('id'=>300))}">联系我们</a></li>
+                <!--li> | </li>
+                <li><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li-->
+            </ul>
+            </div>
+    </div>
+    <div  class="menu_top daohang">
+    	<h2 style="font-size:70px; color:#888; width:500px; margin:0 auto">国际商务电视台</h2>
+    	<div class="wei"> 
+        <div class="try" style=" position:relative;"><img  onerror="nofind();" src="__TMPL__Public/ind/img/yugao.jpg" alt="节目预告" width="60" height="40"  />
+            <ul class="tty" style="position:absolute;top:40px;z-index:10">
+        <php>
+        $v=sp_getslide('main_v');
+        </php>
+        <for start="0" end="10" name="i" >
+			
+                <li><a  href="{$v[$i]['slide_url']}.webm">{$v[$i]['slide_name']}</a></li>                           
+        </for>
+            </ul>
+        </div>
+             	
+          
+        </div>
+    </div>
+    <div class="menu_top ding">
+        
+        <php>
+            $slides=sp_getslide('main_v');
+        </php>
+        <foreach name="slides" item="video">
+  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="800" height="450" poster="/data/upload/{$video.slide_pic}" data-setup="{}">
+    <source src="{$video.slide_url}.mp4" type='video/mp4' />
+    <source src="{$video.slide_url}.webm" type='video/webm' />
+    <source src="{$video.slide_url}.ogv" type='video/ogg' />
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="cc" target="_blank">supports HTML5 video</a><br>观看此视频，请启用JavaScript，并考虑升级到一个Web浏览器</p>
+    <php>break;</php>
+  </video>
+  </foreach>
+    </div>
+    <div class="menu_top top4">
+    
+        <php>
+        $v=sp_getslide('main_v');
+        </php>
+        <for start="1" end="6" name="i" >
+			<div class="m1part2">
+                <dl>
+                    <dt><a href="{$v[$i]['slide_url']}.webm">
+                    	<img  onerror="nofind();" src="/data/upload/{$v[$i]['slide_pic']}" alt="{$v[$i]['slide_name']}" width="175" height="120"/>
+                    </a></dt>
+                    <dd style="margin-top: 10px;"><a href="{$v[$i]['slide_url']}.webm" style="color:#FFF">{$v[$i]['slide_name']}</a></dd>
+                </dl>
+            </div>                     
+        </for>
+</div>
+<div class="btn">
+   <div class="menu_top top5">
+    	<div class="logo"><a href="{$site_host}"><img  onerror="nofind();" src="__TMPL__Public/images/logo.png" height="79" style=" margin: 0 30px;"/></a></div>
+        <div class="nav">
+        	<ul class="nav1">
+                <li><a href="{$site_host}">首　页</a></li>
+                 <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>1))}">新　闻</a></li>
+                 <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>2))}">投　资</a></li>
+                <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>11))}">招　商</a></li>
+                 <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>3))}">上　市</a></li>
+                 <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>4))}">贸　易</a></li>
+                 <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>5))}">科　技</a></li>
+                 <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>6))}">专　利</a></li>
+                 <li>|</li>
+                 <li><a href="{:u('list/index',array('id'=>7))}">地　产</a></li>
+            </ul>
+            <ul class="nav2 nav1">
+            	 <li class="right_p"><a href="{:u('list/index',array('id'=>8))}">旅　游</a></li>
+                <li>|</li>
+                <li><a href="/shop">会员商城</a></li>
+                <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>10))}">高端访谈</a></li>
+                <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>12))}">商务指南</a></li>
+                <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>13))}">养　生</a></li>
+                <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>14))}">名家书画</a></li>
+                <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>15))}">公益慈善</a></li>
+                <li>|</li>
+                <li><a href="{:u('list/index',array('id'=>16))}">汽　车</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div class="wrapper">
+	<div class="gundong">
+      <div class="gushi">New News</div>
+            <div>
+ 	<div class="left">
+    	<div>
+           <div id="banner">
+            
+          </div>
+          <div id="btn"></div>
+        </div>
+        <div id="marquee" class="hei">
+        	<ul>
+                <php>
+                $tag='field:tid,post_title;limit:9;order:post_date desc';
+                $posts=sp_sql_posts($tag); 
+                </php>
+                <foreach name="posts" item="new_fz">
+                    <li><a href="{:U('article/index',array('id'=>$new_fz['tid']))}">{$new_fz.post_title}</a></li>
+                </foreach>
+            </ul>
+        </div>
+    </div>
+    <div class="right"> 
+    	<div></div>
+        <div></div>
+    </div>
+ </div>
+    </div>
+</div>
+<div class="wrapper m1">
+	<div class="m1left left">
+    	<div class="m1partone">
+        <php>
+        $v=sp_getslide('main_v');
+        </php>
+        <for start="6" end="14" name="i" >
+			<div class="m1part1">
+                <dl>
+                    <dt><a href="{$v[$i]['slide_url']}.webm">
+                    	<img onerror="nofind();" src="/data/upload/{$v[$i]['slide_pic']}" alt="{$v[$i]['slide_name']}" width="170" height="120"/>
+                    </a></dt>
+                    <dd class="yanse"><a href="{$v[$i]['slide_url']}.webm">{$v[$i]['slide_des']}</a></dd>
+                </dl>
+            </div>                            
+        </for>
+        </div>
+
+	<div class="m1parttwo">
+    	<a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=8049" title="阿根廷访华团代表访问国际商务电视台并题词">
+        	<img  onerror="nofind();" src="__TMPL__Public/timg/zt.jpg" alt="{$c.slide_name}" width="747" height="188"/>
+        </a>
+	</div>
+        <div class="m1partthree">
+        	<div class="m1partthree1">
+                <div class="m1part3 left">
+                    <div class="m1part3tit"><span class="left"> 中国</span><div class="more"><a  href="{:u('list/index',array('id'=>17))}">
+                    <img  onerror="nofind();" src="__TMPL__Public/ind/img/more.png" alt="更多" /></a></div></div>
+                    <div class="m1part3main">
+                        <php>
+                        $tag='cid:17;field:tid,post_title;limit:5;order:post_date desc';
+                        $posts=sp_sql_posts($tag); 
+                        $slides=sp_getslide('new_zg');
+                        </php>
+                        <foreach name="slides" item="new_zgimg"><php>break;</php></foreach>
+                        <div class="renwu left">
+                        	<a href="{:u('list/index',array('id'=>17))}" >
+                            	<img  onerror="nofind();" src="/data/upload/{$new_zgimg.slide_pic}" alt="{$new_zgimg.slide_name}" width="124" height="156"/>
+                            </a>
+                        </div>
+                        <foreach name="posts" item="new_zg">
+                        	<div class="renwuright left"><a  href="{:U('article/index',array('id'=>$new_zg['tid']))}">{$new_zg.post_title}</a></div>
+                        </foreach>
+                    </div>
+                </div>
+                <div class="m1part33 left">
+                    <div class="m1part33tit"><span class="left"> 美国</span><div class="more"><a  href="{:u('list/index',array('id'=>18))}"><img  onerror="nofind();" src="__TMPL__Public/ind/img/more.png" alt="更多" /></a></div></div>
+                    <div class="m1part33main">
+                        
+                        <php>
+                        $tag = 'cid:18;field:tid,post_title;limit:5;order:post_date desc';
+                        $posts = sp_sql_posts($tag);
+                        $slides = sp_getslide('new_mg');
+                        </php>
+                        <foreach name="slides" item="new_mgimg"><php>break;</php></foreach>
+                        <div class="renwu1 left">
+                        	<a href="{:u('list/index',array('id'=>18))}" >
+                            	<img  onerror="nofind();" src="/data/upload/{$new_mgimg.slide_pic}" alt="{$new_mgimg.slide_name}" width="124" height="156"/>
+                            </a>
+                        </div>
+                        <foreach name="posts" item="new_mg">
+                        	<div class="renwuright left"><a  href="{:U('article/index',array('id'=>$new_mg['tid']))}">{$new_mg.post_title}</a></div>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        	<div class="m1partthree1">
+                <div class="m1part3 left">
+                    <div class="m1part3tit"><span class="left"> 欧洲</span><div class="more"><a  href="{:u('list/index',array('id'=>19))}"><img  onerror="nofind();" src="__TMPL__Public/ind/img/more.png" alt="更多" /></a></div></div>
+                    <div class="m1part3main">
+                        
+                        <php>
+                        $tag='cid:19;field:tid,post_title;limit:5;order:post_date desc';
+                        $posts=sp_sql_posts($tag); 
+                        $slides=sp_getslide('new_oz');
+                        </php>
+                        <foreach name="slides" item="new_ozimg"><php>break;</php></foreach>
+                        <div class="renwu left">
+                        	<a href="{:u('list/index',array('id'=>19))}" >
+                            	<img  onerror="nofind();" src="/data/upload/{$new_ozimg.slide_pic}" alt="{$new_ozimg.slide_name}" width="124" height="156"/>
+                            </a>
+                        </div>
+                        <foreach name="posts" item="new_oz">
+                        	<div class="renwuright left"><a  href="{:U('article/index',array('id'=>$new_oz['tid']))}">{$new_oz.post_title}</a></div>
+                        </foreach>
+                    </div>
+            	</div>
+                <div class="m1part33 left">
+                    <div class="m1part33tit"><span class="left"> 亚太</span><div class="more"><a  href="{:u('list/index',array('id'=>20))}"><img  onerror="nofind();" src="__TMPL__Public/ind/img/more.png" alt="更多" /></a></div></div>
+                    <div class="m1part33main">
+                        <php>
+                        $tag='cid:20;field:tid,post_title;limit:5;order:post_date desc';
+                        $posts=sp_sql_posts($tag); 
+                        $slides=sp_getslide('new_yt');
+                        </php>
+                        <foreach name="slides" item="new_ytimg"><php>break;</php></foreach>
+                        <div class="renwu1 left">
+                        	<a href="{:u('list/index',array('id'=>20))}" >
+                            	<img  onerror="nofind();" src="/data/upload/{$new_ytimg.slide_pic}" alt="{$new_ytimg.slide_name}" width="124" height="156"/>
+                            </a>
+                        </div>
+                        <foreach name="posts" item="new_yt">
+                        	<div class="renwuright left"><a  href="{:U('article/index',array('id'=>$new_yt['tid']))}">{$new_yt.post_title}</a></div>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        	<div class="m1partthree1">
+                <div class="m1part3 left">
+                    <div class="m1part3tit"><span class="left"> 拉美</span><div class="more"><a  href="{:u('list/index',array('id'=>21))}"><img  onerror="nofind();" src="__TMPL__Public/ind/img/more.png" alt="更多" /></a></div></div>
+                    <div class="m1part3main">
+                        
+                        <php>
+                        $tag='cid:21;field:tid,post_title;limit:5;order:post_date desc';
+                        $posts=sp_sql_posts($tag); 
+                        $slides=sp_getslide('new_lm');
+                        </php>
+                        <foreach name="slides" item="new_lmimg"><php>break;</php></foreach>
+                        <div class="renwu left">
+                        	<a href="{:u('list/index',array('id'=>21))}" >
+                            	<img  onerror="nofind();" src="/data/upload/{$new_lmimg.slide_pic}" alt="{$new_lmimg.slide_name}" width="124" height="156"/>
+                            </a>
+                        </div>
+                        <foreach name="posts" item="new_lm">
+                        	<div class="renwuright left"><a  href="{:U('article/index',array('id'=>$new_lm['tid']))}">{$new_lm.post_title}</a></div>
+                        </foreach>
+                    </div>
+                </div>
+                <div class="m1part33 left">
+                  <div class="m1part33tit"><span class="left"> 非洲</span><div class="more"><a  href="{:u('list/index',array('id'=>22))}"><img  onerror="nofind();" src="__TMPL__Public/ind/img/more.png" alt="更多" /></a></div></div>
+                    <div class="m1part33main">
+                        
+                        <php>
+                        $tag='cid:22;field:tid,post_title;limit:5;order:post_date desc';
+                        $posts=sp_sql_posts($tag); 
+                        $slides=sp_getslide('new_fz');
+                        </php>
+                        <foreach name="slides" item="new_fzimg"><php>break;</php></foreach>
+                        <div class="renwu1 left">
+                        	<a href="{:u('list/index',array('id'=>22))}" >
+                            	<img  onerror="nofind();" src="/data/upload/{$new_fzimg.slide_pic}" alt="{$new_fzimg.slide_name}" width="124" height="156"/>
+                            </a>
+                        </div>
+                        <foreach name="posts" item="new_fz">
+                        	<div class="renwuright left"><a  href="{:U('article/index',array('id'=>$new_fz['tid']))}">{$new_fz.post_title}</a></div>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m1right left">
+    	<div class="m1rigpart1 clearfix"><span>会员单位</span><div class="more1"><a  href="/index.php/member/memberprod/more"><img  onerror="nofind();" src="__TMPL__Public/ind/img/more1.png" alt="更多" /></a></div></div>
+        <div class="m1rigpart2">
+        <div class="wrap">
+            <div id="pic_list_3" class="scroll_vertical">
+                <div class="box">
+                    <ul class="list">
+                        <php>
+                            $am=sp_getslide('main_am');
+                        </php>
+                        <for start="0" end="20" name="i" >
+                            <li>
+                                <div class="tubiao">
+                                    <a  href="{$am[$i]['slide_url']}"><img  onerror="nofind();" src="/data/upload/{$am[$i]['slide_pic']}" alt="{$am[$i]['slide_name']}" width="165" height="72"/></a>
+                                    <div class="tubiaoxia">{$am[$i]['slide_name']}</div>
+                                </div>
+                            </li>
+                            </for>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="m1rigpart5">
+        <php>
+        $tag='field:tid,post_title;limit:11;order:post_date desc';
+        $time_new=sp_sql_posts($tag); 
+        </php>
+        <foreach name="time_new" item="new">
+                <div class="nei">
+                	<a  href="{:U('article/index',array('id'=>$new['tid']))}">{$new.post_title}</a>
+                </div>
+        </foreach>
+    	</div>
+    	<div class="m1rigpart4"><span>本期杂志</span></div>
+        <div class="m1right44">
+            <php>
+            $slides=sp_getslide('zzfm');
+            </php>
+            <foreach name="slides" item="zzfm"><php>break;</php></foreach>
+            <a href="http://www.intbtv.com/" >
+                <img  onerror="nofind();" src="/data/upload/{$zzfm.slide_pic}" alt="{$zzfm.slide_name}" width="165" height="156" />
+            </a>
+        </div>
+	</div>
+</div>
+<div class="wrapper">
+<div id=demo style="OVERFLOW: hidden; WIDTH: 960px; height:190px; align: center">
+
+  <table cellspacing="0" cellpadding="0" align="center" border="0">
+    <tbody>
+      <tr>
+        <td id="marquePic1" valign="top">
+		
+<table width="958" border="0" cellpadding="0" cellspacing="0">
+        <php>
+        $ibtv_all=sp_sql_posts('field:tid,post_title,smeta;limit:9;order:post_date desc');
+        </php>
+	 <tr>
+        <foreach name="ibtv_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+        <td width="95" align="center">
+        <a href="{:U('article/index',array('id'=>$all['tid']))}" style="margin:0 10px;">
+        	<img onerror="nofind();" src="data/upload/{$smeta.thumb}" width="230" height="170"/>
+        </a>
+        </td>
+        </foreach>
+    </tr>
+    
+    <tr>
+        <foreach name="ibtv_all" item="all">
+        <td height="20"align="center">
+            <div class="ai">
+                <a href="{:U('article/index',array('id'=>$all['tid']))}" >
+                	{$all.post_title}
+                </a>
+            </div>
+        </td>
+        </foreach>
+    </tr>
+
+</table>		
+		
+		</td>
+        <td id="marquePic2" valign="top"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</div>
+</div>
+<div style="border-bottom: 1px solid #000;"></div>
+<div class=" wrapper m3">
+
+            <php>
+            $main_i=sp_getslide('main_i');
+            </php>
+            <for start="0" end="12" name="i" >
+    <div class="m31">
+        <a class="left pic1" href="{$main_i[$i]['slide_url']}" >
+            <img  onerror="nofind();" src="/data/upload/{$main_i[$i]['slide_pic']}" alt="{$main_i[$i]['slide_name']}"  width="136" height="132" />
+        </a>
+        <dl>
+            <dt><a  href="{$main_i[$i]['slide_url']}">{$main_i[$i]['slide_name']}</a></dt>
+            <dd class="wen">{$main_i[$i]['slide_content']}</dd>
+            <dd><a  class="jinru" href="{$main_i[$i]['slide_url']}"><img src="__TMPL__Public/ind/img/jinru.png" /></a></dd>
+        </dl>
+	</div>
+            </for>
+
+</div>
+
+<div class="wrapper m5">
+　　<h2>电视台简介</h2>
+
+　　<p>国际商务电视台（International Business Television）。是中国了解世界，世界了解中国的窗口，以全球化、多语种、多终端的国际网络与电视相结合的传媒平台，提供国际投资、招商、融资、贸易及商务的信息传播。</p>
+
+　　<p>国际商务电视台秉持“观世界经济，览国际商机”的宗旨,为中国企业提高国际知名度，拓展投资招商新领域、促进国际投资及合作，帮助国外企业进入中国市场，精确市场定位，拓展业务，提高品牌知名度。国际商务电视台在提供商务资讯的同时，展示世界文化及艺术，促进国际间文化交流。</p>
+
+　　<p>国际商务电视台与政治家、经济学家、企业家等专业人士直接对话，进行实时、严谨、专业的深度分析，为国内外企业的发展提供客观参考。</p>
+
+　　<p>国际商务电视台提供快速真实的资讯，传播国际多元文化，介绍快速发展的中国及世界经济，倾力设计打造原创品牌节目，成为具有公信力和权威型的媒体传播平台。</p>
+　　<h2>电视台宗旨</h2>
+
+　　<p>观世界经济，览国际商机。</p>
+　　<p>传播经济信息文化，促进国际交流及合作。</p>
+
+　　<h2>电视台定位</h2>
+　　<p>做最有影响力的国际商务交流平台。</p>
+　　<h2>国际商务电视台山东办事处：</h2>
+　　<p>地址：山东省青岛市开发区长江东路319号泽润广场A座3004室</p>
+　　<p>负责人：张立红</p>
+　　<p>电话：18611147980</p>
+</br> 
+</div>
+<div class="bigad wrapper">
+
+        <php>
+            $main_b=sp_getslide('main_b');
+        </php>
+        <foreach name="main_b" item="b"><php>break;</php></foreach>
+        <img onerror="nofind();"  src="/data/upload/{$b.slide_pic}" alt="{$b.slide_name}" width="960" height="130"/>
+</div>
+<div class=" wrapper">
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7906" title="阿根廷克里斯蒂娜总统访华" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/1.jpg" width="310" height="200"  title="阿根廷克里斯蒂娜总统访华" alt="阿根廷克里斯蒂娜总统访华" />
+            <p>阿根廷克里斯蒂娜总统访华</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7962" title="国际商务电视台在阿设分支机构" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/6.jpg" width="310" height="200" title="国际商务电视台在阿设分支机构" alt="国际商务电视台在阿设分支机构" />
+            <p>国际商务电视台在阿设分支机构</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7906" title="中阿跨行业贸易取得新突破" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/2.JPG" width="310" height="200"  title="中阿跨行业贸易取得新突破" alt="中阿跨行业贸易取得新突破" />
+            <p>中阿跨行业贸易取得新突破</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7962" title="国际商务电视台将在阿根廷建设分支机构" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/7.jpg" width="310" height="200" title="国际商务电视台将在阿根廷建设分支机构" alt="国际商务电视台将在阿根廷建设分支机构" />
+            <p>国际商务电视台将在阿根廷建设分支机构</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7906"  title="阿根廷克里斯蒂娜总统访华" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/3.JPG" width="310" height="200" title="阿根廷克里斯蒂娜总统访华" alt="阿根廷克里斯蒂娜总统访华" />
+            <p>阿根廷克里斯蒂娜总统访华</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7961" title="中阿高官就双边合作事宜在京会谈" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/8.jpg" width="310" height="200" title="中阿高官就双边合作事宜在京会谈" alt="中阿高官就双边合作事宜在京会谈" />
+            <p>中阿跨行业贸易取得新突破</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7906"  title="中阿跨行业贸易取得新突破" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/4.JPG" width="310" height="200" title="中阿跨行业贸易取得新突破" alt="中阿跨行业贸易取得新突破" />
+            <p>中阿跨行业贸易取得新突破</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7961" title="中阿双边合作" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/9.jpg" width="310" height="200" title="中阿双边合作" alt="中阿双边合作" />
+            <p>中阿双边合作</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7906"  title="克里斯蒂娜总统访华" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/5.JPG" width="310" height="200" title="克里斯蒂娜总统访华" alt="克里斯蒂娜总统访华" />
+            <p>克里斯蒂娜总统访华</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7961" title="中阿高官在京会谈" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/10.jpg" width="310" height="200" title="中阿高官在京会谈" alt="中阿高官在京会谈" />
+            <p>中阿高官在京会谈</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=8049" title="阿根廷访华团代表访问国际商务电视台" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/12.jpg" width="310" height="200"title="阿根廷访华团代表访问国际商务电视台" alt="阿根廷访华团代表访问国际商务电视台" />
+            <p>阿根廷访华团代表访问国际商务电视台</p>
+        </a>
+        <a href="http://sc.ibtv.cc/index.php?m=article&a=index&id=7961" title="中阿高官就双边合作事宜在京会谈" style="margin:5px;float: left;">
+            <img  onerror="nofind();" src="/data/upload/11.jpg" width="310" height="200"title="中阿高官就双边合作事宜在京会谈" alt="中阿高官就双边合作事宜在京会谈" />
+            <p>中阿高官就双边合作事宜在京会谈</p>
+        </a>
+</div>
+<div class=" wrapper m4">
+	<div class="m4zuo left">
+        <div class="m4left"><span>友情链接</span></div>
+        <div class="m4leftxia">
+<php>
+    $links=sp_getlinks();
+</php>
+ 
+            <ul>
+            	<foreach name="links" item="friend">
+                <li><a href="{$friend.link_url}" target="{$friend.link_target}">{$friend.link_name}</a></li>
+                <li>|</li>
+                </foreach>
+            </ul>
+        </div>
+    </div>
+    <div class="m4you left">
+    	<div class="m4right1 left">
+        	<div class="logo1"><img  onerror="nofind();" src="__TMPL__Public/ind/img/logo.png" alt="LOGO" width="120" height="47"/></div>
+            <p>国 际 商 务 电 视 台</p>
+            <p>International Business Television</p>
+        </div>
+        <div class="m4right2 left">
+        	<div><img  onerror="nofind();" src="__TMPL__Public/ind/img/erweima.png" alt="微信" width="88" height="89"/></div>
+        </div>
+    </div>
+</div>
+
+  <include file="Public:footer" />
+<script>
+$("#pic_list_1").cxScroll();
+$("#pic_list_2").cxScroll({direction:"left",step:3});
+$("#pic_list_3").cxScroll({direction:"bottom",speed:1000,time:1500,plus:false,minus:false});
+$("#pic_list_4").cxScroll({direction:"top",auto:false});
+</script>
+<!--web前端开放:薛xue洪hong刚gang-->
+</body>
+</html>

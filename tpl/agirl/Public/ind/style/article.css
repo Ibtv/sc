@@ -1,0 +1,98 @@
+/* CSS Document */
+
+.m1{ overflow:hidden; margin-bottom:18px;}
+.m1left{ float:left;}
+.m1right{ float:right;}
+.m1left img{ width:755px; height:92px;}
+.m1right img{ width:204px; height:92px;}
+
+.m2{ overflow:hidden;}
+
+.m2left{ float:left; padding-left:15px; width:655px;}
+.biaoti{ text-align:center; font-size:24px; font-family:"微软雅黑"; line-height:50px;overflow:hidden; border-bottom: 1px dashed #858181;}
+.biaotixia{ text-align:center; height:34px; line-height:34px; overflow:hidden; color:#858181;}
+.yuanbaioti{ height:30px; line-height:30px; overflow:hidden;}
+.shipin{ padding:10px 50px;}
+.zhengwen{text-indent:2em; height:auto;overflow-y:auto; font-size:14px;}
+.zhengwentit{ font-weight:bold; height:40px; line-height:40px;}
+.duanluo{line-height:26px; margin-top:14px;}
+
+.zhengwenxia{ overflow:hidden;height:28px; line-height:28px; margin-top:20px;}
+.fenxiang{ overflow:hidden; float:left; margin-left:40px; }
+.fenxiang li{ float:left; margin-left:8px;}
+.dayin{ float:right; overflow:hidden;}
+.dayin li{ float:left; margin-right:8px;}
+.dayin li a{ color:#000;}
+.dayin li.te a{ color:#8a0000;}
+
+.xiangguan{ margin:20px 0;height: 170px;overflow: hidden;}
+.xiangguantit{ height:30px; line-height:30px;}
+.xiangguantit a{ color:#000; font-weight:bold; font-size:14px;}
+.xiangguan ul{width:645px; padding-left:10px;}
+.xiangguan ul li{float: left; height:28px;width: 310px; line-height:28px; overflow:hidden; background:url(../sijiyeimg/dian.jpg) no-repeat 0 10px; margin-left:10px; text-indent:10px;}
+.xiangguan ul li a{ color:#29629d;}
+
+
+.guangao{ margin-top:20px; overflow:hidden;}
+
+
+table tr{ height:28px;}
+table{text-align:center; font-family:"微软雅黑";}
+table a{ color:#FFF; }
+.table1 .tr1 .td1{ background:#ac68d7; font-size:24px;}
+.table1 .tr1 .td2{ background:#71cdca; font-size:16px;}
+.table1 .tr1 .td3{ background:#ac68d7; font-size:16px;}
+.table1 .tr1 .td4{ background:#ce78df; font-size:16px;}
+.table1 .tr1 .td5{ background:#71cdca; font-size:24px;}
+.table1 .tr2 .td1{ background:#ac68d7; font-size:24px;}
+.table1 .tr3 .td2{ background:#ac68d7; font-size:24px;}
+.table1 .tr3 .td1{ background:#49bf82; font-size:16px;}
+.table1 .tr3 .td3{ background:#ffbb3a; font-size:16px;}
+.table1 .tr4 .td1{ background:#49bf82; font-size:24px;}
+.table1 .tr4 .td2{ background:#ae6ada; font-size:24px;}
+.table1 .tr5 .td1{ background:#6cc3df; font-size:16px;}
+.table1 .tr5 .td2{ background:#d381e3; font-size:16px;}
+.table1 .tr5 .td3{ background:#ffbb3f; font-size:16px;}
+
+.table2 .tr1 .td1{ background:#ffbb3a; font-size:16px;}
+.table2 .tr1 .td2{ background:#ac68d7; font-size:24px;}
+.table2 .tr1 .td3{ background:#fe9900; font-size:16px;}
+.table2 .tr1 .td4{ background:#5330b3; font-size:16px;}
+.table2 .tr1 .td5{ background:#cc3433; font-size:24px;}
+.table2 .tr2 .td1{ background:#4bbf82; font-size:24px;}
+.table2 .tr2 .td2{ background:#0048be; font-size:24px;}
+.table2 .tr3 .td1{ background:#a3df9c; font-size:16px;}
+.table2 .tr3 .td2{ background:#d482e2; font-size:16px;}
+.table2 .tr3 .td3{ background:#00829a; font-size:16px;}
+
+
+
+
+
+
+.m2right{ float:left; padding-left:20px; width:270px; overflow:hidden;}
+.m2right1 h2{font-size:16px; color:#414658; font-family:"微软雅黑"; background:url(../sijiyeimg/you2bg.jpg) repeat-x 0 8px; height:40px; line-height:34px;}
+.m2right1 li{ width:270px; height:26px; line-height:26px; overflow:hidden;}
+.m2right1 li a { color:#000;}
+
+.m2right2{ margin-top:10px; overflow:hidden;}
+.m2right2 a{ display:block; margin-bottom:3px;}
+.m2right2 a img{ width:269px; height:140px;}
+
+.m2right3{ overflow:hidden; margin-bottom:4px;}
+.m2right3 img{ width:269px; height:90px;}
+
+.m2right4{ overflow:hidden; }
+.m2right4tit{ overflow:hidden;height:36px; line-height:36px; padding-left:6px;}
+.m2right4tit .tu{ float:left; font-size:16px; font-weight:bold;}
+.m2right4tit .more{ float:right; padding-right:22px;}
+.m2right4tit .more span{ color:#F00; font-weight:bold;}
+.m2right4main{ overflow:hidden; width:268px; padding-left:2px;}
+.m2right4 dl{ width:128px; float:left; display:inline;}
+.m2right4 dl dt a img{ width:126px; height:102px;}
+.m2right4 dl dd{ width:126px; text-align:center; overflow:hiddee; height:34px; line-height:34px; overflow:hidden;}
+
+.m2right5{ margin-top:4px;}
+.m2right5 a{ display:block; margin-top:2px;}
+.m2right5 .pic1 img{ width:268px; height:177px;}
+.m2right5 .pic2 img{ width:268px; height:190px;}

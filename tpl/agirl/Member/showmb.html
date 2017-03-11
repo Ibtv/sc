@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员信息</title>
+<link href="__TMPL__Public/css/chan.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<!--header logoer start-->
+<div id="searchbg">
+	<div class="logobg"><a href="{$site_host}"><img src="__TMPL__Public/images/logo.jpg" width="230" height="90" /></a></div>
+<div class="centerbg">
+        <dl class="searchboxbg">
+        <div class="selectbg">
+            <form action='/index.php/member/memberprod/search' method='post'>
+            <select name='type' style="width:85px; height:38px;border:#207ddb 1px solid; ">
+                <option value='0'>搜索产品</option>
+                <option value='1'>搜索会员</option>
+            </select>
+        </div>
+        <dt><input name="sear" type="text" placeholder="招商投资" maxlength=16  required style="width:550px; height:35px; border:#207ddb 1px solid; margin:0px;"/></dt>
+        <dd><input type="submit" value="" style="width:94px; height:39px; background:url(__TMPL__Public/images/1.png); border:0px;" /></dd>
+        </dl>
+        </form>
+        <div class="jsgunbg">
+            <div style="width:770px;height:50px; line-height:60px; font-size:20px;overflow:hidden;" onMouseOver="stop()" onMouseOut="start()">
+            <table width="700" border="0" cellspacing="0" cellpadding="0" id="scrollimg" height="21">
+            <tr>
+            <td id="simg">
+            <TABLE width="960" border="0" cellspacing="0" cellpadding="0" height="21">
+            <tr>
+                <foreach name='tuimessage' item='vo'>
+            <td class="zi"><a href="/index.php/member/memberprod/showmsg/id/{$vo.id}" target='_blank'>{$vo.comm}</a></td>
+                </foreach>
+            </tr>
+            </TABLE>
+            </td>
+            <td id="simg1"></td>
+            </tr>
+            </table>
+            </div>
+            <script LANGUAGE="Javascript">
+            var tm=null
+            function newsScroll() {
+            if(scrollimg.parentNode.scrollLeft!=(scrollimg.clientWidth/2))
+            scrollimg.parentNode.scrollLeft++;
+            else
+            scrollimg.parentNode.scrollLeft=0
+            }
+            window.onload=function() {
+            simg1.innerHTML=simg.innerHTML
+            tm=setInterval('newsScroll()',20)
+            }
+            function stop()
+            {
+            clearInterval(tm)
+            }
+            function start()
+            {
+            tm=setInterval('newsScroll()',20)
+            }
+            </script> 
+        </div>
+    </div>
+    <div class="rightmabg">
+        <div class="addressbg">
+            <li style="font-size:16px;font-weight:bold;">加入我们</li>
+            <li><a href="/index.php?m=list&a=index&id=142">查看联系方式</a></li>
+        </div>
+        <span ><img src="__TMPL__Public/images/ma.jpg" width="90" height="90" /></span>
+    </div>
+</div>
+<!--header logoer end-->
+<!--header  start-->
+<div id="headerbg">
+	 	<h1 style='float:left;padding-top:5px'><a href="/index.php/member/memberprod/more">首页</a></h1>
+		<h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/all">全部行业</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/all">所有会员</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allprod">所有产品</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allhd">所有活动</a></h1>
+	    <h1 style='float:left;padding-top:5px;margin-left:20px;'><a href="/index.php/member/memberprod/allmsg">所有消息</a></h1>
+</div>
+<!--header tradesort end-->
+<!--main start-->
+<div id="mainbg">
+	<div class="leftinforbg" style="height:258px;">
+		<div class="infornavbg">会员信息</div>
+		<ul>
+			<li>{$mb[mname]}</li>
+			<li>地址:{$mb['address']}</li>
+			<li>所属行业:{$mb['hangye']}</li>
+			<li>联系方式:{$mb['tel']}</li>
+			<li>邮箱:{$mb['email']}</li>
+		</ul>
+	</div>
+	<div class="rightproductbg">
+		<div class="productbg"> 会员介绍</div>
+		<dl>
+			<dt><img src="{$mb['mlogo']}" width="410" height="265" /></dt>
+			<dd>{$mb.comm}</dd>
+		</dl>
+		<div class="chanpintubg">会员所有产品</div>
+		<div class="typebg">
+		   	<foreach name="mpro" item="vo">
+		   		<dl class="typenamebg">
+			   <dt><a href="/index.php/member/memberprod/showprod/id/{$vo.id}" target="_blank"><img src="{$vo.pimg}" width="235" height="210"/></a></dt>
+			   <dd>
+				   <div>产品名称：<a href="/index.php/member/memberprod/showprod/id/{$vo.id}" target="_blank">{$vo.pname}</a></div>
+				   <div>参考价格：{$vo.price}元</div>
+			   </dd>
+			   </dl>
+			</foreach>
+		</div>
+	</div>
+</div>
+<!--main end-->
+<include file="Public:memberfooter" />
+<!-- <div style="padding-top:26px;background:#f46969;width:1200px; height:45px; margin:5px auto; overflow:hidden;">
+	<div style="float:left; width:650; margin-left:200px;">
+        Copyright &copy; 2014
+        <a target="_blank" href="http://www.nnatv.com/">International Business Television</a> 
+    </div>
+    <div style="float:right; width:320px;margin-right:200px;"><a target="_blank" href="http://www.nnatv.com/">国际商务电视台</a>&nbsp;&nbsp;&nbsp;
+        	备案信息：<a target="_blank" href="http://www.miitbeian.gov.cn">京ICP备13016783号</a>
+    </div>
+    
+</div>
+</body>
+由靳思远（以后简称J_SY）开发2014-10.5
+</html> -->

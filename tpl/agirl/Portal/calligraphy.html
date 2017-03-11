@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/calligraphy.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/gun.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/FancyZoom.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/FancyZoomHTML.js"></script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+<script language=Javascript> 
+  function time(){
+    //获得显示时间的div
+    t_div = document.getElementById('showtime');
+   var now=new Date()
+    //替换div内容 
+   t_div.innerHTML = "现在是"+now.getFullYear()
+    +"年"+(now.getMonth()+1)+"月"+now.getDate()
+    +"日"+now.getHours()+"时"+now.getMinutes()
+    +"分"+now.getSeconds()+"秒";
+    //等待一秒钟后调用time方法，由于settimeout在time方法内，所以可以无限调用
+   setTimeout(time,1000);
+  }
+</script>
+</head>
+<body onload='setupZoom();time()'>
+	
+<div class=" wrapper top1">
+		<div class="shijian" id="showtime"></div>
+
+            
+                <ul class="ul2"> 
+                <li><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+                <li>|</li>
+                <li><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+            </ul>
+</div>
+<div class=" wrapper top2">
+	<a class="logo" href="{$site_host}"><img onerror="nofind();" src="__TMPL__Public/images/logo.png" height="110" /></a>
+    
+        <php>
+            $calligraphy_t=sp_getslide('calligraphy_t');
+        </php>
+        <foreach name="calligraphy_t" item="t"><php>break;</php></foreach>
+    <img onerror="nofind();" src="/data/upload/{$t.slide_pic}" alt="{$t.slide_name}" width="722"  height="110"/>
+</div>
+<div class="wrapper nav">
+	<ul>
+	<li><a href="{:u('list/index',array('id'=>121))}">名家专访</a></li>    <li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>122))}">名作鉴赏</a></li>    <li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>123))}">收藏</a></li>    <li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>124))}">画廊</a></li>    <li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>125))}">拍卖</a></li>    <li class="fen">|</li>
+	<li><a href="{:u('list/index',array('id'=>126))}">艺海拾趣</a></li>
+    </ul>
+</div>
+
+<div class="m1">
+	<div class="m1left">
+<div id="ifocus">
+	<div id="ifocus_pic">
+		<div id="ifocus_piclist" style="left:0; top:0;">
+			<ul>
+             <php>
+        $calligraphy_mzjs=sp_sql_posts('cid:122;field:tid,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_mzjs" item="mzjs">
+        <php>
+        $smeta=json_decode($mzjs['smeta'],true);
+        </php>
+     	 
+				<li><a href="{:U('article/index',array('id'=>$mzjs['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></li>
+        </foreach>
+			</ul>
+		</div>
+		<div id="ifocus_opdiv"></div>
+		<div id="ifocus_tx">
+			<ul>
+             <php>
+        $calligraphy_mzjs=sp_sql_posts('cid:122;field:tid,post_title;limit:4;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_mzjs" item="mzjs">
+				<li class="current"><a href="{:U('article/index',array('id'=>$mzjs['tid']))}">{$mzjs.post_title}</a></li>
+        </foreach>
+			</ul>
+		</div>
+	</div>
+	<div id="ifocus_btn">
+		<ul>
+                     <php>
+        $calligraphy_mzjs=sp_sql_posts('cid:122;field:tid,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_mzjs" item="mzjs">
+        <php>
+        $smeta=json_decode($mzjs['smeta'],true);
+        </php>
+     	 <li tyle="margin:3px 0;"><a href="{:U('article/index',array('id'=>$mzjs['tid']))}">
+         <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></li>
+        </foreach>
+		</ul>
+	</div>
+</div>
+        <diV class="guang">
+        <php>
+        $calligraphy_sc=sp_sql_posts('cid:123;field:tid,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_sc" item="sc">
+        <php>
+        $smeta=json_decode($sc['smeta'],true);
+        </php>
+     	 <div style="margin:3px 0;"><a href="{:U('article/index',array('id'=>$sc['tid']))}">
+         <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width=" 642"height="103"/></a></div>
+        </foreach>
+        </diV>
+    </div>
+    <div class="m1right">
+           <php>
+        $calligraphy_mjzf=sp_sql_posts('cid:121;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_mjzf" item="mjzf">
+        <php>
+        $smeta=json_decode($mjzf['smeta'],true);
+        </php>
+        
+        <dl>
+            <dt><a href="{:U('article/index',array('id'=>$mjzf['tid']))}"><img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="72" height="100"/></a></dt>
+            <dd class="dd1"><a href="{:U('article/index',array('id'=>$mjzf['tid']))}">{$mjzf.post_title}</a></dd>
+            <dd class="dd2"><a href="{:U('article/index',array('id'=>$mjzf['tid']))}">{$mjzf.post_excerpt}</a></dd>
+        </dl>
+        </foreach>
+           
+    </div>
+</div>
+<div class="m2">
+    <h3><span>画廊</span></h3>
+    <div class="huajia">
+               <php>
+        $calligraphy_mjzf=sp_sql_posts('cid:124;field:tid,post_title,smeta;limit:12;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_mjzf" item="mjzf">
+        <php>
+        $smeta=json_decode($mjzf['smeta'],true);
+        </php>
+
+        <dl>
+        	<dt><a href="{:U('article/index',array('id'=>$mjzf['tid']))}"><img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+            <dd><a href="{:U('article/index',array('id'=>$mjzf['tid']))}">{$mjzf.post_title}</a></dd>
+        </dl>
+        </foreach>
+    </div>    
+</div>
+<div class=" wrapper m3">
+	<div class="m3left">
+    	<div class="m3left1">
+            <ul>
+        <php>
+        $calligraphy_msh=sp_sql_posts('cid:122,123,124;field:tid,post_title;limit:10;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_msh" item="msh">
+				<li><a href="{:U('article/index',array('id'=>$msh['tid']))}">{$msh.post_title}</a></li>
+        </foreach>
+            </ul>
+            <ul style="margin-left:10px">
+        <php>
+        $calligraphy_mpy=sp_sql_posts('cid:121,125,126;field:tid,post_title;limit:10;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_mpy" item="mpy">
+				<li><a href="{:U('article/index',array('id'=>$mpy['tid']))}">{$mpy.post_title}</a></li>
+        </foreach>
+            </ul>
+        </div>
+    	<div class="m3left2">
+         <php>
+            $calligraphy_c=sp_getslide('calligraphy_c');
+        </php>
+        <foreach name="calligraphy_c" item="c"><php>break;</php></foreach>
+    <img onerror="nofind();" src="/data/upload/{$c.slide_pic}" alt="{$c.slide_name}" width="613" height="146"/>
+        </div>
+    	<div class="m3left3">
+        	<div class="m3left31">
+		<php>
+        $calligraphy_sc=sp_sql_posts('cid:123;field:tid,post_title,post_excerpt,smeta;limit:3;order:post_date desc');
+        $s = 0;
+        </php>
+        <foreach name="calligraphy_sc" item="sc">
+        <php>
+        $s++;
+        $smeta=json_decode($sc['smeta'],true);
+		if($s == 1)
+        {
+        </php>
+        <div class="m3left31left">
+                	<dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$sc['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                   		<dd><a href="{:U('article/index',array('id'=>$sc['tid']))}">{$sc.post_title}</a></dd>
+                    </dl>
+        </div>
+        <php>
+        }
+        if($s > 1){
+        </php>
+		<div class="m3left31right">
+                    <dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$sc['tid']))}">
+                        <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="126" height="84"/></a></dt>
+                        <dd class="dd1"><a href="{:U('article/index',array('id'=>$sc['tid']))}">{$sc.post_title}</a></dd>        
+                        <dd class="dd2"><a href="{:U('article/index',array('id'=>$sc['tid']))}">{$sc.post_excerpt}</a></dd>    
+                    </dl>
+                </div>  
+        <php>
+        }
+        </php>
+        </foreach>   
+          
+            </div>
+            <div style=" margin-top:5px" class="m3left31">
+        <php>
+        $calligraphy_yhsq=sp_sql_posts('cid:126;field:tid,post_title,post_excerpt,smeta;limit:3;order:post_date desc');
+        $s = 0;
+        </php>
+        <foreach name="calligraphy_yhsq" item="yhsq">
+        <php>
+        $s++;
+        $smeta=json_decode($yhsq['smeta'],true);
+		if($s == 1)
+        {
+        </php>
+        <div class="m3left31left">
+                	<dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$yhsq['tid']))}">
+                        <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                   		<dd><a href="{:U('article/index',array('id'=>$yhsq['tid']))}">{$yhsq.post_title}</a></dd>
+                    </dl>
+        </div>
+        <php>
+        }
+        if($s > 1){
+        </php>
+		<div class="m3left31right">
+                    <dl>
+                    	<dt><a href="{:U('article/index',array('id'=>$yhsq['tid']))}">
+                        <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="126" height="84"/></a></dt>
+                        <dd class="dd1"><a href="{:U('article/index',array('id'=>$yhsq['tid']))}">{$yhsq.post_title}</a></dd>        
+                        <dd class="dd2"><a href="{:U('article/index',array('id'=>$yhsq['tid']))}">{$yhsq.post_excerpt}</a></dd>    
+                    </dl>
+                </div>  
+        <php>
+        }
+        </php>
+        </foreach>   
+                </div>
+        </div>
+    </div>
+    <div class="m3right">
+		<php>
+        $calligraphy_mh=sp_sql_posts('cid:122,124;field:tid,post_title,post_date,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_mh" item="mh">
+        <php>
+        $smeta=json_decode($mh['smeta'],true);
+        </php>
+    	<dl>
+        	<dt><a href="{:U('article/index',array('id'=>$mh['tid']))}"><img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+            <dd class="dd1"><a href="{:U('article/index',array('id'=>$mh['tid']))}">{$mh.post_title}</a></dd>
+            <dd class="dd2"><a href="{:U('article/index',array('id'=>$mh['tid']))}">{:date("m-d",strtotime($mh['post_date']))}</a></dd></dd>
+        </dl>
+        </foreach>
+
+    </div>
+</div>
+<div class=" wrapper m4">
+        <php>
+            $calligraphy_d=sp_getslide('calligraphy_d');
+        </php>
+        <foreach name="calligraphy_d" item="d"><php>break;</php></foreach>
+    <img onerror="nofind();" src="/data/upload/{$d.slide_pic}" alt="{$d.slide_name}" width="960" height="122"/></div>
+<div class=" wrapper m5">
+    <h3><span>书法欣赏</span></h3>
+	<div id=demo style="OVERFLOW: hidden; WIDTH: 960px; align: center" class="zuopin">
+  <table cellspacing="0" cellpadding="0" align="center" border="0">
+    <tbody>
+      <tr>
+        <td id="marquePic1" valign="top">
+		
+<table width="958" height="130" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+             <php>
+            $calligraphy_all=sp_sql_posts('cid:121,122,123,124,125,126;field:tid,smeta;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="calligraphy_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <td align="center"><a href="{:U('article/index',array('id'=>$all['tid']))}" style="margin:0 10px;">
+                <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="160" height="185"/></a></td>
+            </foreach>
+
+  </tr>
+  <tr>
+            <php>
+            $calligraphy_all=sp_sql_posts('cid:121,122,123,124,125,126;field:post_title;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="calligraphy_all" item="all">
+			<td align="center"><div class="ai">{$all.post_title}</div></td>
+            </foreach>
+  </tr>
+</table>		
+		
+		</td>
+        <td id="marquePic2" valign="top"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+        </div>
+</div>
+<div class=" wrapper nr4">
+    <h3><span>交易专区</span></h3>
+    <div class="nr41">
+        <php>
+        $calligraphy_pm=sp_sql_posts('cid:125;field:tid,post_title,post_date,smeta;limit:8;order:post_date desc');
+        </php>
+        <foreach name="calligraphy_pm" item="pm">
+        <php>
+        $smeta=json_decode($pm['smeta'],true);
+        </php>
+
+  <div class="yikuai left">
+            <div class="nrrtu">
+				<div class="tr photoblock-many">
+                	<a href="{:U('article/index',array('id'=>$pm['tid']))}">
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="180" height="200" border="0" alt="" id="img-mwsf-2" class="photo" /></a>
+                </div>
+            </div>
+            <p class="p1"><a href="{:U('article/index',array('id'=>$pm['tid']))}">{$pm.post_title}</a></p>
+            <p class=" lll"><a href="{:U('article/index',array('id'=>$pm['tid']))}">{:date("Y-m-d",strtotime($pm['post_date']))}</a></p>
+        </div>
+        </foreach>
+        
+    </div>
+</div>
+
+  <include file="Public:footer" />
+
+<script type="text/javascript" src="__TMPL__Public/ind/js/banner.js"></script>	
+
+</body>
+</html>

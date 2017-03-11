@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:14px;vertical-align:middle;}
+body{font-size:14px;font-family:Arial, Helvetica, sans-serif;margin:0 auto; font-family:"Arial";}
+table{border-collapse:collapse;border-spacing:0;}
+b,em,i{ font-style:normal; font-weight:normal;}
+h1,h2,h3{ font-size:14px;}
+h4{font-weight:normal; font-size:14px;}
+h5{ font-size:14px;}
+h6{ font-size:14px;font-weight:normal;}
+a:link{ color:#000; text-decoration:none;}
+a:visited{ color:#000; text-decoration:none;}
+a:hover{ color:#ff0000;  text-decoration:none;}
+.warpper{width:1200px;margin:0 auto; overflow:hidden;}
+/* header logoer start */
+#headlogobg{width:1200px; height:90px; margin:0 auto; overflow:hidden;}
+ul.loginbar{width:400px; height:31px; overflow:hidden;}
+ul.loginbar div{width:150px; height:31px; text-align:center;line-height:25px; float:left;}
+ul.loginbar li{width:60px; height:31px; float:left; text-align:center; line-height:25px;}
+#loginbarbg li a:link{color:#000; text-decoration:none;}
+#loginbarbg li a:hover{ color:#ff6e00;  text-decoration:none;}
+#searchbg{width:1200px; height:90px; margin:5px auto; overflow:hidden;}
+.logobg{width:230px; height:90px; float:left;}
+.centerbg{ width:770px; height:90px;float:left; overflow:hidden;}
+.selectbg{width:85px;height:38px; margin:10px 0px 0px 10px; float:left;}
+dl.searchboxbg{width:770px; height:40px;float:left;}
+dl.searchboxbg dt{width:550px; height:30px; margin:10px 0px 0px 5px;float:left;}
+dl.searchboxbg dd{width:94px; height:38px; margin:10px 0px 0px 4px; float:left;}
+.jsgunbg{width:770px; height:50px; line-height:50px;float:left;  overflow:hidden;}
+.rightmabg{width:190px; height:90px; float:left; overflow:hidden; margin-left:10px;}
+.addressbg{width:100px; height:90px; text-align:center; line-height:40px; float:left;}
+/* header  start */
+#headerbg{border-top:#d3d0d0 1px solid; border-bottom:#d3d0d0 1px solid; width:1200px; height:30px;
+          margin:5px auto; overflow:hidden;}
+.homebg{width:50px; line-height:30px;text-align:center;}
+/* header tradesort start */
+#tradesortbg{border:#d3d0d0 1px solid;width:1200px; height:30px; margin:5px auto;}
+#tradesortbg ul{width:1200px; height:30px;}
+#tradesortbg ul li{width:95px; height:30px;float:left; text-align:center; line-height:30px;}
+/* main firmlogo start */
+#mainlistbg{width:1200px; margin:0px auto; overflow:hidden;}
+.subnavbg{width:830px; height:40px; margin-top:10px;  line-height:40px; text-indent:1em; 
+          border-top:#d5d5d5 2px solid;border-bottom:#d5d5d5 1px solid;color:#2095d9; }
+.subnavbg h1{font-size:20px;}         
+.leftnewsbg{width:830px; float:left;overflow:hidden;}
+.leftnewsbg ul{width:500px;border-bottom:#c4c5c5 1px dashed; margin-top:10px; float:left;}
+.leftnewsbg ul li{width:500px; line-height:25px; overflow:hidden;}
+.centerimgbg{width:330px; height:200px; margin-top:10px; float:left;}
+.rightnewsbg{width:360px; float:left; overflow:hidden; margin-left:10px;}
+.tuinavbg{width:360px; height:40px; margin-top:10px;  line-height:40px; text-indent:1em;
+          border-top:#d5d5d5 2px solid;border-bottom:#d5d5d5 1px solid; color:#2095d9; }
+.tuinavbg h1{font-size:20px;} 
+ul.listnewbg{width:360px; height:200px; margin-top:10px; overflow:hidden;}
+ul.listnewbg li{width:360px; text-indent:1em; overflow:hidden; line-height:39px; border-bottom:#d4d4d4 1px dashed;}
+.qiyenavbg{width:360px; height:40px;  line-height:40px; text-indent:1em;
+          border-top:#d5d5d5 2px solid;border-bottom:#d5d5d5 1px solid; color:#2095d9; margin-top:10px; }
+.qiyenavbg h1{font-size:20px;}
+dl.listcontentbg{ width:360px; overflow:hidden; }
+dl.listcontentbg dt{width:360px; height:100px; line-height:25px; overflow:hidden; border-bottom:#d4d4d4 1px dashed;margin-top:10px;text-indent:2em;}

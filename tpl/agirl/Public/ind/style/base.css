@@ -1,0 +1,31 @@
+/* CSS Document */
+h3{ font-size:18px; color:#0000; font-family:"微软雅黑"; text-align:center;}
+*{margin:0; padding:0;}
+body{font-size:14px; font-family: Arial, Helvetica, sans-serif,"宋体";word-wrap: break-word;}
+.body_bg{ background:url(../img/bg.jpg) repeat #000; }
+ul{list-style:none;}
+img{border:none;}
+a{text-decoration:none;color:#000;}
+a:hover{ color:#F00;}
+
+.left{float:left;}
+.right{float:right;}
+
+.clear{clear:both;}
+.clearfix:after{ content:"."; display:block; clear:both; height:0; overflow:hidden;zoom:1;}
+
+
+.imgleft{float:left; margin:3px 0 0 12px;}
+
+.clear{clear:both;}
+.clearfix:after{ content:"."; display:block; clear:both; height:0; overflow:hidden;zoom:1;}
+.menu_top{width:960px; margin:0px auto; }
+.wrapper{width:960px; margin:0 auto; overflow:hidden;background-color:#FFF;}
+
+
+/*footer*/
+.footer{line-height:54px; width:960px; padding: 12px auto;}
+.footer a{color:#000;}
+.footer p{color:#000;}
+.copyright{ float:left; width:680px; color:#000; padding-left:15px;}
+.footer-logo{ float:right; width:255px; color:#000;}

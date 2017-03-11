@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <php>
+    $second=sp_get_term($term['parent']);
+    </php>
+    <meta charset="UTF-8">
+	<title>{$post_title}－{$term.name}－{$second['name']}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$post_title}">
+	<meta name="description" content="{$post_excerpt}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+    <link href="__TMPL__Public/css/menu.css"  rel="stylesheet" type="text/css" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/article.css"/>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+</head>
+<body>
+
+	<include file="Public:header" />
+<div class="wrapper m1">
+		<php>
+            $tl=sp_getslide('article_tl');
+        </php>
+        <for start="0" end="1" name="i" >
+            <a href="{$tl[$i]['slide_url']}">
+            <img onerror="nofind();" src="/data/upload/{$tl[$i]['slide_pic']}" alt="{$tl[$i]['slide_name']}" width="755" height="92">
+            </a>
+        </for>
+        
+		<php>
+            $tr=sp_getslide('article_tr');
+        </php>
+        <for start="0" end="1" name="i" >
+            <a href="{$tr[$i]['slide_url']}">
+            <img onerror="nofind();" src="/data/upload/{$tr[$i]['slide_pic']}" alt="{$tr[$i]['slide_name']}" width="204" height="92">
+            </a>
+        </for>
+</div>
+<div class="wrapper m2">
+	<div class="m2left">
+    	<div><a href="__ROOT__/">首页</a> －
+        <a href="{:u('list/index',array('id'=>$term['parent']))}">{$second['name']}</a> －
+        <a href="{:u('list/index',array('id'=>$term['term_id']))}">{$term.name}</a> －
+        <a href="{:U('article/index',array('id'=>$_GET['id']))}">{$post_title}</a></div>
+        <div class="biaoti">{$post_title}</div>
+        <div class="biaotixia">发布时间:{$post_date}</div>
+        <div class="zhengwen">
+            <p class="duanluo">{$post_content}</p><br>
+                <p style="float:right; margin:10px 0">
+                <a href="#" onClick=window.print()>【打印】</a>
+                <span>责任编辑:</span><span class="bold">{$user_nicename}</span>
+                </p>
+        </div>
+        <div style="width:555px; text-align:center; margin:0 auto; line-height:20px">
+                <b>注：本文转载自{$post_keywords}，转载目的在于传递更多信息，并不代表本网赞同其观点和对其真实性负责。如有侵权行为，请联系我们，我们会及时删除。</b>
+        </div>
+        <div class="xiangguan">
+        	<div class="xiangguantit"><a href="#2">&gt;&nbsp;最新相关专题</a></div>
+            <ul>
+                        <php>
+                        $tag='cid:'.$term["term_id"].';field:tid,post_title;limit:10;order:post_date desc';
+                        $correlation=sp_sql_posts($tag); 
+                        </php>
+                        <foreach name="correlation" item="member">
+                        	<li><a  href="{:U('article/index',array('id'=>$member['tid']))}">{$member.post_title}</a></li>
+                        </foreach>
+        </ul></div>
+            <table class="table1" width="654" height="125" border="0">
+              <tr class="tr1">
+                <td class="td1" colspan="2" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=productinfo&id=23">全平扒炉GH-250</a></td>
+                <td class="td2"  rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=787">金冠食品有限公司</a></td>
+                <td class="td3" ><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=786">北京华鹏食品有限公司</a></td>
+                <td class="td4" ><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=784">河北宏望食品有限公司</a></td>
+                <td class="td5"  rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=782">北京王致和食品集团有限公司</a></td>
+              </tr>
+              <tr class="tr2">
+                <td class="td1" colspan="2" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=781">北京二商龙和食品有限公司</a></td>
+              </tr>
+              <tr class="tr3">
+                <td class="td1" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=804">河北圣诺建材加工有限公司</a></td>
+                <td class="td2" colspan="2" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=753">康菲实业集团</a></td>
+                <td class="td3"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=725">中国化学工程集团公司</a></td>
+              </tr>
+              <tr class="tr4">
+                <td class="td1" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=803">中冶置业有限责任公司</a></td>
+                <td class="td2" colspan="2" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=550">道达尔公司</a></td>
+              </tr>
+              <tr class="tr5">
+                <td class="td1"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=771">红蜻蜓</a></td>
+                <td class="td2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=772">万仟堂</a></td>
+                <td class="td3"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=774">宇平工艺品制造</a></td>
+              </tr>
+            </table>
+        <table class="table2" width="654" height="87" border="0">
+          <tr class="tr1">
+            <td class="td1"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=750">天长市双丰文化用品有限公司</a></td>
+            <td class="td2" colspan="2" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=749">北京博通创嘉网络科技有限公司</a></td>
+            <td class="td3"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=748">上海帕弗洛文化用品有限公司</a></td>
+            <td class="td4"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=746">上海伊和诺文化用品有限公司</a></td>
+            <td class="td5" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=745">广州市和鑫文化用品有限公司</a></td>
+          </tr>
+          <tr class="tr2">
+            <td class="td1" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=789">科大讯飞股份有限公司</a></td>
+            <td class="td2" colspan="2" rowspan="2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=785">深圳波粒科技股份有限公司</a></td>
+          </tr>
+          <tr class="tr3">
+            <td class="td1"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=767">逸阳</a></td>
+            <td class="td2"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=780">方兴地产（中国）有限公司</a></td>
+            <td class="td3"><a href="http://sc.ibtv.cc/index.php?g=shop&m=memberprod&a=memberinfo&id=769">月光石</a></td>
+          </tr>
+        </table>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<div class="m2right">
+  <div class="m2right1">
+      <h2>实时新讯</h2>
+      <ul>
+       <php>
+        $tag='field:tid,post_title;limit:11;order:post_date desc';
+        $time_new=sp_sql_posts($tag); 
+        </php>
+        <foreach name="time_new" item="new">
+            <li><a  href="{:U('article/index',array('id'=>$new['tid']))}">{$new.post_title}</a></li>
+        </foreach>
+      </ul>
+  </div>
+      	<php>
+            $rt=sp_getslide('article_rt');
+        </php>
+        <for start="0" end="1" name="i" >
+            <div class="m2right2">
+            <a href="{$rt[$i]['slide_url']}">
+            <img onerror="nofind();" src="/data/upload/{$rt[$i]['slide_pic']}" alt="{$rt[$i]['slide_name']}" width="269" height="240">
+            </a>
+            </div> 
+        </for>
+        <for start="1" end="2" name="i" >
+            <div class="m2right3">
+            <a href="{$rt[$i]['slide_url']}">
+            <img onerror="nofind();" src="/data/upload/{$rt[$i]['slide_pic']}" alt="{$rt[$i]['slide_name']}" width="269" height="120">
+            </a>
+            </div>
+        </for>
+        <for start="2" end="3" name="i" >
+            <div class="m2right2">
+            <a href="{$rt[$i]['slide_url']}">
+            <img onerror="nofind();" src="/data/upload/{$rt[$i]['slide_pic']}" alt="{$rt[$i]['slide_name']}" width="269" height="180">
+            </a>
+            </div>
+        </for>
+  <div class="m2right4">
+      <div class="m2right4tit">
+          <div class="tu">热门图片</div>
+          <div class="more">更多<span>&nbsp;&gt;</span></div>
+      </div>
+      <div class="m2right4main">
+      
+		<php>
+            $rc=sp_getslide('article_rc');
+        </php>
+        <for start="0" end="4" name="i" >
+            <dl><dt>
+            <img onerror="nofind();" src="/data/upload/{$rc[$i]['slide_pic']}" alt="{$rc[$i]['slide_name']}" width="126" height="102">
+            </dt><dd>{$rc[$i]['slide_name']}</dd></dl>
+        </for>
+      </div>
+  </div>
+  <div class="m2right5">
+  		<php>
+            $rd=sp_getslide('article_rd');
+        </php>
+        <for start="0" end="1" name="i" >
+            <a class="pic{$i}" href="{$rd[$i]['slide_url']}">
+            <img onerror="nofind();" src="/data/upload/{$rd[$i]['slide_pic']}" alt="{$rd[$i]['slide_name']}" width="268" height="177">
+            </a>
+        </for>
+        <for start="1" end="2" name="i" >
+            <a class="pic{$i}" href="{$rd[$i]['slide_url']}">
+            <img onerror="nofind();" src="/data/upload/{$rd[$i]['slide_pic']}" alt="{$rd[$i]['slide_name']}" width="268" height="190">
+            </a>
+        </for>
+  </div>
+</div>
+
+  <include file="Public:footer" />
+</div>
+
+
+</body>
+</html>

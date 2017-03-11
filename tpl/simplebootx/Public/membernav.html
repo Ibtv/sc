@@ -1,0 +1,71 @@
+<!-- header -->
+	<div id="header_1">
+    	<!-- top -->
+        <div id="top">
+        	<a href="__ROOT__/"><div class="logo"></div></a>
+            <div id="search_results">
+            	<div id="search">
+                  <form action='search' method='post'>
+                    <div id="search_output">
+            <select name='type' class="sel_1" >
+
+                <option value='0'>产品</option>
+
+                <option value='1'>会员</option>
+
+            </select>  
+                    </div>  
+                    <div id="searchInput">                        
+                	<input name="sear" type="text" placeholder="input" maxlength=16  required class="txt_1"id="txt_1"/>
+                    
+                    <input type="submit" value="搜索" class="btn_1" />
+                    </div>
+                    
+                </form>
+                </div>
+                <dl class="keyword">
+                	<dt>热门搜索：</dt>
+                    <dd><a href="#">国际商务电视</a></dd>
+                    <dd><a href="#">香港国际投资招商</a></dd>
+                </dl>
+            </div>
+            <if condition="sp_is_user_login()">
+            <div id="msg" style="width:30px; height:30px;margin-top:5px;">
+	            <if condition="empty($user['avatar'])">
+	            <img  onerror="nofind();" src="__TMPL__/Public/images/headicon.png" width="30" height="30"/>
+	            <else/>
+	            <img  onerror="nofind();" src="{:sp_get_user_avatar_url($user['avatar'])}" width="30" height="30"/>
+	        </if>
+            </div>
+            <div id="msg">
+	            <p>{$user.user_nicename}</p>
+	               <p><a href="{:u('user/center/index')}">会员中心</a></p>
+	               <p><a href="{:u('user/index/logout')}">退出</a></p>
+	            </ul>
+             </div>
+	        <else/>
+            <div id="msg">
+            	<p><a href="{:u('user/login/index')}">登录</a></p>
+                <p><a href="{:u('user/login/forgot_password')}">忘记密码</p></a>
+                </div>
+	        </if>
+            
+        </div>
+        <!-- //top -->
+    </div>
+    <!-- //header -->
+    <!-- nav -->
+    <div id="nav_1">
+    	<div id="navigation">
+        	<div id="subnavtop">所有分类</div>
+            <ul class="subnavleft">
+            	<li><a href="index.html">商城首页</a></li> 
+                <li><a href="member.html">所有会员</a></li> 
+                <li><a href="product.html">所有产品</a></li> 
+                <li><a href="activity.html">所有活动</a></li> 
+                <li style="background:none;"><a href="info.html">所有信息</a></li>    
+            </ul>
+            <div id="service">电话：+86010-8766 5033</div>
+        </div>
+    </div>
+    <!-- //nav -->

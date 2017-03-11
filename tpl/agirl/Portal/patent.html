@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/funds.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.cxscroll.js"></script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+</head>
+
+<body>
+<div class=" wrapper">
+	<ul class="nav">
+	<li><a href="{:u('list/index',array('id'=>57))}"> 资讯</a></li>
+	<li><a href="{:u('list/index',array('id'=>58))}"> 政策</a></li>
+	<li><a href="{:u('list/index',array('id'=>59))}"> 维权</a></li>
+	<li><a href="{:u('list/index',array('id'=>60))}"> 指南</a></li>
+        <li><a href="{:u('list/index',array('id'=>61))}"> 推荐</a></li>
+                <li style="float:right"><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+                <li style="float:right"><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+    </ul>
+                
+    </div>
+    <div class="guanggao">
+     <php>
+        $funds_t=sp_getslide('patent_t');
+        </php>
+        <foreach name="funds_t" item="t"><php>break;</php></foreach>
+            <a href="{$t.slide_url}"  title="{$t.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$t.slide_pic}" alt="{$t.slide_name}" width="960" height="100"/>
+            </a>
+    </div>
+</div>
+<div class=" wrapper">
+	 <div class="leftSide left">
+     
+           <p class="title"> 专利新讯</p>
+        <div class="title1">
+           <php>
+        $interview_zsg=sp_sql_posts('cid:57,58,59;field:tid,post_title,post_excerpt,smeta;limit:3;order:post_date desc');
+        $a = 0;
+        </php>
+        <foreach name="interview_zsg" item="zsg">
+        <php>
+        $a++;
+        $smeta=json_decode($zsg['smeta'],true);
+        if($a == 1)
+        {
+        </php>
+        	<div class="grds">
+              <dl>
+            	<dt><a href="{:U('article/index',array('id'=>$zsg['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+            </dl>
+              <div class="titleRight">
+            	<p><a href="{:U('article/index',array('id'=>$zsg['tid']))}">{$zsg.post_title}</a></p>
+                <div><a href="{:U('article/index',array('id'=>$zsg['tid']))}">{$zsg.post_excerpt}</a></div>
+            </div>
+            </div>
+        <php>
+        }
+        if($a > 1){
+        </php>
+            <div class="title2">
+            	<span class="one"><a href="{:U('article/index',array('id'=>$zsg['tid']))}">{$zsg.post_title}</a></span>
+                <div class="img2"><a href="{:U('article/index',array('id'=>$zsg['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="290" height="123"/></a></div>
+                <div class="titleRight1">
+                <div class="si"><a href="{:U('article/index',array('id'=>$zsg['tid']))}">{$zsg.post_excerpt}</a></div>
+            </div>
+            </div>
+        <php>
+        }
+        </php>
+        </foreach>
+        </div>
+        <div class="title1">
+           <php>
+        $interview_pgx=sp_sql_posts('cid:60,61;field:tid,post_title,post_excerpt,smeta;limit:3;order:post_date desc');
+        $a = 0;
+        </php>
+        <foreach name="interview_pgx" item="pgx">
+        <php>
+        $a++;
+        $smeta=json_decode($pgx['smeta'],true);
+        if($a == 1)
+        {
+        </php>
+        	<div class="grds">
+              <dl>
+            	<dt><a href="{:U('article/index',array('id'=>$pgx['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+            </dl>
+              <div class="titleRight">
+            	<p><a href="{:U('article/index',array('id'=>$pgx['tid']))}">{$pgx.post_title}</a></p>
+                <div><a href="{:U('article/index',array('id'=>$pgx['tid']))}">{$pgx.post_excerpt}</a></div>
+            </div>
+            </div>
+        <php>
+        }
+        if($a > 1){
+        </php>
+            <div class="title2">
+            	<span class="one"><a href="{:U('article/index',array('id'=>$pgx['tid']))}">{$pgx.post_title}</a></span>
+                <div class="img2"><a href="{:U('article/index',array('id'=>$pgx['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="290" height="123"/></a></div>
+                <div class="titleRight1">
+                <div class="si"><a href="{:U('article/index',array('id'=>$pgx['tid']))}">{$pgx.post_excerpt}</a></div>
+            </div>
+            </div>
+        <php>
+        }
+        </php>
+        </foreach>
+        </div>
+        <div class="wrap">
+              <div id="pic_list_1" class="scroll_horizontal">
+                  <div class="box">
+                      <ul class="list">
+                             <php>
+        $funds_zgw=sp_sql_posts('cid:57,59,61;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="funds_zgw" item="zgw">
+        <php>
+        $smeta=json_decode($zgw['smeta'],true);
+        </php>
+        
+                          <li>
+                              <dl>
+                                  <dt><a href="{:U('article/index',array('id'=>$zgw['tid']))}">
+                                  <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" height="69" width="53"></a></dt>
+                                  <dd><a href="{:U('article/index',array('id'=>$zgw['tid']))}">{$zgw.post_title}</a></dd>
+                              </dl>
+                          </li>
+        </foreach>
+                      </ul>
+                  </div>
+                  <div class="plus"></div>
+                  <div class="minus"></div>
+                  
+              </div>
+          </div>
+         <div class="dasg">
+          <div class="left tyle">
+          
+        <php>
+        $funds_zx=sp_sql_posts('cid:57;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="funds_zx" item="zx"></foreach>
+        <php>
+        $smeta=json_decode($zx['smeta'],true);
+        </php>
+        <div class="title3">
+              <span class="span1"><a href="{:U('article/index',array('id'=>$zx['tid']))}">{$zx.post_title}</a></span>
+              <div class="dfty">
+                  <a href="{:U('article/index',array('id'=>$zx['tid']))}">
+                  <img onerror="nofind();" class="right" src="{$site_host}data/upload/{$smeta.thumb}" /></a>
+                <div>
+                  <P class="p1">
+                  <a href="{:U('article/index',array('id'=>$zx['tid']))}">{$zx.post_excerpt}</a>
+                  </P>
+                </div>
+                
+              </div>
+          </div>
+        <php>
+        $funds_smjj=sp_sql_posts('cid:58;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="funds_smjj" item="smjj"></foreach>
+        <php>
+        $smeta=json_decode($smjj['smeta'],true);
+        </php>
+        <div class="title3">
+              <span class="span1"><a href="{:U('article/index',array('id'=>$smjj['tid']))}">{$smjj.post_title}</a></span>
+              <div class="dfty"><a href="{:U('article/index',array('id'=>$smjj['tid']))}">
+                  <img onerror="nofind();" class="right" src="{$site_host}data/upload/{$smeta.thumb}" /></a>
+                <div>
+                  <P class="p1">
+                  <a href="{:U('article/index',array('id'=>$smjj['tid']))}">{$smjj.post_excerpt}</a>
+                  </P>
+                </div>
+                
+              </div>
+          </div>
+          
+        <php>
+        $funds_gmjj=sp_sql_posts('cid:59;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="funds_gmjj" item="gmjj"></foreach>
+        <php>
+        $smeta=json_decode($gmjj['smeta'],true);
+        </php>
+        <div class="title3">
+              <span class="span1"><a href="{:U('article/index',array('id'=>$gmjj['tid']))}">{$gmjj.post_title}</a></span>
+              <div class="dfty"><a href="{:U('article/index',array('id'=>$gmjj['tid']))}">
+                  <img onerror="nofind();" class="right" src="{$site_host}data/upload/{$smeta.thumb}" /></a>
+                <div>
+                  <P class="p1">
+                  <a href="{:U('article/index',array('id'=>$gmjj['tid']))}">{$gmjj.post_excerpt}</a>
+                  </P>
+                </div>
+                
+              </div>
+          </div>
+        </div>
+           
+         </div>
+          <div>
+          <div class="wrap" style="overflow:hidden ; float:left;">
+              <div id="pic_list_2" class="scroll_horizontal">
+                  <div class="box">
+                      <ul class="list">
+        <php>
+        $funds_spx=sp_sql_posts('cid:58,60;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+        </php>
+        <foreach name="funds_spx" item="spx">
+        <php>
+        $smeta=json_decode($spx['smeta'],true);
+        </php>
+        
+                          <li>
+                              <dl>
+                                  <dt><a href="{:U('article/index',array('id'=>$spx['tid']))}">
+                                  <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" height="69" width="53"></a></dt>
+                                  <dd><a href="{:U('article/index',array('id'=>$spx['tid']))}">{$spx.post_title}</a></dd>
+                              </dl>
+                          </li>
+        </foreach>
+                      </ul>
+                  </div>
+                  <div class="plus"></div>
+                  <div class="minus"></div>
+                  
+              </div>
+          </div>
+          <div class="dasg left">
+            <div class="left tyle">
+                  <php>
+        $funds_pm=sp_sql_posts('cid:60;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="funds_pm" item="pm"></foreach>
+        <php>
+        $smeta=json_decode($pm['smeta'],true);
+        </php>
+        <div class="title3">
+              <span class="span1"><a href="{:U('article/index',array('id'=>$pm['tid']))}">{$pm.post_title}</a></span>
+              <div class="dfty"><a href="{:U('article/index',array('id'=>$pm['tid']))}">
+                  <img onerror="nofind();" class="right" src="{$site_host}data/upload/{$smeta.thumb}" /></a>
+                <div>
+                  <P class="p1">
+                  <a href="{:U('article/index',array('id'=>$pm['tid']))}">{$pm.post_excerpt}</a>
+                  </P>
+                </div>
+                
+              </div>
+          </div>
+                  <php>
+        $funds_gswd=sp_sql_posts('cid:61;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="funds_gswd" item="gswd"></foreach>
+        <php>
+        $smeta=json_decode($gswd['smeta'],true);
+        </php>
+        <div class="title3">
+              <span class="span1"><a href="{:U('article/index',array('id'=>$gswd['tid']))}">{$gswd.post_title}</a></span>
+              <div class="dfty"><a href="{:U('article/index',array('id'=>$gswd['tid']))}">
+                  <img onerror="nofind();" class="right" src="{$site_host}data/upload/{$smeta.thumb}" /></a>
+                <div>
+                  <P class="p1">
+                  <a href="{:U('article/index',array('id'=>$gswd['tid']))}">{$gswd.post_excerpt}</a>
+                  </P>
+                </div>
+                
+              </div>
+          </div>
+                  <php>
+        $funds_xjfa=sp_sql_posts('cid:58;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+        </php>
+        <foreach name="funds_xjfa" item="xjfa"></foreach>
+        <php>
+        $smeta=json_decode($xjfa['smeta'],true);
+        </php>
+        <div class="title3">
+              <span class="span1"><a href="{:U('article/index',array('id'=>$xjfa['tid']))}">{$xjfa.post_title}</a></span>
+              <div class="dfty"><a href="{:U('article/index',array('id'=>$xjfa['tid']))}">
+                  <img onerror="nofind();" class="right" src="{$site_host}data/upload/{$smeta.thumb}" /></a>
+                <div>
+                  <P class="p1">
+                  <a href="{:U('article/index',array('id'=>$xjfa['tid']))}">{$xjfa.post_excerpt}</a>
+                  </P>
+                </div>
+                
+              </div>
+          </div>
+        </div>
+            
+          </div>
+        </div>
+       
+    </div>
+   <div class="rightside">
+   		
+        <div class="guanggao2">
+        <php>
+        $funds_rt=sp_getslide('patent_rt');
+        </php>
+        <foreach name="funds_rt" item="rt"><php>break;</php></foreach>
+            <a href="{$rt.slide_url}"  title="{$rt.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$rt.slide_pic}" alt="{$rt.slide_name}"/>
+            </a>
+        </div>
+        <div class="news">
+        <p></p>
+            <ul>
+            <php>
+        $funds_xps=sp_sql_posts('cid:60,58;field:tid,post_title;limit:20;order:post_date desc');
+        </php>
+        <foreach name="funds_xps" item="xps">
+                <li><a href="{:U('article/index',array('id'=>$xps['tid']))}">{$xps.post_title}</a></li>
+        </foreach>
+            </ul>
+        </div>
+<div class="guanggao3">
+        <php>
+        $funds_rc=sp_getslide('patent_rc');
+        </php>
+        <foreach name="funds_rc" item="rc"><php>break;</php></foreach>
+            <a href="{$rc.slide_url}"  title="{$rc.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$rc.slide_pic}" alt="{$rc.slide_name}"/>
+            </a>
+</div>
+        <div class="news">
+        <p></p>
+            <ul>
+        <php>
+        $funds_gmz=sp_sql_posts('cid:61,59,57;field:tid,post_title;limit:20;order:post_date desc');
+        </php>
+        <foreach name="funds_gmz" item="gmz">
+                <li><a href="{:U('article/index',array('id'=>$gmz['tid']))}">{$gmz.post_title}</a></li>
+        </foreach>
+            </ul>
+        </div>
+        <div class="news news_y">
+        <php>
+        $funds_all=sp_sql_posts('cid:57,58,59,60,61;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+        </php>
+        <foreach name="funds_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+            <ul class="haibao ">
+            	<li><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_title}</a></li>
+                <li><a href="{:U('article/index',array('id'=>$all['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="134" height="188"></a></li>
+                <li><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_excerpt}</a></li>
+                <p>&nbsp;</p>
+            </ul>
+        </foreach>
+        </div>
+        
+        
+        
+        
+        <div class="guanggao3">
+                <php>
+        $funds_rd=sp_getslide('patent_rd');
+        </php>
+        <foreach name="funds_rd" item="rd"><php>break;</php></foreach>
+            <a href="{$rd.slide_url}"  title="{$rd.slide_content}">
+                <img  onerror="nofind();" src="/data/upload/{$rd.slide_pic}" alt="{$rd.slide_name}"/>
+            </a>
+        </div>
+        
+   </div>
+    
+</div>
+
+
+    <include file="Public:footer" />
+
+
+
+<script>
+$("#pic_list_1").cxScroll();
+$("#pic_list_2").cxScroll({direction:"left",step:1});
+$("#pic_list_3").cxScroll({direction:"bottom",speed:500,time:1500,plus:false,minus:false});
+$("#pic_list_4").cxScroll({direction:"top",auto:false});
+
+$(function(){
+	$("#menu>span:first").addClass("se");
+	$("#content>div:not(:first)").hide();
+	$("#menu>span").click(function(){
+		$("#content").children(":eq("+$(this).index()+")").show().siblings().hide();
+		$(this).addClass().addClass("se").siblings().removeClass("se")
+	});
+	$(".nav>li:first").addClass("se");
+	$(".nav2>ul:not(:first)").hide();
+	$(".nav>li").click(function(){
+		$(".nav2").children(":eq("+$(this).index()+")").show().siblings().hide();
+		$(this).addClass().addClass("se").siblings().removeClass("se")
+	});
+})
+</script>
+
+</body>
+</html>

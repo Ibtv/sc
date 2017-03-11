@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<php>
+$this_parent = sp_get_term($cat_id);
+$second=sp_get_term($this_parent[parent]);
+</php>
+	<title>{$name}┊{$second['name']}┊{$site_name}</title>
+	<meta name="keywords" content="{$term.name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+    <include file="Public:css" />
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+	<include file="Public:header" />
+    <div class="slice bg-3 section">
+        <div class="w-section inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-listings">
+                        <div class="list-art">
+                        	<php>
+                        		$lists = sp_sql_posts_paged("cid:$cat_id;order:post_date desc");
+                        	</php>
+                            <volist name="lists['posts']" id="list">
+                        	<php>
+                        		$smeta = "__TMPL__Public/images/no-img.jpg";
+                        		if(!empty($list['smeta'])){
+                        			$arr = json_decode($list['smeta'], true);
+                        			$smeta = $arr['thumb'] ?  __UPLOAD__.$arr['thumb']  : $smeta;
+                        		} 
+                        	</php>
+                             <li>
+                                <div class="listing-image">
+                                    <img onerror="nofind();" src="{$smeta}"  width="168" height="150" >
+                                </div>
+                                <div class="listing-body">
+                                    <h3><a href="{:U('article/index',array('id'=>$list['tid']))}">{$list.post_title}</a></h3>
+                                    <h4>{:date("Y-m-d",strtotime($list['post_date']))}</h4>
+                                    <p>
+                                    {$list.post_excerpt}
+                                    </p>
+                                </div>
+                                <div class="listing-actions">
+                                    
+                                    <a href="{:U('article/index',array('id'=>$list['tid']))}" class="btn btn-two">阅读详细</a>
+                                </div>
+                            </li>
+                            </volist>
+                            </div>
+                        <div style="width:265px; height:auto; float:right">
+                        <div>
+						<php>
+                        $rt=sp_getslide('list_rt');
+                        </php>
+                            <for start="0" end="2" name="i" >
+                                <img onerror="nofind();" src="/data/upload/{$rt[$i]['slide_pic']}" alt="{$rt[$i]['slide_name']}" width="265" height="100"/>
+                            </for>
+                        </div>
+                    	<div>
+						<php>
+                        $rc=sp_getslide('list_rc');
+                        </php>
+                            <for start="0" end="2" name="i" >
+                                <img onerror="nofind();" src="/data/upload/{$rc[$i]['slide_pic']}" alt="{$rc[$i]['slide_name']}" width="265" height="200">
+                            </for>
+                        </div>
+                    	<div>
+
+						<php>
+                        $rd=sp_getslide('list_rd');
+                        </php>
+                        <for start="0" end="2" name="i" >
+                        <img onerror="nofind();" src="/data/upload/{$rd[$i]['slide_pic']}" alt="{$rd[$i]['slide_name']}" width="265" height="200">
+                        </for>
+        
+                        </div>
+                    </div>
+                        </ul> 
+                    </div>
+                </div>
+                
+                        <ul class="pagination" style=" text-align:center">{$lists['page']}</ul>
+            </div>
+        </div>
+    </div>
+    
+    <include file="Public:footer" />
+</div>
+    
+<!-- JavaScript -->
+<include file="Public:scripts" />
+
+</body>
+</html>

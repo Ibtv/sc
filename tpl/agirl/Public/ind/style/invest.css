@@ -1,0 +1,157 @@
+/* CSS Document */
+
+.bg{ background:#231f20; height:48px; line-height:48px;}
+.nav{ background-color:#231f20; overflow:hidden;}
+.nav ul{ overflow:hidden; float:left;}
+.nav ul.ul2{ overflow:hidden; float:right;}
+.nav ul li{ float:left; color:#FFF;}
+.nav ul li a{ color:#FFF;}
+.nav ul li.spe{ padding:0 20px;}
+.nav input{ float:right;width:200px; height:21px; margin-top:15px; background:url(../invest/sousuo.jpg) no-repeat; background-color:#FFF; margin-right:8px; border:none;}
+
+
+
+.gg{ text-align:center; height:90px; overflow:hidden; margin-top:10PX;}
+.gg a img{ width:787px; height:72px;}
+.L{ width:710px;}
+.L1{ border-bottom:#CCC 1px solid;  padding-bottom:2px; height:500px; overflow:hidden;}
+.L1 h1{ font-size:30px; height:30px; line-height:30px; overflow:hidden;}
+.L1 h1 a{ color:#000;}
+.L1 p{ text-indent:2em; line-height:20px;padding-top:10px; padding-bottom:5px; height:95px; overflow:hidden;}
+.L11{ overflow:hidden;}
+.L11pic{ float:left;}
+.L11pictit{ width:455px; text-indent:20px; height:30px; line-height:30px; overflow:hidden; font-size:16px; font-weight:bold; padding-bottom:5px;}
+
+.L11picshipin img{ width:455px; height:350px;}
+.L11 ul{ width:235px; float:right;  overflow:hidden;}
+.L11 ul li{ border-bottom:#CCC 1px solid; padding:8px 0; line-height:26px; overflow:hidden; height:47px;}
+.L11 ul li.zuihou{ border:none;}
+.L11 ul li a{ color:#000;}
+
+
+
+
+.L2{ padding-top:10px; overflow:hidden;}
+.L2 dl{ width:236px; overflow:hidden; float:left;}
+.L2 dl dd a{ color:#000;}
+.L2 dl dd{ height:60px; line-height:20px; overflow:hidden; padding:0 16px;}
+.L2 dl dt{ margin:5px 0;}
+
+
+.L3{ height:760px; border:1px solid #ffc000; background:#f2f2f2; margin-top:10px;}
+.L3tit{ width:688px; height:50px; background:#ffc000; line-height:50px; padding-left:20px; color:#fff; font-size:18px;}
+.L31{width:310px; border-right:#EAEAEA 2px solid; overflow:hidden; background:#FFF; height:709PX; padding:0 20px; line-height:20px; float:left;}
+.L31 ul li{height:40px; overflow:hidden; line-height:20px;}
+.L31 ul li a{ color:#F00;}
+.L31 ul li.biao{ margin-top:4px;}
+.L31 ul li.more{border-bottom:1px solid #CCC; height:20px; line-height:20px; padding-bottom:4px;}
+.L31 dl{ overflow:hidden;}
+.L31 dl dt{ float:left; margin-top:20px;}
+.L31 dl dt a img{ width:179px; height:246px;}
+.L31 dl dd{ float:left; width:130px; text-indent:2em; padding-top:20px; background:url(../img/tu4.jpg) no-repeat 0 9px; height:250px; line-height:25px; overflow:hidden;}
+.L31 dl dd a{ color:#000;}
+.L32{ width:356px; float:left; overflow:hidden;}
+.div1{ margin:20px 20px 0 20px;}
+.div1 a img{ width:310px; height:398px;}
+.L32 ul{ overflow:hidden;}
+.L32 ul li{ height:30px; line-height:30px;border-bottom:1px solid #CCC; overflow:hidden; text-align:center;}
+.L32 ul li a{ color:#000;}
+.div2{ margin:19px;}
+.div2 a img{ width:321px; height:125px;}
+
+
+.L4{ overflow:hidden; margin-top:6px;}
+.L4tit{ height:40px; line-height:40px; font-size:20px; font-weight:bold; text-indent:20px;}
+.L4mian{ overflow:hidden; height:270px;}
+.L4mianl{ width:351px; float:left;}
+.L4mianl dl{ overflow:hidden;}
+.L4mianl dl dt{ overflow:hidden;}
+.L4mianl dl dt a img{ width:351px; height:270px; margin-bottom:5px;}
+.L4mianl dl dd{ height:25px; line-height:25px; overflow:hidden; font-weight:bold; font-size:16px;}
+
+
+.L4mianr{ width:359px; float:left;  overflow:hidden;}
+.L4mianr ul{ margin:0 10px;}
+.L4mianr ul li{ line-height:30px; overflow:hidden;padding:0 0 10px; height:235px; margin-top:20px;}
+.L4mianr ul li.zuihou{ border:none;}
+.L4mianr ul li a{ color:#000;}
+
+
+
+.R{ width:240px; float:left; padding-left:10px;}
+.R1{ overflow:hidden;}
+.R1tit{ font-weight:bold; color:#c40a11; font-size:16px; height:25px; line-height:25px; overflow:hidden; border-top:1px solid #c40a11; padding-top:6px;}
+.R3 ul li,.R1 ul li{ height:30px; line-height:30px; overflow:hidden; margin-bottom:10px;}
+.R3 ul li span,.R1 ul li span{ color:#b4b4b4; padding-right:10px; font-size:14px;}
+.R3 ul li a,.R1 ul li a{ color:#000;}
+
+.R2{ margin-top:10px;}
+.R2 a img{ width:237px; height:317px;}
+
+.R1tit1{ color:#cfb413; border-top:1px solid #cfb413;}
+
+.R1tit2{color:#616161; border-top:1px solid #616161; margin-top:14px;}
+.zhu{ overflow:hidden; height:270px;}
+.zhu dl{ overflow:hidden;}
+.zhu dl dt{ overflow:hidden; margin-top:10px;}
+.zhu dl dt a img{ width:236px; height:140px;}
+.zhu dl dd.dd1{ height:20px; line-height:20px; font-weight:bold; overflow:hidden; text-align:center;}
+.zhu dl dd.dd2{ height:50px; line-height:25px; overflow:hidden; margin-top:5px;}
+.zhu dl dd a{ color:#000;}
+.zhu .anniu{ overflow:hidden; padding-left:60px; margin-top:10px;}
+.zhu .anniu a img{ width:117px; height:29px;}
+
+.m2{ overflow:hidden; margin-top:5px; margin-bottom:5px;}
+.m2 a img{ width:960px; height:142px;}
+
+.m3{ overflow:hidden;}
+
+.m3l{ width:710px; overflow:hidden; float:left;}
+.guang{ overflow:hidden; margin-top:10px; margin-bottom:10px;}
+.guang img a{ width:710px; height:186px;}
+
+.datu{ overflow:hidden;}
+.datunei{ background:#262626; height:810px; margin-bottom:10px;}
+.datunei img{ display:block;}
+.datunei dl.dl1{ overflow:hidden;}
+.datunei dl.dl1 dt a img{ width:710px; height:473px;}
+.datunei dl.dl1 dd{ color:#d5d2cf; height:50px; line-height:50px; width:500px; overflow:hidden; font-size:18px; font-weight:bold;}
+.datunei .xia{ overflow:hidden;}
+.datunei .xia dl{ float:left;}
+.datunei .xia dl dt{ overflow:hidden;}
+.datunei .xia dl dt a img{ width:355px; height:237px;}
+.datunei .xia dl dd{ height:50px; line-height:50px; width:300px; overflow:hidden; color:#d5d2cf; font-weight:bold; font-size:18px;}
+
+
+.datuzi{ width:710px; overflow:hidden;}
+.datuzimain{ width:710px; overflow:hidden;}
+.datuzimain dl{ width:350px; overflow:hidden; float:left; margin:5px auto;}
+.datuzimain dl.jian{ margin-top:10px;}
+.datuzimain dl.jian1{ margin-right:10px;}
+.datuzimain dl dt{ float:left;}
+.datuzimain dl dt a img{ width:150px; height:140px;}
+.datuzimain dl dd{ text-indent:2em;float:left;width:180px; height:20px; line-height:20px; overflow:hidden;}
+
+.m3r{ width:240px; padding-left:10px; float:left; overflow:hidden;}
+.m3r1{ overflow:hidden; margin-top:7px;}
+.m3r1 a img{ width:240px; height:175px;}
+
+
+.m3r2{ overflow:hidden;}
+.m3r2 dl{ overflow:hidden; margin-top:5px;}
+.m3r2 dl dt{ float:left;}
+.m3r2 dl dt a img{ width:47px; height:62px;}
+.m3r2 dl dd{ width:160px; float:left;height:60px; line-height:20px; overflow:hidden; margin-left:10px;}
+.m3r2 dl dd a{ color:#000;}
+
+
+
+
+
+
+.m5{ height:2px; background:#000; margin-top:10px;}
+
+
+
+.m4lefttit{ background:url(../maoyiimg/m4bg.jpg) repeat-x; width:100%; margin-bottom:10px;}
+.m4lefttit .zi{ width:auto; height:30px; background:#000; color:#FFF; font-size:20px; text-align:center; line-height:30px;}

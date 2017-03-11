@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+	<title>{$name}－{$site_name}</title>
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$name},{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<link rel="icon" href="__TMPL__Public/images/ico.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/base.css"/>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/ind/style/appear.css"/>
+<script type="text/javascript" src="__TMPL__Public/ind/js/swfobject_source.js"></script>
+<script type="text/javascript" src="__TMPL__Public/ind/js/jquery.js"></script>
+
+<script type="text/javascript" src="__TMPL__Public/ind/js/gun.js"></script>
+    <script type="text/javascript" language="javascript">  
+	function nofind(){
+	var img=event.srcElement;
+	img.src="__TMPL__Public/ind/img/no-img.jpg";
+	img.onerror=null; 
+	}
+	</script>
+</head>
+
+<body>
+<div class=" wrapper logo"><a href="{$site_host}"><img src="__TMPL__Public/ind/appear/logo.jpg" alt="logo" /></a>
+
+</div>
+<div class=" wrapper top1">
+<ul class="ul1">
+	<li><a href="{:u('list/index',array('id'=>49))}">看点</a></li><li class="line">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>50))}">互联网</a></li><li class="line">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>51))}">环保</a></li><li class="line">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>52))}">人物</a></li><li class="line">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>53))}">数码</a></li><li class="line">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>54))}">创意</a></li><li class="line">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>55))}">能源</a></li><li class="line">&nbsp;</li>
+	<li><a href="{:u('list/index',array('id'=>56))}">其它</a></li>
+    </ul>
+    <img class="pic" src="__TMPL__Public/ind/appear/top1.jpg" />
+            <ul class="ul2"> 
+                <li><a class="i_01" title="国际商务电视台" href="javascript:window.external.AddFavorite('{$site_host}', '国际商务电视台')" target="_self"> 收藏本站</a></li>
+                <li>|</li>
+                <li><a id="cgjf" title="點擊以繁體中文方式瀏覽" href="javascript:StranBody()">繁體版</a></li>
+            </ul>    
+</div>
+<div class="wrapper m1">
+
+        <php>
+            $science_lt=sp_getslide('science_lt');
+        </php>
+        <foreach name="science_lt" item="lt"><php>break;</php></foreach>
+        <div class="m1left"><img  onerror="nofind();" src="/data/upload/{$lt.slide_pic}" alt="{$lt.slide_name}" width"755px" height"92px"/></div>
+        
+        <php>
+            $science_rt=sp_getslide('science_rt');
+        </php>
+        <foreach name="science_rt" item="rt"><php>break;</php></foreach>
+        <div class="m1right"><img  onerror="nofind();" src="/data/upload/{$rt.slide_pic}" alt="{$rt.slide_name}"width"204px" height"92px"/></div>
+</div>
+<div class="wrapper top3">
+	<div class="banner">
+       
+        <div style="width:453px;margin:0px auto;">
+            <div class="box-keleyi-com" id="slider-keleyi-com">
+              <ul>
+            <php>
+            $science_scnq=sp_sql_posts('cid:53,54,55,56;field:tid,post_title,smeta;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="science_scnq" item="scnq">
+                <php>
+                $smeta=json_decode($scnq['smeta'],true);
+                </php>
+                
+                            <li>
+                                    <a href="{:U('article/index',array('id'=>$scnq['tid']))}">
+                                    <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="453" height="403"/>
+                                    </a>
+                                    <p>{$scnq.post_title}</p>
+                            </li>
+            </foreach>
+             </ul>
+          </div>
+        </div>
+    </div>
+    <div class="banner1">
+    	<div class="banner11">
+    		<div class="banner11tit">看点</div>
+            <ul>
+             			<php>
+                        $science_zx=sp_sql_posts('cid:49;field:tid,post_title;limit:5;order:post_date desc');
+                        </php>
+                        <foreach name="science_zx" item="zx">
+                        <li><a href="{:U('article/index',array('id'=>$zx['tid']))}" >{$zx.post_title}</a></li>
+                        </foreach>
+            </ul>
+            <div class="more"><a href="{:u('list/index',array('id'=>49))}">更多看点>></a></div>
+        </div>
+    	<div class="banner11 banner12">
+    		<div class="banner11tit banner12tit">互联网</div>
+            <ul>
+             			<php>
+                        $science_rz=sp_sql_posts('cid:50;field:tid,post_title;limit:5;order:post_date desc');
+                        </php>
+                        <foreach name="science_rz" item="rz">
+                        <li><a href="{:U('article/index',array('id'=>$rz['tid']))}" >{$rz.post_title}</a></li>
+                        </foreach>
+            </ul>
+            <div class="more"><a href="{:u('list/index',array('id'=>50))}">更多互联网信息>></a></div>
+        </div>
+    </div>
+    <div class="banner2">
+    
+            <php>
+            $science_ssall=sp_sql_posts('cid:49,50,51,52,53,54,55,56;field:tid,post_title,smeta;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="science_ssall" item="ssall">
+                <php>
+                $smeta=json_decode($ssall['smeta'],true);
+                </php>
+                <dl>
+                	
+                	<dt><a href="{:U('article/index',array('id'=>$ssall['tid']))}">
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}" width="72" height="60"/></a></dt>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$ssall['tid']))}">{$ssall.post_title}</a></dd>
+                </dl>
+            </foreach>
+                
+    </div>
+</div>
+<div class="wrapper flash">
+<php>
+$science_c=sp_getslide('science_c');
+</php>
+<foreach name="science_c" item="c"><php>break;</php></foreach>
+<img  onerror="nofind();" src="/data/upload/{$c.slide_pic}" alt="{$c.slide_name}" width="960" height="109"/>
+</div>
+<div class="wrapper m1">
+	<div class="m1main">
+            <php>
+            $appear_mgss=sp_sql_posts('cid:51;field:tid,post_title,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_mgss" item="mgss">
+                <php>
+                $smeta=json_decode($mgss['smeta'],true);
+                </php>
+                <dl>
+                	
+                	<dt><a href="{:U('article/index',array('id'=>$mgss['tid']))}">
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$mgss['tid']))}">{$mgss.post_title}</a></dd>
+                </dl>
+            </foreach>
+            <php>
+            $appear_ygss=sp_sql_posts('cid:52;field:tid,post_title,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="appear_ygss" item="ygss">
+                <php>
+                $smeta=json_decode($ygss['smeta'],true);
+                </php>
+                <dl>
+                	
+                	<dt><a href="{:U('article/index',array('id'=>$ygss['tid']))}">
+                    <img  onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                    <dd class="dd2"><a href="{:U('article/index',array('id'=>$ygss['tid']))}">{$ygss.post_title}</a></dd>
+                </dl>
+            </foreach>
+    </div>
+
+</div>
+<div class="wrapper m2">
+	<div class="m2left">
+  		<div class="m2left1">
+        
+            <php>
+            $science_xxss=sp_sql_posts('cid:53,54;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="science_xxss" item="xxss">
+                <php>
+                $smeta=json_decode($xxss['smeta'],true);
+                </php>
+        	<dL>
+            	<dt><a href="{:U('article/index',array('id'=>$xxss['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd class="dd1"><a href="{:U('article/index',array('id'=>$xxss['tid']))}">{$xxss.post_title}</a></dd>
+                <dd class="dd2"><a href="{:U('article/index',array('id'=>$xxss['tid']))}">{$xxss.post_excerpt}</a></dd>
+            </dL>
+            </foreach>
+        </div>  
+    </div>
+	<div class="m2right">
+		<div class="m2right1">
+            <php>
+            $science_ajss=sp_sql_posts('cid:55,56;field:tid,post_title,post_excerpt,smeta;limit:6;order:post_date desc');
+            </php>
+            
+            <foreach name="science_ajss" item="ajss">
+                <php>
+                $smeta=json_decode($ajss['smeta'],true);
+                </php>
+        	<dL>
+            	<dt><a href="{:U('article/index',array('id'=>$ajss['tid']))}">
+                <img onerror="nofind();"  src="{$site_host}data/upload/{$smeta.thumb}"/></a></dt>
+                <dd class="dd1"><a href="{:U('article/index',array('id'=>$ajss['tid']))}">{$ajss.post_title}</a></dd>
+                <dd class="dd2"><a href="{:U('article/index',array('id'=>$ajss['tid']))}">{$ajss.post_excerpt}</a></dd>
+            </dL>
+            </foreach>
+        </div>
+        <div class="zhishu">
+        <div class="m2right2">
+        	<a href="#2"><img src="__TMPL__Public/ind/appear/CPI-PPI.jpg" width="375" height="292"/></a>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper flash">
+<php>
+$science_d=sp_getslide('science_d');
+</php>
+<foreach name="science_d" item="d"><php>break;</php></foreach>
+<img  onerror="nofind();" src="/data/upload/{$d.slide_pic}" alt="{$d.slide_name}"  width="960" height="109"/></div>
+<div class="wrapper m3">
+	<div id=demo style="OVERFLOW: hidden; WIDTH: 960px; align: center">
+  <table cellspacing="0" cellpadding="0" align="center" border="0">
+    <tbody>
+      <tr>
+        <td id="marquePic1" valign="top">
+		
+<table width="958" height="130" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+  
+            <php>
+            $science_all=sp_sql_posts('cid:49,50,51,52,53,54,55,56;field:tid,smeta;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="science_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <td width="95" align="center"><a href="{:U('article/index',array('id'=>$all['tid']))}" style="margin:0 10px;">
+                <img  onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="160" height="185"/></a></td>
+            </foreach>
+
+  </tr>
+  <tr>
+            <php>
+            $science_all=sp_sql_posts('cid:49,50,51,52,53,54,55,56;field:post_title;limit:9;order:post_date desc');
+            </php>
+            
+            <foreach name="science_all" item="all">
+			<td height="20"align="center"><div class="ai">{$all.post_title}</div></td>
+            </foreach>
+  </tr>
+</table>		
+		
+		</td>
+        <td id="marquePic2" valign="top"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class="wrapper m4">
+	<ul>
+            <php>
+            $science_zr=sp_sql_posts('cid:50,51;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="science_zr" item="zr">
+        	<li><a href="{:U('article/index',array('id'=>$zr['tid']))}">{$zr.post_title}</a></li>
+            </foreach>
+    </ul>
+	<ul>
+            <php>
+            $science_my=sp_sql_posts('cid:52,53;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="science_my" item="my">
+        	<li><a href="{:U('article/index',array('id'=>$my['tid']))}">{$my.post_title}</a></li>
+            </foreach>
+    </ul>
+	<ul>
+            <php>
+            $science_xx=sp_sql_posts('cid:54,55;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="science_xx" item="xx">
+        	<li><a href="{:U('article/index',array('id'=>$xx['tid']))}">{$xx.post_title}</a></li>
+            </foreach>
+    </ul>
+	<ul>
+            <php>
+            $science_aj=sp_sql_posts('cid:56,49;field:tid,post_title;limit:5;order:post_date desc');
+            </php>
+            
+            <foreach name="science_aj" item="aj">
+        	<li><a href="{:U('article/index',array('id'=>$aj['tid']))}">{$aj.post_title}</a></li>
+            </foreach>
+    </ul>
+</div>
+
+<div class="wrapper m5"></div>
+
+  <include file="Public:footer" />
+<script src="http://keleyi.com/keleyi/phtml/image/15/keleyieffect.js"></script>
+<script type="text/javascript">
+Effect.slider({
+'targetElement': 'slider-ke'+'leyi-com',
+'showMarkers': true,
+'showControls': true
+});
+</script>
+
+</body>
+</html>

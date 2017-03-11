@@ -1,0 +1,118 @@
+/* CSS Document */
+.top1{ height:37px;; line-height:37px; overflow:hidden; margin-bottom:2px;}
+
+
+.top1 .ul1{ height:37px; float:left; padding-left:70px; background:#2a3177; width:631px; }
+.top1 .ul1 li{ float:left; color:#FFF;}
+.top1 .ul1 li a{ color:#fff;}
+.top1 .ul1 li.line{ padding:0 15px; }
+.top1 .pic{ float:left;}
+.top1 .ul2{ float:left; padding-right:40px; background:#b9b9bd;width: 132px;}
+.top1 .ul2 li{ float:left; color:#FFF;}
+.top1 .ul2 li a{ color:#000; display:block; width:60px; text-align:center;}
+
+.logo{ overflow:hidden; height:138px; margin-bottom:2px;}
+
+.top2 .shijian{ width:195px; float:left; height:28px; line-height:16px; text-align:center; color:#000; display:inline; background:#b9b9bd; padding-top:10px; font-family:"微软雅黑"; font-size:14px;}
+.top2 .pic{ width:88px; float:left;}
+.nav{ height:38px; line-height:38px; overflow:hidden; background:#2a3177; padding-left:15px;}
+.nav li{ float:left; color:#FFF;}
+.nav li a{ color:#FFF; display:block; text-align:center; height:32px; width:76px;}
+/*.current1,.nav li a:hover{ background:url(../erjiyiing/current.jpg) repeat-x 0 4px; height:32px; overflow:hidden; color:#FFF;}
+*/
+
+.m1{ overflow:hidden; margin-bottom:2px; margin-top:2px; height:auto;}
+.m1left{ float:left;}
+.m1right{ float:right;}
+.m1left img{ width:755px; height:92px;}
+.m1right img{ width:204px; height:92px;}
+.top3{ overflow:hidden;}
+.banner{ float:left; width:458px; height:417px; background:url(../appear/bannerbg.jpg) no-repeat; padding-top:19px;}
+
+
+.banner1{ overflow:hidden; float:left; width:251px;}
+.banner11{ width:251px; height:212px; overflow:hidden;}
+.banner11tit{ background:url(../appear/banner1tit.jpg) repeat-x; height:30px; line-height:30px; text-align:center; color:#fff;}
+.banner11 ul{ padding-left:10px; width:220px; overflow:hidden; padding-top:10px;}
+.banner11 ul li{ background:url(../appear/sanjiao.jpg) 0 10px no-repeat; margin-left:10px; text-indent:20px; height:30px; line-height:30px; overflow:hidden;}
+.banner11 ul li a{ color:#2a3178;}
+.banner11 .more{ height:20px; line-height:20px; float:right; margin-right:20px;}
+.banner11 .more a{ color:#2a3178;}
+.banner12tit{background:url(../appear/banner1tit2.jpg) repeat-x;}
+.banner12 ul li{ background:url(../appear/sanjiao1.jpg) 0 10px no-repeat;}
+
+.banner2{ float:left; width:249px; margin-left:1px; background:#000; height:435px;}
+.banner2 dl{ overflow:hidden; margin:24px 24px; height:59px; }
+.banner2 dl dt{ float:left;}
+.banner2 dl dt a img{ width:77px; height:59px; display:block;}
+.banner2 dl dd{ float:left; width:116px; overflow:hidden; margin-left:8px; display:inline; height:40px; line-height:20px; }
+.banner2 dl dd a{ color:#fff;}
+
+.flash a{ display:block; margin-top:5px;}
+
+.m1{ overflow:hidden;}
+.m1tit{ height:24px; line-height:24px; font-size:14px; background:#cc334f; color:#FFF; text-indent:30px; margin-top:6px; width:960px;}
+.m1main{ background:#f9e6e8; padding-top:7px; padding-left:10px; overflow:hidden;}
+.m1main dl{ width:144px; /*height:178px;*/ overflow:hidden; margin-right:14px; float:left; margin-bottom:12px;}
+.m1main dl dt{ width:144px; height:130px; background:#393939; }
+.m1main dl dt a{ display:block;}
+.m1main dl dt a img{ width:121px; height:110px;margin:9px 11px;}
+.m1main dl dd{ height:60px; line-height:20px; overflow:hidden; padding:0 2px; margin-top:10px;}
+.m1main dl dd a{ color:#000;}
+
+
+.m2{ overflow:hidden;}
+.m2left{ width:582px; float:left;}
+.m2left dl{ width:566px; height:146px; padding:8px 0; margin:0 8px; overflow:hidden; }
+.m2left dl dt{ width:281px; height:144px; overflow:hidden; float:left;}
+.m2left dl dt a img{ width:281px; height:144px;}
+.m2left dl dd{ width:277px; float:right; margin-left:8px;}
+.m2left dl dd.dd1{ height:30px; line-height:30px; font-size:16px; font-weight:bold; overflow:hidden}
+.m2left dl dd.dd2{ height:108px; line-height:18px; overflow:hidden;}
+.m2left dl.xian{ border-top:2px solid #CCC;}
+
+.m2right{ float:right; width:378px;}
+.m2right1{ width:378px; overflow:hidden;}
+.m2right1 dl{ width:189px; height:189px; overflow:hidden; float:left;}
+.m2right1 dl dt a img{ width:177px; height:127px;}
+.m2right1 dl dd{line-height:20px;}
+.m2right1 dl dd.dd2{ background:#9fac05; height:20px; overflow:hidden; text-indent:18px;}
+.m2right1 dl dd.dd1{ height:40px; overflow:hidden; padding:0 6px;}
+.m2right1 dl dd.dd1 a{ color:#969795;}
+.m2right1 dl dd.dd2 a{ color:#FFF;}
+.m2right1 dl.lan dd.dd2{ background:#0aa899;}
+.m2right2{ overflow:hidden; width:378px; height:310px;}
+.m2right2 a img{ width:378px; height:292px; margin-top:10px;}
+
+.m3{ margin-top:10px;}
+
+.m4{ overflow:hidden; margin-top:13px;}
+.m4 ul{ float:left; width:230px; overflow:hidden; margin-right:10px;}
+.m4 ul li{ background:url(../appear/dian.jpg) 0 10px no-repeat; height:20px; line-height:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden; width:220px; margin-left:10px; text-indent:10px;}
+.m4 ul li a{ color:#000;}
+
+
+
+.m5{ height:2px; background:#000; margin-top:20px;}
+
+
+
+
+
+
+.box-keleyi-com,.box-keleyi-com *{ padding: 0; margin: 0; }
+.box-keleyi-com li { list-style: none; }
+.box-keleyi-com img { border: none; }
+.box-keleyi-com { width: 453px; height: 403px; overflow: hidden; position: relative; margin:0px; background: #ccc; }
+.box-keleyi-com ol { position: absolute; right: 20px; bottom: 2px; z-index: 2; }
+.box-keleyi-com ol li { float: left; margin-right: 3px; display: inline; cursor: pointer; background: #fcf2cf; border: 1px solid #f47500; padding: 2px 6px; color: #d94b01; font-family: arial; font-size: 12px; }
+.box-keleyi-com .active { padding: 3px 8px; font-weight: bold; color: #ffffff; background: #ffb442; position: relative; bottom: 2px; }
+.box-keleyi-com ul { position: absolute; top: 0; left: 0; z-index: 1; overflow:hidden; width: 453px; height: 403px; }
+.box-keleyi-com ul li { width: 453px; height: 403px; float: left;  overflow: hidden; }
+.box-keleyi-com ul img { float: left; width: 453px; height: 403px;  overflow: hidden; }
+.box-keleyi-com p { display:block;}
+.box-keleyi-com ul li{ position:relative}
+.box-keleyi-com ul li p{ position:absolute; bottom:0; height:30px; line-height:30px; background:#000; width:100%;opacity:0.4;filter:alpha(opacity=40); color:#fff; padding-left:10px;}
+
+
+
